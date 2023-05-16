@@ -43,6 +43,7 @@
             this.accordionControlElement4 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ce_quanlynguoidung = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement7 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.ce_thongketaikhoan = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement5 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ce_thaydoithongtin = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement6 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -53,7 +54,6 @@
             this.repositoryItemHypertextLabel1 = new DevExpress.XtraEditors.Repository.RepositoryItemHypertextLabel();
             this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.accordionControlElement8 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.ce_thongketaikhoan = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).BeginInit();
@@ -170,6 +170,13 @@
             this.accordionControlElement7.Name = "accordionControlElement7";
             this.accordionControlElement7.Text = "Thống kê";
             // 
+            // ce_thongketaikhoan
+            // 
+            this.ce_thongketaikhoan.Name = "ce_thongketaikhoan";
+            this.ce_thongketaikhoan.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.ce_thongketaikhoan.Text = "Thống kê tài khoản";
+            this.ce_thongketaikhoan.Click += new System.EventHandler(this.ce_thongketaikhoan_Click);
+            // 
             // accordionControlElement5
             // 
             this.accordionControlElement5.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
@@ -189,6 +196,7 @@
             this.accordionControlElement6.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.ce_dangxuat,
             this.ce_thoat});
+            this.accordionControlElement6.Expanded = true;
             this.accordionControlElement6.Name = "accordionControlElement6";
             this.accordionControlElement6.Text = "Hệ thống";
             // 
@@ -197,6 +205,7 @@
             this.ce_dangxuat.Name = "ce_dangxuat";
             this.ce_dangxuat.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.ce_dangxuat.Text = "Đăng xuất";
+            this.ce_dangxuat.Click += new System.EventHandler(this.ce_dangxuat_Click);
             // 
             // ce_thoat
             // 
@@ -239,13 +248,6 @@
             this.accordionControlElement8.Name = "accordionControlElement8";
             this.accordionControlElement8.Text = "Thống kê đối tác";
             // 
-            // ce_thongketaikhoan
-            // 
-            this.ce_thongketaikhoan.Name = "ce_thongketaikhoan";
-            this.ce_thongketaikhoan.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.ce_thongketaikhoan.Text = "Thống kê tài khoản";
-            this.ce_thongketaikhoan.Click += new System.EventHandler(this.ce_thongketaikhoan_Click);
-            // 
             // frm_admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -260,6 +262,7 @@
             this.Name = "frm_admin";
             this.NavigationControl = this.accordionControl1;
             this.Text = "Admin app";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).EndInit();

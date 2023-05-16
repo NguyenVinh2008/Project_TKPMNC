@@ -62,19 +62,11 @@ namespace project_tkpmnc.GUI
             row = dgv_thongtindoitac.Rows[0];
             doitac_DTO.id = int.Parse(row.Cells["doitac_id"].Value.ToString());
             doitac_DTO.ten = row.Cells["info_ten"].Value.ToString();
-            doitac_DTO.email = row.Cells["info_email"].Value.ToString();
             doitac_DTO.sodienthoai = row.Cells["info_dienthoai"].Value.ToString();
-            if (login_BUS.CheckExistEmail(doitac_DTO.email) == 0)
-            {
-                doitac_DAO.thaydoithongtindoitac(doitac_DTO.id, doitac_DTO.ten, doitac_DTO.sodienthoai);
-                MessageBox.Show("Thay đổi thông tin thành công!");
-                dgv_thongtindoitac.DataSource = doitac_DAO.timdoitactheoid(doitac_DTO.id);
-                button_save.Enabled = false;
-            }
-            else
-            {
-                MessageBox.Show("Email đã được đăng ký trong hệ thống!");
-            }
+            doitac_DAO.thaydoithongtindoitac(doitac_DTO.id, doitac_DTO.ten, doitac_DTO.sodienthoai);
+            MessageBox.Show("Thay đổi thông tin thành công!");
+            dgv_thongtindoitac.DataSource = doitac_DAO.timdoitactheoid(doitac_DTO.id);
+            button_save.Enabled = false;
         }
         private void button_reload_Click(object sender, EventArgs e)
         {
