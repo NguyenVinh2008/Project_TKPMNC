@@ -25,7 +25,7 @@ namespace project_tkpmnc
         admin_quanlynguoidung ucQuanlynguoidung;
         admin_quanlyvoucher ucQuanlyvoucher;
         admin_thaydoithongtin ucThaydoithongtin;
-        admin_thongkenguoidungcs ucThaydoithongtinnguoidung;
+        thongke_nguoidung ucThongkenguoidung;
         private void ce_quanlychiendich_Click(object sender, EventArgs e)
         {
             if (ucQuanlychiendich == null)
@@ -104,18 +104,7 @@ namespace project_tkpmnc
                 ucQuanlynguoidung.BringToFront();
         }
 
-        private void ce_thaydoithongtinnguoidung_Click(object sender, EventArgs e)
-        {
-            if (ucThaydoithongtinnguoidung == null)
-            {
-                ucThaydoithongtinnguoidung = new admin_thongkenguoidungcs();
-                ucThaydoithongtinnguoidung.Dock = DockStyle.Fill;
-                fluentDesignFormContainer1.Controls.Add(ucThaydoithongtinnguoidung);
-                ucThaydoithongtinnguoidung.BringToFront();
-            }
-            else
-                ucThaydoithongtinnguoidung.BringToFront();
-        }
+        
 
         private void ce_thaydoithongtin_Click(object sender, EventArgs e)
         {
@@ -136,5 +125,18 @@ namespace project_tkpmnc
         }
 
         
+
+        private void ce_thongketaikhoan_Click(object sender, EventArgs e)
+        {
+            if (ucThongkenguoidung == null)
+            {
+                ucThongkenguoidung = new thongke_nguoidung();
+                ucThongkenguoidung.Dock = DockStyle.Fill;
+                fluentDesignFormContainer1.Controls.Add(ucThongkenguoidung);
+                ucThongkenguoidung.BringToFront();
+            }
+            else
+                ucThongkenguoidung.BringToFront();
+        }
     }
 }
