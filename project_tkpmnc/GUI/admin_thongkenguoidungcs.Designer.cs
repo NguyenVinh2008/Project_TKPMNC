@@ -1,6 +1,6 @@
 ﻿namespace project_tkpmnc.GUI
 {
-    partial class admin_thaydoithongtinnguoidungcs
+    partial class admin_thongkenguoidungcs
     {
         /// <summary> 
         /// Required designer variable.

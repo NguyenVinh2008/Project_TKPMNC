@@ -39,6 +39,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button_dangkyadmin = new System.Windows.Forms.Button();
+            this.button_dangkynguoidung = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label6
@@ -57,7 +58,7 @@
             this.button_dangky.Name = "button_dangky";
             this.button_dangky.Size = new System.Drawing.Size(75, 23);
             this.button_dangky.TabIndex = 35;
-            this.button_dangky.Text = "Đăng ký";
+            this.button_dangky.Text = "Đối tác";
             this.button_dangky.UseVisualStyleBackColor = true;
             this.button_dangky.Click += new System.EventHandler(this.button_dangky_Click);
             // 
@@ -128,19 +129,30 @@
             // 
             // button_dangkyadmin
             // 
-            this.button_dangkyadmin.Location = new System.Drawing.Point(126, 158);
+            this.button_dangkyadmin.Location = new System.Drawing.Point(153, 158);
             this.button_dangkyadmin.Name = "button_dangkyadmin";
-            this.button_dangkyadmin.Size = new System.Drawing.Size(102, 23);
+            this.button_dangkyadmin.Size = new System.Drawing.Size(75, 23);
             this.button_dangkyadmin.TabIndex = 37;
-            this.button_dangkyadmin.Text = "Đăng ký admin";
+            this.button_dangkyadmin.Text = "Admin";
             this.button_dangkyadmin.UseVisualStyleBackColor = true;
             this.button_dangkyadmin.Click += new System.EventHandler(this.button_dangkyadmin_Click);
+            // 
+            // button_dangkynguoidung
+            // 
+            this.button_dangkynguoidung.Location = new System.Drawing.Point(72, 158);
+            this.button_dangkynguoidung.Name = "button_dangkynguoidung";
+            this.button_dangkynguoidung.Size = new System.Drawing.Size(75, 23);
+            this.button_dangkynguoidung.TabIndex = 38;
+            this.button_dangkynguoidung.Text = "Người dùng";
+            this.button_dangkynguoidung.UseVisualStyleBackColor = true;
+            this.button_dangkynguoidung.Click += new System.EventHandler(this.button_dangkynguoidung_Click);
             // 
             // frm_dangky
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(326, 186);
+            this.Controls.Add(this.button_dangkynguoidung);
             this.Controls.Add(this.button_dangkyadmin);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button_dangky);
@@ -172,5 +184,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button_dangkyadmin;
+        private System.Windows.Forms.Button button_dangkynguoidung;
     }
 }

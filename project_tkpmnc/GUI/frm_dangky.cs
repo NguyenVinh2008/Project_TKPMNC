@@ -28,6 +28,7 @@ namespace project_tkpmnc.GUI
         login_BUS login = new login_BUS();
         DOITAC_DAO doitac_DAO = new DOITAC_DAO();
         admin_DAO admin_DAO = new admin_DAO();
+        nguoidung_DAO nguoidung_DAO = new nguoidung_DAO();
 
         private void button_dangky_Click(object sender, EventArgs e)
         {
@@ -59,6 +60,23 @@ namespace project_tkpmnc.GUI
             if (login.CheckExistEmail(admin_DTO.email) == 0)
             {
                 admin_DAO.themquantrivien(admin_DTO.ten, admin_DTO.email, admin_DTO.sodienthoai, admin_DTO.password);
+                MessageBox.Show("Thành công!");
+            }
+            else
+                MessageBox.Show("Email đã tồn tại");
+        }
+
+        private void button_dangkynguoidung_Click(object sender, EventArgs e)
+        {
+            nguoidung_DTO.ten = textBox_tennguoidung.Text.Trim();
+            nguoidung_DTO.email = textBox_diachiemail.Text.Trim();
+            nguoidung_DTO.sodienthoai = textBox_sodienthoai.Text.Trim();
+            // Mã hóa mật khẩu MD5
+            nguoidung_DTO.password = login.GetMD5(textBox_matkhau.Text.Trim());
+
+            if (login.CheckExistEmail(nguoidung_DTO.email) == 0)
+            {
+                nguoidung_DAO.themnguoidung(nguoidung_DTO.ten, nguoidung_DTO.email, nguoidung_DTO.sodienthoai, nguoidung_DTO.password);
                 MessageBox.Show("Thành công!");
             }
             else

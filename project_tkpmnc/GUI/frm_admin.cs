@@ -25,7 +25,7 @@ namespace project_tkpmnc
         admin_quanlynguoidung ucQuanlynguoidung;
         admin_quanlyvoucher ucQuanlyvoucher;
         admin_thaydoithongtin ucThaydoithongtin;
-        admin_thaydoithongtinnguoidungcs ucThaydoithongtinnguoidung;
+        admin_thongkenguoidungcs ucThaydoithongtinnguoidung;
         private void ce_quanlychiendich_Click(object sender, EventArgs e)
         {
             if (ucQuanlychiendich == null)
@@ -108,7 +108,7 @@ namespace project_tkpmnc
         {
             if (ucThaydoithongtinnguoidung == null)
             {
-                ucThaydoithongtinnguoidung = new admin_thaydoithongtinnguoidungcs();
+                ucThaydoithongtinnguoidung = new admin_thongkenguoidungcs();
                 ucThaydoithongtinnguoidung.Dock = DockStyle.Fill;
                 fluentDesignFormContainer1.Controls.Add(ucThaydoithongtinnguoidung);
                 ucThaydoithongtinnguoidung.BringToFront();

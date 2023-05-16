@@ -1,18 +1,8 @@
-﻿using DevExpress.Data.Async;
-using DevExpress.XtraEditors;
-using DevExpress.XtraPrinting;
-using Phan_mem_quan_ly_voucher.DAO;
+﻿using Phan_mem_quan_ly_voucher.DAO;
 using project_tkpmnc.BUS;
 using project_tkpmnc.DAO;
 using project_tkpmnc.DTO;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace project_tkpmnc.GUI
@@ -20,7 +10,6 @@ namespace project_tkpmnc.GUI
     public partial class admin_quanlydoitac : DevExpress.XtraEditors.XtraUserControl
     {
         DOITAC_DAO doitac_DAO = new DOITAC_DAO();
-        admin_DAO admin_DAO = new admin_DAO();
         login_BUS login_BUS = new login_BUS();
         public admin_quanlydoitac()
         {
@@ -33,8 +22,8 @@ namespace project_tkpmnc.GUI
         private void admin_quanlydoitac_Load(object sender, EventArgs e)
         {
             load();
+            comboBox_danhmuc.SelectedIndex = 0;
         }
-
         private void button_timkiem_Click(object sender, EventArgs e)
         {
             string loai = comboBox_danhmuc.SelectedItem.ToString();
@@ -50,12 +39,8 @@ namespace project_tkpmnc.GUI
                 case "Số điện thoại":
                     dgv_thongtindoitac.DataSource = doitac_DAO.timdoitactheosodienthoai(search_str);
                     break;
-                default:
-                    dgv_thongtindoitac.DataSource = doitac_DAO.timdoitac();
-                    break;
-            } 
+            }
         }
-
         private void dgv_thongtindoitac_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = new DataGridViewRow();
@@ -66,13 +51,11 @@ namespace project_tkpmnc.GUI
             doitac_DTO.sodienthoai = row.Cells["info_dienthoai"].Value.ToString();
             doitac_DTO.updated_at = DateTime.Now;
         }
-
         private void button_chinhsua_Click(object sender, EventArgs e)
         {
             dgv_thongtindoitac.DataSource = doitac_DAO.timdoitactheoid(doitac_DTO.id);
             button_save.Enabled = true;
         }
-
         private void button_save_Click(object sender, EventArgs e)
         {
             DataGridViewRow row = new DataGridViewRow();
@@ -93,7 +76,6 @@ namespace project_tkpmnc.GUI
                 MessageBox.Show("Email đã được đăng ký trong hệ thống!");
             }
         }
-
         private void button_reload_Click(object sender, EventArgs e)
         {
             load();

@@ -57,8 +57,10 @@
     <Compile Include="DAO\db.cs" />
     <Compile Include="DAO\doitac_DAO.cs" />
     <Compile Include="DAO\login_DAO.cs" />
+    <Compile Include="DAO\nguoidung_DAO.cs" />
     <Compile Include="DTO\admin_DTO.cs" />
     <Compile Include="DTO\doitac_DTO.cs" />
+    <Compile Include="DTO\nguoidung_DTO.cs" />
     <Compile Include="GUI\admin_duyetchiendich.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -101,11 +103,11 @@
     <Compile Include="GUI\admin_thaydoithongtin.Designer.cs">
       <DependentUpon>admin_thaydoithongtin.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\admin_thaydoithongtinnguoidungcs.cs">
+    <Compile Include="GUI\admin_thongkenguoidungcs.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\admin_thaydoithongtinnguoidungcs.Designer.cs">
-      <DependentUpon>admin_thaydoithongtinnguoidungcs.cs</DependentUpon>
+    <Compile Include="GUI\admin_thongkenguoidungcs.Designer.cs">
+      <DependentUpon>admin_thongkenguoidungcs.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\doitac_quanlychiendich.cs">
       <SubType>UserControl</SubType>
@@ -172,8 +174,8 @@
     <EmbeddedResource Include="GUI\admin_thaydoithongtin.resx">
       <DependentUpon>admin_thaydoithongtin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\admin_thaydoithongtinnguoidungcs.resx">
-      <DependentUpon>admin_thaydoithongtinnguoidungcs.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\admin_thongkenguoidungcs.resx">
+      <DependentUpon>admin_thongkenguoidungcs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\doitac_quanlychiendich.resx">
       <DependentUpon>doitac_quanlychiendich.cs</DependentUpon>

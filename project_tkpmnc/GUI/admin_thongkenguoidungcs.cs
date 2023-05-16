@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace project_tkpmnc.GUI
 {
-    public partial class admin_thaydoithongtinnguoidungcs : UserControl
+    public partial class admin_thongkenguoidungcs : UserControl
     {
-        public admin_thaydoithongtinnguoidungcs()
+        public admin_thongkenguoidungcs()
         {
             InitializeComponent();
         }
