@@ -33,13 +33,19 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v21.2" />
+    <Reference Include="DevExpress.Charts.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.Desktop.v21.2" />
     <Reference Include="DevExpress.Data.v21.2" />
     <Reference Include="DevExpress.Printing.v21.2.Core" />
     <Reference Include="DevExpress.Utils.v21.2" />
+    <Reference Include="DevExpress.Utils.v21.2.UI, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v21.2" />
     <Reference Include="DevExpress.Sparkline.v21.2.Core" />
+    <Reference Include="DevExpress.XtraCharts.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v21.2.UI, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v21.2.Wizard, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraEditors.v21.2" />
+    <Reference Include="DevExpress.XtraPrinting.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -53,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUS\login_BUS.cs" />
+    <Compile Include="BUS\quayso.cs" />
     <Compile Include="DAO\admin_DAO.cs" />
     <Compile Include="DAO\db.cs" />
     <Compile Include="DAO\doitac_DAO.cs" />
@@ -104,6 +111,12 @@
     <Compile Include="GUI\admin_thaydoithongtin.Designer.cs">
       <DependentUpon>admin_thaydoithongtin.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\user_LottoGame.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\user_LottoGame.Designer.cs">
+      <DependentUpon>user_LottoGame.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\doitac_quanlychiendich.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -152,6 +165,12 @@
     <Compile Include="GUI\thongke_nguoidung.Designer.cs">
       <DependentUpon>thongke_nguoidung.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\user_OChuGame.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\user_OChuGame.Designer.cs">
+      <DependentUpon>user_OChuGame.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\admin_duyetchiendich.resx">
@@ -174,6 +193,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\admin_thaydoithongtin.resx">
       <DependentUpon>admin_thaydoithongtin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\user_LottoGame.resx">
+      <DependentUpon>user_LottoGame.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\doitac_quanlychiendich.resx">
       <DependentUpon>doitac_quanlychiendich.cs</DependentUpon>
@@ -199,6 +221,9 @@
     <EmbeddedResource Include="GUI\thongke_nguoidung.resx">
       <DependentUpon>thongke_nguoidung.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\user_OChuGame.resx">
+      <DependentUpon>user_OChuGame.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -208,6 +233,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="App.config" />
     <None Include="Properties\Settings.settings">
@@ -220,7 +246,13 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Resources\DISCOUNT 10%25.jpg" />
+    <Content Include="Resources\DISCOUNT 15%25.jpg" />
+    <Content Include="Resources\DISCOUNT 5%25.jpg" />
+    <Content Include="Resources\template.jpg" />
+    <None Include="Resources\template1.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

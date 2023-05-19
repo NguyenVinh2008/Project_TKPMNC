@@ -157,7 +157,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "thongke_nguoidung";
-            this.Size = new System.Drawing.Size(506, 364);
+            this.Size = new System.Drawing.Size(349, 193);
             this.Load += new System.EventHandler(this.thongke_nguoidung_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

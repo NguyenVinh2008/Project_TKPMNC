@@ -26,6 +26,8 @@ namespace project_tkpmnc
         admin_quanlyvoucher ucQuanlyvoucher;
         admin_thaydoithongtin ucThaydoithongtin;
         thongke_nguoidung ucThongkenguoidung;
+        user_LottoGame ucLotto;
+        user_OChuGame ucOChu;
         private void ce_quanlychiendich_Click(object sender, EventArgs e)
         {
             if (ucQuanlychiendich == null)
@@ -145,6 +147,32 @@ namespace project_tkpmnc
             frm_dangnhap dangnhap = new frm_dangnhap();
             dangnhap.ShowDialog();
 
+        }
+
+        private void ce_testform_Click(object sender, EventArgs e)
+        {
+            if (ucLotto == null)
+            {
+                ucLotto = new user_LottoGame();
+                ucLotto.Dock = DockStyle.Fill;
+                fluentDesignFormContainer1.Controls.Add(ucLotto);
+                ucLotto.BringToFront();
+            }
+            else
+                ucLotto.BringToFront();
+        }
+
+        private void accordionControlElement9_Click(object sender, EventArgs e)
+        {
+            if (ucOChu == null)
+            {
+                ucOChu = new user_OChuGame();
+                ucOChu.Dock = DockStyle.Fill;
+                fluentDesignFormContainer1.Controls.Add(ucOChu);
+                ucOChu.BringToFront();
+            }
+            else
+                ucOChu.BringToFront();
         }
     }
 }

@@ -49,11 +49,13 @@
             this.accordionControlElement6 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ce_dangxuat = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ce_thoat = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.ce_testform = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             this.fluentFormDefaultManager1 = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(this.components);
             this.repositoryItemHypertextLabel1 = new DevExpress.XtraEditors.Repository.RepositoryItemHypertextLabel();
             this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.accordionControlElement8 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement9 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).BeginInit();
@@ -195,7 +197,9 @@
             // 
             this.accordionControlElement6.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.ce_dangxuat,
-            this.ce_thoat});
+            this.ce_thoat,
+            this.ce_testform,
+            this.accordionControlElement9});
             this.accordionControlElement6.Expanded = true;
             this.accordionControlElement6.Name = "accordionControlElement6";
             this.accordionControlElement6.Text = "Hệ thống";
@@ -213,6 +217,13 @@
             this.ce_thoat.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.ce_thoat.Text = "Thoát chương trình";
             this.ce_thoat.Click += new System.EventHandler(this.ce_thoat_Click);
+            // 
+            // ce_testform
+            // 
+            this.ce_testform.Name = "ce_testform";
+            this.ce_testform.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.ce_testform.Text = "testform";
+            this.ce_testform.Click += new System.EventHandler(this.ce_testform_Click);
             // 
             // fluentDesignFormControl1
             // 
@@ -247,6 +258,13 @@
             // 
             this.accordionControlElement8.Name = "accordionControlElement8";
             this.accordionControlElement8.Text = "Thống kê đối tác";
+            // 
+            // accordionControlElement9
+            // 
+            this.accordionControlElement9.Name = "accordionControlElement9";
+            this.accordionControlElement9.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement9.Text = "test o chu";
+            this.accordionControlElement9.Click += new System.EventHandler(this.accordionControlElement9_Click);
             // 
             // frm_admin
             // 
@@ -297,6 +315,8 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit1;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement7;
         private DevExpress.XtraBars.Navigation.AccordionControlElement ce_thongketaikhoan;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement ce_testform;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement9;
     }
 }
 
