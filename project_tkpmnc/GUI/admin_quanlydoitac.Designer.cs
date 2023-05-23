@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button_reload = new System.Windows.Forms.Button();
+            this.button_save = new System.Windows.Forms.Button();
             this.comboBox_danhmuc = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button_timkiem = new System.Windows.Forms.Button();
@@ -38,8 +40,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgv_thongtindoitac = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
-            this.button_save = new System.Windows.Forms.Button();
-            this.button_reload = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_thongtindoitac)).BeginInit();
@@ -64,13 +64,35 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thao tác";
             // 
+            // button_reload
+            // 
+            this.button_reload.Location = new System.Drawing.Point(6, 41);
+            this.button_reload.Name = "button_reload";
+            this.button_reload.Size = new System.Drawing.Size(75, 23);
+            this.button_reload.TabIndex = 8;
+            this.button_reload.Text = "Tải lại";
+            this.button_reload.UseVisualStyleBackColor = true;
+            this.button_reload.Click += new System.EventHandler(this.button_reload_Click);
+            // 
+            // button_save
+            // 
+            this.button_save.Enabled = false;
+            this.button_save.Location = new System.Drawing.Point(168, 41);
+            this.button_save.Name = "button_save";
+            this.button_save.Size = new System.Drawing.Size(75, 23);
+            this.button_save.TabIndex = 7;
+            this.button_save.Text = "Ghi lại";
+            this.button_save.UseVisualStyleBackColor = true;
+            this.button_save.Click += new System.EventHandler(this.button_save_Click);
+            // 
             // comboBox_danhmuc
             // 
             this.comboBox_danhmuc.FormattingEnabled = true;
             this.comboBox_danhmuc.Items.AddRange(new object[] {
             "Tên",
             "Email",
-            "Số điện thoại"});
+            "Số điện thoại",
+            "Trạng thái"});
             this.comboBox_danhmuc.Location = new System.Drawing.Point(60, 14);
             this.comboBox_danhmuc.Name = "comboBox_danhmuc";
             this.comboBox_danhmuc.Size = new System.Drawing.Size(134, 21);
@@ -159,27 +181,6 @@
             this.label6.Size = new System.Drawing.Size(156, 25);
             this.label6.TabIndex = 26;
             this.label6.Text = "Quản lý đối tác";
-            // 
-            // button_save
-            // 
-            this.button_save.Enabled = false;
-            this.button_save.Location = new System.Drawing.Point(168, 41);
-            this.button_save.Name = "button_save";
-            this.button_save.Size = new System.Drawing.Size(75, 23);
-            this.button_save.TabIndex = 7;
-            this.button_save.Text = "Ghi lại";
-            this.button_save.UseVisualStyleBackColor = true;
-            this.button_save.Click += new System.EventHandler(this.button_save_Click);
-            // 
-            // button_reload
-            // 
-            this.button_reload.Location = new System.Drawing.Point(6, 41);
-            this.button_reload.Name = "button_reload";
-            this.button_reload.Size = new System.Drawing.Size(75, 23);
-            this.button_reload.TabIndex = 8;
-            this.button_reload.Text = "Tải lại";
-            this.button_reload.UseVisualStyleBackColor = true;
-            this.button_reload.Click += new System.EventHandler(this.button_reload_Click);
             // 
             // admin_quanlydoitac
             // 

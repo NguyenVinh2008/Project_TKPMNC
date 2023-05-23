@@ -74,7 +74,7 @@ namespace project_tkpmnc
                 ucQuanlydoitac = new admin_quanlydoitac();
                 ucQuanlydoitac.Dock = DockStyle.Fill;
                 fluentDesignFormContainer1.Controls.Add(ucQuanlydoitac);
-                ucQuanlydoitac.BringToFront();
+                ucQuanlydoitac.load();
             }
             else
                 ucQuanlydoitac.BringToFront();

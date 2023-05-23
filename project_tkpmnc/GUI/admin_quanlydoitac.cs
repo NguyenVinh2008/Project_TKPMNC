@@ -1,4 +1,5 @@
-﻿using Phan_mem_quan_ly_voucher.DAO;
+﻿using DevExpress.XtraPrinting.Native.LayoutAdjustment;
+using Phan_mem_quan_ly_voucher.DAO;
 using project_tkpmnc.BUS;
 using project_tkpmnc.DAO;
 using project_tkpmnc.DTO;
@@ -17,12 +18,13 @@ namespace project_tkpmnc.GUI
         }
         public void load()
         {
+            comboBox_danhmuc.SelectedIndex = 0;
+            textBox_timkiem.Text = string.Empty;
             dgv_thongtindoitac.DataSource = doitac_DAO.timdoitac();
         }
         private void admin_quanlydoitac_Load(object sender, EventArgs e)
         {
             load();
-            comboBox_danhmuc.SelectedIndex = 0;
         }
         private void button_timkiem_Click(object sender, EventArgs e)
         {
@@ -38,6 +40,12 @@ namespace project_tkpmnc.GUI
                     break;
                 case "Số điện thoại":
                     dgv_thongtindoitac.DataSource = doitac_DAO.timdoitactheosodienthoai(search_str);
+                    break;
+                case "Trạng thái":
+                    if (search_str == "0" || search_str == "1")
+                        dgv_thongtindoitac.DataSource = doitac_DAO.timdoitactheotrangthai(int.Parse(search_str));
+                    else
+                        MessageBox.Show("Trạng thái chỉ nhập số 0 (chưa duyệt) và số 1 (đã duyệt)!");
                     break;
             }
         }
