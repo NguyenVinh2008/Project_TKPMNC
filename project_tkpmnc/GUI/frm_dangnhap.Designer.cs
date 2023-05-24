@@ -36,7 +36,6 @@
             this.button_dangnhap = new System.Windows.Forms.Button();
             this.button_exit = new System.Windows.Forms.Button();
             this.linklable_dangky = new System.Windows.Forms.LinkLabel();
-            this.checkBox_admin = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // textBox_email
@@ -73,20 +72,20 @@
             // 
             // button_dangnhap
             // 
-            this.button_dangnhap.Location = new System.Drawing.Point(98, 103);
+            this.button_dangnhap.Location = new System.Drawing.Point(102, 76);
             this.button_dangnhap.Name = "button_dangnhap";
             this.button_dangnhap.Size = new System.Drawing.Size(75, 23);
-            this.button_dangnhap.TabIndex = 4;
+            this.button_dangnhap.TabIndex = 2;
             this.button_dangnhap.Text = "Đăng nhập";
             this.button_dangnhap.UseVisualStyleBackColor = true;
             this.button_dangnhap.Click += new System.EventHandler(this.button_dangnhap_Click);
             // 
             // button_exit
             // 
-            this.button_exit.Location = new System.Drawing.Point(179, 103);
+            this.button_exit.Location = new System.Drawing.Point(183, 76);
             this.button_exit.Name = "button_exit";
             this.button_exit.Size = new System.Drawing.Size(75, 23);
-            this.button_exit.TabIndex = 6;
+            this.button_exit.TabIndex = 4;
             this.button_exit.Text = "Thoát";
             this.button_exit.UseVisualStyleBackColor = true;
             this.button_exit.Click += new System.EventHandler(this.button_exit_Click);
@@ -94,31 +93,20 @@
             // linklable_dangky
             // 
             this.linklable_dangky.AutoSize = true;
-            this.linklable_dangky.Location = new System.Drawing.Point(176, 87);
+            this.linklable_dangky.Location = new System.Drawing.Point(176, 60);
             this.linklable_dangky.Name = "linklable_dangky";
             this.linklable_dangky.Size = new System.Drawing.Size(82, 13);
-            this.linklable_dangky.TabIndex = 5;
+            this.linklable_dangky.TabIndex = 3;
             this.linklable_dangky.TabStop = true;
             this.linklable_dangky.Text = "Đăng ký đối tác";
             this.linklable_dangky.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklable_dangky_LinkClicked);
-            // 
-            // checkBox_admin
-            // 
-            this.checkBox_admin.AutoSize = true;
-            this.checkBox_admin.Location = new System.Drawing.Point(148, 63);
-            this.checkBox_admin.Name = "checkBox_admin";
-            this.checkBox_admin.Size = new System.Drawing.Size(110, 17);
-            this.checkBox_admin.TabIndex = 3;
-            this.checkBox_admin.Text = "Đăng nhập admin";
-            this.checkBox_admin.UseVisualStyleBackColor = true;
             // 
             // frm_dangnhap
             // 
             this.AcceptButton = this.button_dangnhap;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(298, 159);
-            this.Controls.Add(this.checkBox_admin);
+            this.ClientSize = new System.Drawing.Size(285, 125);
             this.Controls.Add(this.linklable_dangky);
             this.Controls.Add(this.button_exit);
             this.Controls.Add(this.button_dangnhap);
@@ -143,6 +131,5 @@
         private System.Windows.Forms.Button button_dangnhap;
         private System.Windows.Forms.Button button_exit;
         private System.Windows.Forms.LinkLabel linklable_dangky;
-        private System.Windows.Forms.CheckBox checkBox_admin;
     }
 }

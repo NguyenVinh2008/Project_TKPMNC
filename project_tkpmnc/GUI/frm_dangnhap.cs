@@ -12,6 +12,8 @@ using System.Windows.Forms;
 using project_tkpmnc.DTO;
 using project_tkpmnc.BUS;
 using project_tkpmnc.DAO;
+using System.Linq.Expressions;
+using Phan_mem_quan_ly_voucher.DAO;
 
 namespace project_tkpmnc.GUI
 {
@@ -27,6 +29,7 @@ namespace project_tkpmnc.GUI
 
         private void linklable_dangky_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            this.Hide();
             frm_dangky dangky = new frm_dangky();
             dangky.ShowDialog();
         }
@@ -38,10 +41,13 @@ namespace project_tkpmnc.GUI
             password = login_BUS.GetMD5(textBox_matkhau.Text.Trim());
             if (login_BUS.CheckLogin(email, password) == 1)
             {
-                if (checkBox_admin.Checked)
+                switch (login_BUS.checkUserType(email))
                 {
-                    if (login_BUS.CheckAdmin(email) == 1)
-                    {
+                    case 0:
+                        // Đăng nhập người dùng
+                        break;
+                    case 1:
+                        // Đăng nhập quản trị viên
                         admin_DAO admin_DAO = new admin_DAO();
                         var datatable = admin_DAO.timquantrivienidbangemail(email);
                         admin_DTO.id = int.Parse(datatable.Rows[0]["quantrivien_id"].ToString());
@@ -49,28 +55,26 @@ namespace project_tkpmnc.GUI
                         MessageBox.Show("Đăng nhập admin thành công!");
                         this.Hide();
                         frm_admin dangnhapadmin = new frm_admin();
-                        dangnhapadmin.Text = ("welcome admin name: " + admin_DTO.ten + " id: " + admin_DTO.id);
+                        dangnhapadmin.Text = ("welcome admin name: " + admin_DTO.ten);
                         dangnhapadmin.ShowDialog();
-
-                    }
-                    else
-                        MessageBox.Show("Đăng nhập không thành công!");
-                }
-                else
-                {
-                    if (login_BUS.CheckAdmin(email) != 1)
-                    {
+                        break;
+                    case 2:
+                        // Đăng nhập đối tác
                         if (login_BUS.CheckStatus(email, 1) == 1)
                         {
+                            DOITAC_DAO doitac_DAO = new DOITAC_DAO();
+                            datatable = doitac_DAO.timdoitactheoemail(email);
+                            doitac_DTO.id = int.Parse(datatable.Rows[0]["doitac_id"].ToString());
+                            doitac_DTO.ten = datatable.Rows[0]["info_ten"].ToString();
                             MessageBox.Show("Đăng nhập đối tác thành công!");
+                            this.Hide();
                             frm_doitac dangnhapdoitac = new frm_doitac();
+                            dangnhapdoitac.Text = ("welcome đối tác name: " + doitac_DTO.ten);
                             dangnhapdoitac.ShowDialog();
                         }
                         else
                             MessageBox.Show("Tài khoản đối tác chưa được quản trị viên duyệt!");
-                    }
-                    else
-                        MessageBox.Show("Đăng nhập không thành công!");
+                        break;
                 }
             }
             else

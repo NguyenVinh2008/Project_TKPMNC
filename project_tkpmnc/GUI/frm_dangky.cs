@@ -30,6 +30,9 @@ namespace project_tkpmnc.GUI
                 {
                     doitac_DAO.themdoitac(doitac_DTO.ten, doitac_DTO.email, doitac_DTO.sodienthoai, doitac_DTO.password);
                     MessageBox.Show("Đăng ký đối tác thành công, vui lòng chờ quản trị viên duyệt!");
+                    this.Hide();
+                    frm_dangnhap dangnhap = new frm_dangnhap();
+                    dangnhap.ShowDialog();
                 }
                 else
                     MessageBox.Show("Email đã tồn tại");
@@ -46,6 +49,9 @@ namespace project_tkpmnc.GUI
                 {
                     nguoidung_DAO.themnguoidung(nguoidung_DTO.ten, nguoidung_DTO.email, nguoidung_DTO.sodienthoai, nguoidung_DTO.password);
                     MessageBox.Show("Đăng ký người dùng thành công!");
+                    this.Hide();
+                    frm_dangnhap dangnhap = new frm_dangnhap();
+                    dangnhap.ShowDialog();
                 }
                 else
                     MessageBox.Show("Email đã tồn tại");

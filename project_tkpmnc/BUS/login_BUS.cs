@@ -41,6 +41,7 @@ namespace project_tkpmnc.BUS
         }
         public int CheckLogin(string email, string password)
         {
+            // return 1: đăng nhập thành công, return 0: đăng nhập không thành công
             login_DAO login_DAO = new login_DAO();
             var kq = login_DAO.checklogin(email, password);
             if (kq.Rows.Count == 1)
@@ -57,6 +58,21 @@ namespace project_tkpmnc.BUS
                 return 1;
             else 
                 return 0;
+        }
+        public int checkUserType(string email)
+        {
+            // return 0: người dùng; return 1: quản trị viên; return 2: đối tác
+            login_DAO login_DAO = new login_DAO();
+            var kq = login_DAO.checkadmin(email);
+            if (kq.Rows.Count == 1)
+                return 1;
+            else
+            {
+                kq = login_DAO.checkdoitac(email);
+                if (kq.Rows.Count == 1)
+                    return 2;
+            }
+            return 0;
         }
 
         public int CheckStatus(string email, int trangthai)

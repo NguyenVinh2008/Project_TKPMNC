@@ -25,6 +25,16 @@ namespace project_tkpmnc.DAO
             string sql = string.Format("EXEC KIEM_TRA_QUAN_TRI_VIEN '" + email + "'");
             return db.laydulieu(sql);
         }
+        public DataTable checkdoitac(string email)
+        {
+            string sql = string.Format("EXEC KIEM_TRA_DOI_TAC '" + email + "'");
+            return db.laydulieu(sql);
+        }
+        public DataTable checknguoidung(string email)
+        {
+            string sql = string.Format("EXEC KIEM_TRA_NGUOI_DUNG '" + email + "'");
+            return db.laydulieu(sql);
+        }
 
         public DataTable checkstatusbyemail(string email, int trangthai) 
         {
