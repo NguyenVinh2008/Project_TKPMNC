@@ -61,14 +61,21 @@
     <Compile Include="BUS\login_BUS.cs" />
     <Compile Include="BUS\quayso.cs" />
     <Compile Include="DAO\admin_DAO.cs" />
+    <Compile Include="DAO\chiendich_DAO.cs" />
     <Compile Include="DAO\db.cs" />
     <Compile Include="DAO\doitac_DAO.cs" />
     <Compile Include="DAO\login_DAO.cs" />
     <Compile Include="DAO\nguoidung_DAO.cs" />
+    <Compile Include="DAO\phanthuong_DAO.cs" />
     <Compile Include="DAO\thongkenguoidung_DAO.cs" />
+    <Compile Include="DAO\voucher_DAO.cs" />
     <Compile Include="DTO\admin_DTO.cs" />
+    <Compile Include="DTO\chiendich_DTO.cs" />
     <Compile Include="DTO\doitac_DTO.cs" />
     <Compile Include="DTO\nguoidung_DTO.cs" />
+    <Compile Include="DTO\phanthuong_DTO.cs" />
+    <Compile Include="DTO\trochoi_DTO.cs" />
+    <Compile Include="DTO\voucher_DTO.cs" />
     <Compile Include="GUI\admin_duyetchiendich.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -110,6 +117,12 @@
     </Compile>
     <Compile Include="GUI\admin_thaydoithongtin.Designer.cs">
       <DependentUpon>admin_thaydoithongtin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\doitac_taovoucher.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\doitac_taovoucher.Designer.cs">
+      <DependentUpon>doitac_taovoucher.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\user_LottoGame.cs">
       <SubType>UserControl</SubType>
@@ -193,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\admin_thaydoithongtin.resx">
       <DependentUpon>admin_thaydoithongtin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\doitac_taovoucher.resx">
+      <DependentUpon>doitac_taovoucher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\user_LottoGame.resx">
       <DependentUpon>user_LottoGame.cs</DependentUpon>

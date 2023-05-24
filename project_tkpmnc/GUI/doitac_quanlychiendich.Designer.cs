@@ -100,6 +100,7 @@
             this.button_taochiendich.TabIndex = 0;
             this.button_taochiendich.Text = "Tạo mới";
             this.button_taochiendich.UseVisualStyleBackColor = true;
+            this.button_taochiendich.Click += new System.EventHandler(this.button_taochiendich_Click);
             // 
             // groupBox2
             // 
