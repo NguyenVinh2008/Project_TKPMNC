@@ -32,12 +32,12 @@
             this.button_themvoucher = new System.Windows.Forms.Button();
             this.button_timkiem = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox_timkiem = new System.Windows.Forms.TextBox();
             this.button_chinhsua = new System.Windows.Forms.Button();
             this.button_taochiendich = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgv_thongtinchiendich = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_thongtinchiendich)).BeginInit();
@@ -47,22 +47,22 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.button_themvoucher);
             this.groupBox1.Controls.Add(this.button_timkiem);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox_timkiem);
             this.groupBox1.Controls.Add(this.button_chinhsua);
             this.groupBox1.Controls.Add(this.button_taochiendich);
             this.groupBox1.Location = new System.Drawing.Point(7, 30);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(492, 72);
+            this.groupBox1.Size = new System.Drawing.Size(492, 73);
             this.groupBox1.TabIndex = 26;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thao tác";
             // 
             // button_themvoucher
             // 
-            this.button_themvoucher.Location = new System.Drawing.Point(188, 41);
+            this.button_themvoucher.Location = new System.Drawing.Point(188, 43);
             this.button_themvoucher.Name = "button_themvoucher";
             this.button_themvoucher.Size = new System.Drawing.Size(85, 23);
             this.button_themvoucher.TabIndex = 5;
@@ -72,7 +72,7 @@
             // 
             // button_timkiem
             // 
-            this.button_timkiem.Location = new System.Drawing.Point(401, 12);
+            this.button_timkiem.Location = new System.Drawing.Point(188, 14);
             this.button_timkiem.Name = "button_timkiem";
             this.button_timkiem.Size = new System.Drawing.Size(85, 23);
             this.button_timkiem.TabIndex = 4;
@@ -89,16 +89,9 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Tìm kiếm";
             // 
-            // textBox_timkiem
-            // 
-            this.textBox_timkiem.Location = new System.Drawing.Point(59, 14);
-            this.textBox_timkiem.Name = "textBox_timkiem";
-            this.textBox_timkiem.Size = new System.Drawing.Size(336, 20);
-            this.textBox_timkiem.TabIndex = 2;
-            // 
             // button_chinhsua
             // 
-            this.button_chinhsua.Location = new System.Drawing.Point(97, 41);
+            this.button_chinhsua.Location = new System.Drawing.Point(97, 43);
             this.button_chinhsua.Name = "button_chinhsua";
             this.button_chinhsua.Size = new System.Drawing.Size(85, 23);
             this.button_chinhsua.TabIndex = 1;
@@ -107,7 +100,7 @@
             // 
             // button_taochiendich
             // 
-            this.button_taochiendich.Location = new System.Drawing.Point(6, 41);
+            this.button_taochiendich.Location = new System.Drawing.Point(6, 43);
             this.button_taochiendich.Name = "button_taochiendich";
             this.button_taochiendich.Size = new System.Drawing.Size(85, 23);
             this.button_taochiendich.TabIndex = 0;
@@ -121,22 +114,28 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.dgv_thongtinchiendich);
-            this.groupBox2.Location = new System.Drawing.Point(7, 108);
+            this.groupBox2.Location = new System.Drawing.Point(7, 109);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(492, 255);
+            this.groupBox2.Size = new System.Drawing.Size(492, 254);
             this.groupBox2.TabIndex = 27;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin chiến dịch";
             // 
             // dgv_thongtinchiendich
             // 
+            this.dgv_thongtinchiendich.AllowUserToAddRows = false;
+            this.dgv_thongtinchiendich.AllowUserToDeleteRows = false;
+            this.dgv_thongtinchiendich.AllowUserToOrderColumns = true;
             this.dgv_thongtinchiendich.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgv_thongtinchiendich.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_thongtinchiendich.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_thongtinchiendich.Location = new System.Drawing.Point(8, 19);
+            this.dgv_thongtinchiendich.MultiSelect = false;
             this.dgv_thongtinchiendich.Name = "dgv_thongtinchiendich";
-            this.dgv_thongtinchiendich.Size = new System.Drawing.Size(476, 230);
+            this.dgv_thongtinchiendich.ReadOnly = true;
+            this.dgv_thongtinchiendich.Size = new System.Drawing.Size(476, 229);
             this.dgv_thongtinchiendich.TabIndex = 0;
             this.dgv_thongtinchiendich.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_thongtinchiendich_CellClick);
             // 
@@ -150,6 +149,20 @@
             this.label6.TabIndex = 28;
             this.label6.Text = "Quản lý chiến dịch";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Toàn bộ",
+            "Chưa duyệt",
+            "Đã duyệt",
+            "Đang diễn ra",
+            "Đã kết thúc"});
+            this.comboBox1.Location = new System.Drawing.Point(61, 14);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 6;
+            // 
             // doitac_quanlychiendich
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -159,6 +172,7 @@
             this.Controls.Add(this.label6);
             this.Name = "doitac_quanlychiendich";
             this.Size = new System.Drawing.Size(506, 364);
+            this.Load += new System.EventHandler(this.doitac_quanlychiendich_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -173,12 +187,12 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button_timkiem;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox_timkiem;
         private System.Windows.Forms.Button button_chinhsua;
         private System.Windows.Forms.Button button_taochiendich;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dgv_thongtinchiendich;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button_themvoucher;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

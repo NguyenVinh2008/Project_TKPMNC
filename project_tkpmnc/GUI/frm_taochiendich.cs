@@ -31,12 +31,13 @@ namespace project_tkpmnc.GUI
         }
         private void button_tao_Click(object sender, EventArgs e)
         {
+            chiendich_DTO.chiendich_ten = textBox_tenchiendich.Text;
             chiendich_DTO.doitac_id = doitac_DTO.id;
             chiendich_DTO.trochoi_id = int.Parse(comboBox_trochoi.SelectedValue.ToString());
             chiendich_DTO.chiendich_start = dateTimePicker_start.Value.ToString("yyyy/MM/dd");
             chiendich_DTO.chiendich_end = dateTimePicker_end.Value.ToString("yyyy/MM/dd");
-            chiendich_DAO.taochiendich(chiendich_DTO.doitac_id, chiendich_DTO.trochoi_id, chiendich_DTO.chiendich_start, chiendich_DTO.chiendich_end);
-            MessageBox.Show("Chiến dịch đã được tạo!");
+            chiendich_DAO.taochiendich(chiendich_DTO.chiendich_ten, chiendich_DTO.doitac_id, chiendich_DTO.trochoi_id, chiendich_DTO.chiendich_start, chiendich_DTO.chiendich_end);
+            MessageBox.Show("Tạo chiến dịch mới thành công!");
             this.Close();
         }
 

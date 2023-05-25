@@ -4,6 +4,7 @@ using DevExpress.Utils.Drawing.Animation;
 using DevExpress.Utils.Extensions;
 using DevExpress.XtraEditors.Mask;
 using project_tkpmnc.BUS;
+using project_tkpmnc.DAO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,6 +25,7 @@ namespace project_tkpmnc.GUI
         {
             InitializeComponent();
         }
+       
         private void button_quayso_Click(object sender, EventArgs e)
         {
             timer1.Enabled = !timer1.Enabled;
@@ -44,5 +46,7 @@ namespace project_tkpmnc.GUI
             int num = r.Next(0, phanthuong.Length);
             label_ketqua.Text = phanthuong[num];
         }
+
+        
     }
 }

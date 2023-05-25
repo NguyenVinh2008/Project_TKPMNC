@@ -30,6 +30,7 @@ namespace project_tkpmnc
         user_OChuGame ucOChu;
         private void ce_quanlychiendich_Click(object sender, EventArgs e)
         {
+
             if (ucQuanlychiendich == null)
             {
                 ucQuanlychiendich = new admin_quanlychiendich();
@@ -164,6 +165,7 @@ namespace project_tkpmnc
 
         private void accordionControlElement9_Click(object sender, EventArgs e)
         {
+
             if (ucOChu == null)
             {
                 ucOChu = new user_OChuGame();

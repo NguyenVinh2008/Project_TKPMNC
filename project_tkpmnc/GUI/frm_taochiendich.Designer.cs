@@ -40,12 +40,14 @@
             this.dateTimePicker_end = new System.Windows.Forms.DateTimePicker();
             this.button_tao = new System.Windows.Forms.Button();
             this.button_exit = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox_tenchiendich = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label_id
             // 
             this.label_id.AutoSize = true;
-            this.label_id.Location = new System.Drawing.Point(168, 43);
+            this.label_id.Location = new System.Drawing.Point(79, 38);
             this.label_id.Name = "label_id";
             this.label_id.Size = new System.Drawing.Size(68, 13);
             this.label_id.TabIndex = 0;
@@ -54,7 +56,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(193, 69);
+            this.label1.Location = new System.Drawing.Point(104, 64);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 13);
             this.label1.TabIndex = 1;
@@ -63,7 +65,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(190, 94);
+            this.label2.Location = new System.Drawing.Point(101, 116);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(46, 13);
             this.label2.TabIndex = 2;
@@ -72,7 +74,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(145, 124);
+            this.label3.Location = new System.Drawing.Point(56, 146);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(91, 13);
             this.label3.TabIndex = 3;
@@ -81,7 +83,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(143, 150);
+            this.label4.Location = new System.Drawing.Point(54, 172);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(93, 13);
             this.label4.TabIndex = 4;
@@ -89,7 +91,7 @@
             // 
             // textBox_chiendichid
             // 
-            this.textBox_chiendichid.Location = new System.Drawing.Point(242, 40);
+            this.textBox_chiendichid.Location = new System.Drawing.Point(153, 35);
             this.textBox_chiendichid.Name = "textBox_chiendichid";
             this.textBox_chiendichid.ReadOnly = true;
             this.textBox_chiendichid.Size = new System.Drawing.Size(121, 20);
@@ -97,7 +99,7 @@
             // 
             // textBox_nguoitao
             // 
-            this.textBox_nguoitao.Location = new System.Drawing.Point(242, 66);
+            this.textBox_nguoitao.Location = new System.Drawing.Point(153, 61);
             this.textBox_nguoitao.Name = "textBox_nguoitao";
             this.textBox_nguoitao.ReadOnly = true;
             this.textBox_nguoitao.Size = new System.Drawing.Size(121, 20);
@@ -106,28 +108,28 @@
             // comboBox_trochoi
             // 
             this.comboBox_trochoi.FormattingEnabled = true;
-            this.comboBox_trochoi.Location = new System.Drawing.Point(242, 91);
+            this.comboBox_trochoi.Location = new System.Drawing.Point(153, 113);
             this.comboBox_trochoi.Name = "comboBox_trochoi";
-            this.comboBox_trochoi.Size = new System.Drawing.Size(121, 21);
+            this.comboBox_trochoi.Size = new System.Drawing.Size(268, 21);
             this.comboBox_trochoi.TabIndex = 7;
             // 
             // dateTimePicker_start
             // 
-            this.dateTimePicker_start.Location = new System.Drawing.Point(242, 118);
+            this.dateTimePicker_start.Location = new System.Drawing.Point(153, 140);
             this.dateTimePicker_start.Name = "dateTimePicker_start";
-            this.dateTimePicker_start.Size = new System.Drawing.Size(121, 20);
+            this.dateTimePicker_start.Size = new System.Drawing.Size(268, 20);
             this.dateTimePicker_start.TabIndex = 8;
             // 
             // dateTimePicker_end
             // 
-            this.dateTimePicker_end.Location = new System.Drawing.Point(242, 144);
+            this.dateTimePicker_end.Location = new System.Drawing.Point(153, 166);
             this.dateTimePicker_end.Name = "dateTimePicker_end";
-            this.dateTimePicker_end.Size = new System.Drawing.Size(121, 20);
+            this.dateTimePicker_end.Size = new System.Drawing.Size(268, 20);
             this.dateTimePicker_end.TabIndex = 9;
             // 
             // button_tao
             // 
-            this.button_tao.Location = new System.Drawing.Point(207, 170);
+            this.button_tao.Location = new System.Drawing.Point(265, 192);
             this.button_tao.Name = "button_tao";
             this.button_tao.Size = new System.Drawing.Size(75, 23);
             this.button_tao.TabIndex = 10;
@@ -137,18 +139,36 @@
             // 
             // button_exit
             // 
-            this.button_exit.Location = new System.Drawing.Point(288, 170);
+            this.button_exit.Location = new System.Drawing.Point(346, 192);
             this.button_exit.Name = "button_exit";
             this.button_exit.Size = new System.Drawing.Size(75, 23);
             this.button_exit.TabIndex = 11;
             this.button_exit.Text = "Thoát";
             this.button_exit.UseVisualStyleBackColor = true;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(69, 90);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(78, 13);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Tên chiến dịch";
+            // 
+            // textBox_tenchiendich
+            // 
+            this.textBox_tenchiendich.Location = new System.Drawing.Point(153, 87);
+            this.textBox_tenchiendich.Name = "textBox_tenchiendich";
+            this.textBox_tenchiendich.Size = new System.Drawing.Size(268, 20);
+            this.textBox_tenchiendich.TabIndex = 13;
+            // 
             // frm_taochiendich
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(488, 264);
+            this.ClientSize = new System.Drawing.Size(433, 264);
+            this.Controls.Add(this.textBox_tenchiendich);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.button_exit);
             this.Controls.Add(this.button_tao);
             this.Controls.Add(this.dateTimePicker_end);
@@ -183,5 +203,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker_end;
         private System.Windows.Forms.Button button_tao;
         private System.Windows.Forms.Button button_exit;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBox_tenchiendich;
     }
 }

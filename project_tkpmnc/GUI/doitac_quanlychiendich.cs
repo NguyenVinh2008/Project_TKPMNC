@@ -21,6 +21,10 @@ namespace project_tkpmnc.GUI
         {
             InitializeComponent();
         }
+        private void load_data()
+        {
+            dgv_thongtinchiendich.DataSource = chiendich_DAO.laychiendichtheodoitacid(doitac_DTO.id);
+        }
         private void button_taochiendich_Click(object sender, EventArgs e)
         {
 
@@ -30,8 +34,28 @@ namespace project_tkpmnc.GUI
 
         private void button_timkiem_Click(object sender, EventArgs e)
         {
-            dgv_thongtinchiendich.DataSource = chiendich_DAO.laychiendichtheodoitacid(doitac_DTO.id);
-            
+            //load_data();
+            switch (comboBox1.SelectedIndex)
+            {
+                case 0:
+                    load_data();
+                    break;
+                case 1:
+                    chiendich_DTO.trangthai = 0;
+                    dgv_thongtinchiendich.DataSource = chiendich_DAO.laychiendichcuadoitactheotrangthai(doitac_DTO.id, chiendich_DTO.trangthai);
+                    break;
+                case 2:
+                    chiendich_DTO.trangthai = 1;
+                    dgv_thongtinchiendich.DataSource = chiendich_DAO.laychiendichcuadoitactheotrangthai(doitac_DTO.id, chiendich_DTO.trangthai);
+                    break;
+                case 3:
+                    dgv_thongtinchiendich.DataSource = chiendich_DAO.laychiendichcuadoitacdangdienra(doitac_DTO.id);
+                    break;
+                case 4:
+                    dgv_thongtinchiendich.DataSource = chiendich_DAO.laychiendichcuadoitacdaketthuc(doitac_DTO.id);
+                    break;
+            }
+
         }
         private void dgv_thongtinchiendich_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -56,6 +80,12 @@ namespace project_tkpmnc.GUI
                 taovoucher.Show();
             }
             
+        }
+
+        private void doitac_quanlychiendich_Load(object sender, EventArgs e)
+        {
+            comboBox1.SelectedIndex = 0;
+            load_data();
         }
     }
 }
