@@ -1,4 +1,6 @@
-﻿using project_tkpmnc.DAO;
+﻿using DevExpress.XtraBars.FluentDesignSystem;
+using Phan_mem_quan_ly_voucher.DAO;
+using project_tkpmnc.DAO;
 using project_tkpmnc.DTO;
 using System;
 using System.Collections.Generic;
@@ -19,21 +21,41 @@ namespace project_tkpmnc.GUI
         {
             InitializeComponent();
         }
-        public int chiendich_id;
         private void button_taochiendich_Click(object sender, EventArgs e)
         {
-            if (chiendich_DAO.laychiendichidlonnhat().Rows[0]["chiendich_id"] is null)
+
+            frm_taochiendich taochiendich = new frm_taochiendich();
+            taochiendich.Show();
+        }
+
+        private void button_timkiem_Click(object sender, EventArgs e)
+        {
+            dgv_thongtinchiendich.DataSource = chiendich_DAO.laychiendichtheodoitacid(doitac_DTO.id);
+            
+        }
+        private void dgv_thongtinchiendich_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = new DataGridViewRow();
+            row = dgv_thongtinchiendich.Rows[e.RowIndex];
+            chiendich_DTO.chiendich_id = int.Parse(row.Cells["chiendich_id"].Value.ToString());
+            chiendich_DTO.doitac_id = int.Parse(row.Cells["taoboi_doitac_id"].Value.ToString());
+            chiendich_DTO.trochoi_id = int.Parse(row.Cells["trochoi_id"].Value.ToString());
+            chiendich_DTO.trangthai = int.Parse(row.Cells["chiendich_trangthai"].Value.ToString()); ;
+            chiendich_DTO.chiendich_start = row.Cells["chiendich_start"].Value.ToString();
+            chiendich_DTO.chiendich_end = row.Cells["chiendich_end"].Value.ToString();
+        }
+        private void button_themvoucher_Click(object sender, EventArgs e)
+        {
+            if (chiendich_DTO.chiendich_id == 0)
             {
-                chiendich_DTO.chiendich_id = int.Parse(chiendich_DAO.laychiendichidlonnhat().Rows[0]["chiendich_id"].ToString()) + 1;
+                MessageBox.Show("Vui lòng chọn chiến dịch bạn muốn thêm voucher vào");
             }
             else
-                chiendich_DTO.chiendich_id = 1;
-            chiendich_DTO.doitac_id = doitac_DTO.id;
-            chiendich_DTO.trochoi_id = 1;
-            chiendich_DTO.chiendich_start = DateTime.Parse(DateTime.Now.ToString());
-            chiendich_DTO.chiendich_end = DateTime.Parse(DateTime.Now.ToString());
-            chiendich_DAO.taochiendich(chiendich_DTO.doitac_id, chiendich_DTO.trochoi_id, chiendich_DTO.chiendich_start, chiendich_DTO.chiendich_end);
-
+            {
+                frm_taovoucher taovoucher = new frm_taovoucher();
+                taovoucher.Show();
+            }
+            
         }
     }
 }

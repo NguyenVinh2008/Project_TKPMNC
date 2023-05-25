@@ -29,23 +29,25 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button_themvoucher = new System.Windows.Forms.Button();
             this.button_timkiem = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox_timkiem = new System.Windows.Forms.TextBox();
             this.button_chinhsua = new System.Windows.Forms.Button();
             this.button_taochiendich = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dgv_thongtindoitac = new System.Windows.Forms.DataGridView();
+            this.dgv_thongtinchiendich = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_thongtindoitac)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_thongtinchiendich)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.button_themvoucher);
             this.groupBox1.Controls.Add(this.button_timkiem);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.textBox_timkiem);
@@ -58,14 +60,25 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thao tác";
             // 
+            // button_themvoucher
+            // 
+            this.button_themvoucher.Location = new System.Drawing.Point(188, 41);
+            this.button_themvoucher.Name = "button_themvoucher";
+            this.button_themvoucher.Size = new System.Drawing.Size(85, 23);
+            this.button_themvoucher.TabIndex = 5;
+            this.button_themvoucher.Text = "Thêm voucher";
+            this.button_themvoucher.UseVisualStyleBackColor = true;
+            this.button_themvoucher.Click += new System.EventHandler(this.button_themvoucher_Click);
+            // 
             // button_timkiem
             // 
-            this.button_timkiem.Location = new System.Drawing.Point(410, 12);
+            this.button_timkiem.Location = new System.Drawing.Point(401, 12);
             this.button_timkiem.Name = "button_timkiem";
-            this.button_timkiem.Size = new System.Drawing.Size(75, 23);
+            this.button_timkiem.Size = new System.Drawing.Size(85, 23);
             this.button_timkiem.TabIndex = 4;
             this.button_timkiem.Text = "Tìm kiếm";
             this.button_timkiem.UseVisualStyleBackColor = true;
+            this.button_timkiem.Click += new System.EventHandler(this.button_timkiem_Click);
             // 
             // label1
             // 
@@ -80,14 +93,14 @@
             // 
             this.textBox_timkiem.Location = new System.Drawing.Point(59, 14);
             this.textBox_timkiem.Name = "textBox_timkiem";
-            this.textBox_timkiem.Size = new System.Drawing.Size(345, 20);
+            this.textBox_timkiem.Size = new System.Drawing.Size(336, 20);
             this.textBox_timkiem.TabIndex = 2;
             // 
             // button_chinhsua
             // 
-            this.button_chinhsua.Location = new System.Drawing.Point(87, 41);
+            this.button_chinhsua.Location = new System.Drawing.Point(97, 41);
             this.button_chinhsua.Name = "button_chinhsua";
-            this.button_chinhsua.Size = new System.Drawing.Size(75, 23);
+            this.button_chinhsua.Size = new System.Drawing.Size(85, 23);
             this.button_chinhsua.TabIndex = 1;
             this.button_chinhsua.Text = "Chỉnh sửa";
             this.button_chinhsua.UseVisualStyleBackColor = true;
@@ -96,7 +109,7 @@
             // 
             this.button_taochiendich.Location = new System.Drawing.Point(6, 41);
             this.button_taochiendich.Name = "button_taochiendich";
-            this.button_taochiendich.Size = new System.Drawing.Size(75, 23);
+            this.button_taochiendich.Size = new System.Drawing.Size(85, 23);
             this.button_taochiendich.TabIndex = 0;
             this.button_taochiendich.Text = "Tạo mới";
             this.button_taochiendich.UseVisualStyleBackColor = true;
@@ -107,7 +120,7 @@
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.dgv_thongtindoitac);
+            this.groupBox2.Controls.Add(this.dgv_thongtinchiendich);
             this.groupBox2.Location = new System.Drawing.Point(7, 108);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(492, 255);
@@ -115,16 +128,17 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin chiến dịch";
             // 
-            // dgv_thongtindoitac
+            // dgv_thongtinchiendich
             // 
-            this.dgv_thongtindoitac.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgv_thongtinchiendich.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgv_thongtindoitac.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_thongtindoitac.Location = new System.Drawing.Point(8, 19);
-            this.dgv_thongtindoitac.Name = "dgv_thongtindoitac";
-            this.dgv_thongtindoitac.Size = new System.Drawing.Size(476, 230);
-            this.dgv_thongtindoitac.TabIndex = 0;
+            this.dgv_thongtinchiendich.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_thongtinchiendich.Location = new System.Drawing.Point(8, 19);
+            this.dgv_thongtinchiendich.Name = "dgv_thongtinchiendich";
+            this.dgv_thongtinchiendich.Size = new System.Drawing.Size(476, 230);
+            this.dgv_thongtinchiendich.TabIndex = 0;
+            this.dgv_thongtinchiendich.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_thongtinchiendich_CellClick);
             // 
             // label6
             // 
@@ -148,7 +162,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_thongtindoitac)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_thongtinchiendich)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -163,7 +177,8 @@
         private System.Windows.Forms.Button button_chinhsua;
         private System.Windows.Forms.Button button_taochiendich;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dgv_thongtindoitac;
+        private System.Windows.Forms.DataGridView dgv_thongtinchiendich;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button button_themvoucher;
     }
 }
