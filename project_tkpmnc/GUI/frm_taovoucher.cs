@@ -1,4 +1,5 @@
-﻿using project_tkpmnc.DAO;
+﻿using project_tkpmnc.BUS;
+using project_tkpmnc.DAO;
 using project_tkpmnc.DTO;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,7 @@ namespace project_tkpmnc.GUI
         }
         voucher_DAO voucher_DAO = new voucher_DAO();
         phanthuong_DAO phanthuong_DAO = new phanthuong_DAO();
+        voucher_BUS voucher_BUS = new voucher_BUS();
         private void doitac_taovoucher_Load(object sender, EventArgs e)
         {
             textBox1.Text = chiendich_DTO.chiendich_id.ToString();
@@ -34,7 +36,7 @@ namespace project_tkpmnc.GUI
         {
             for (int i = 0; i < int.Parse(textBox_soluong.Text.ToString()); i++)
             {
-                voucher_DAO.taovoucher(textBox_giatri.Text.ToString());
+                voucher_DAO.taovoucher(textBox_giatri.Text.ToString(), voucher_BUS.taomagiamgia());
                 voucher_DTO.id = int.Parse(voucher_DAO.layvoucheridlonnhat().Rows[0]["voucher_id"].ToString());
                 phanthuong_DAO.themphanthuong(voucher_DTO.id, int.Parse(textBox1.Text));
             }

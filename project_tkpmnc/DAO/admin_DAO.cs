@@ -24,6 +24,11 @@ namespace project_tkpmnc.DAO
         {
             string sql = "EXEC SELECT_ADMIN_ID_BANG_EMAIL '" + email + "'";
             return db.laydulieu(sql);
-        }    
+        }
+        public int thaydoithongtinquantrivien(int id, string ten, string email, string sodienthoai)
+        {
+            string sql = "EXEC UPDATE_ADMIN_INFO '" + id + "','" + ten + "','" + email + "','" + sodienthoai + "'";
+            return db.thucthi(sql);
+        }
     }
 }

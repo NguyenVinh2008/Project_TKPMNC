@@ -37,8 +37,8 @@ namespace project_tkpmnc.GUI
         private void button_dangnhap_Click(object sender, EventArgs e)
         {
             login_BUS login_BUS = new login_BUS();
-            email = textBox_email.Text.Trim();
-            password = login_BUS.GetMD5(textBox_matkhau.Text.Trim());
+            email = textBox_email.Text.Trim().ToString();
+            password = login_BUS.GetMD5(textBox_matkhau.Text.Trim().ToString());
             if (login_BUS.CheckLogin(email, password) == 1)
             {
                 switch (login_BUS.checkUserType(email))

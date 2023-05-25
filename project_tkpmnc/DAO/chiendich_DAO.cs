@@ -24,9 +24,9 @@ namespace project_tkpmnc.DAO
             string sql = "EXEC DUYET_CHIEN_DICH '" + chiendich_id + "','" + quantrivien_id +  "'";
             return db.thucthi(sql);
         }
-        public int thaydoithoigian(int chiendich_id, string chiendich_start, string chiendich_end)
+        public int thaydoithongtinchiendich(int chiendich_id,string chiendich_ten)
         {
-            string sql = "EXEC UPDATE_CHIENDICH_INFO '" + chiendich_id + "','" + chiendich_start + "','" + chiendich_end + "'";
+            string sql = "EXEC UPDATE_CHIENDICH_INFO '" + chiendich_id + "','" + chiendich_ten + "'";
             return db.thucthi(sql);
         }
         public DataTable laychiendichidlonnhat()
@@ -54,6 +54,12 @@ namespace project_tkpmnc.DAO
             string sql = "EXEC SELECT_CHIENDICH_CUADOITAC_DAKETTHUC '" + doitac_id + "'";
             return db.laydulieu(sql);
         }
+        public DataTable laychiendichtheoid(int chiendich_id)
+        {
+            string sql = "EXEC SELECT_CHIENDICH_THEO_CHIENDICHID '" + chiendich_id + "'";
+            return db.laydulieu(sql);
+        }
+
 
     }
 }

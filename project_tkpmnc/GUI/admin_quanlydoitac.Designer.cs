@@ -167,7 +167,9 @@
             this.dgv_thongtindoitac.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_thongtindoitac.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_thongtindoitac.Location = new System.Drawing.Point(8, 19);
+            this.dgv_thongtindoitac.MultiSelect = false;
             this.dgv_thongtindoitac.Name = "dgv_thongtindoitac";
+            this.dgv_thongtindoitac.ReadOnly = true;
             this.dgv_thongtindoitac.Size = new System.Drawing.Size(476, 230);
             this.dgv_thongtindoitac.TabIndex = 0;
             this.dgv_thongtindoitac.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_thongtindoitac_CellClick);

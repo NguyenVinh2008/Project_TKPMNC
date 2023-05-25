@@ -10,6 +10,7 @@ namespace project_tkpmnc.DTO
     {
         public static int id { get; set; }
         public static string giatri { get; set; }
+        public static string magiamgia { get; set; }
         public static DateTime ngaytao { get; set; }
         public static DateTime ngayupdate { get; set; }
         public static DateTime ngaysudung { get; set; }

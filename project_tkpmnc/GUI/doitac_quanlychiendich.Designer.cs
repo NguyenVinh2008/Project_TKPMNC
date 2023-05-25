@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button_save = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button_themvoucher = new System.Windows.Forms.Button();
             this.button_timkiem = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -37,7 +39,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgv_thongtinchiendich = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_thongtinchiendich)).BeginInit();
@@ -47,6 +48,7 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.button_save);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.button_themvoucher);
             this.groupBox1.Controls.Add(this.button_timkiem);
@@ -60,9 +62,34 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thao tác";
             // 
+            // button_save
+            // 
+            this.button_save.Enabled = false;
+            this.button_save.Location = new System.Drawing.Point(188, 43);
+            this.button_save.Name = "button_save";
+            this.button_save.Size = new System.Drawing.Size(85, 23);
+            this.button_save.TabIndex = 7;
+            this.button_save.Text = "Ghi lại";
+            this.button_save.UseVisualStyleBackColor = true;
+            this.button_save.Click += new System.EventHandler(this.button_save_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Toàn bộ",
+            "Chưa duyệt",
+            "Đã duyệt",
+            "Đang diễn ra",
+            "Đã kết thúc"});
+            this.comboBox1.Location = new System.Drawing.Point(61, 14);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 6;
+            // 
             // button_themvoucher
             // 
-            this.button_themvoucher.Location = new System.Drawing.Point(188, 43);
+            this.button_themvoucher.Location = new System.Drawing.Point(279, 43);
             this.button_themvoucher.Name = "button_themvoucher";
             this.button_themvoucher.Size = new System.Drawing.Size(85, 23);
             this.button_themvoucher.TabIndex = 5;
@@ -97,6 +124,7 @@
             this.button_chinhsua.TabIndex = 1;
             this.button_chinhsua.Text = "Chỉnh sửa";
             this.button_chinhsua.UseVisualStyleBackColor = true;
+            this.button_chinhsua.Click += new System.EventHandler(this.button_chinhsua_Click);
             // 
             // button_taochiendich
             // 
@@ -149,20 +177,6 @@
             this.label6.TabIndex = 28;
             this.label6.Text = "Quản lý chiến dịch";
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Toàn bộ",
-            "Chưa duyệt",
-            "Đã duyệt",
-            "Đang diễn ra",
-            "Đã kết thúc"});
-            this.comboBox1.Location = new System.Drawing.Point(61, 14);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 6;
-            // 
             // doitac_quanlychiendich
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -194,5 +208,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button_themvoucher;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button button_save;
     }
 }

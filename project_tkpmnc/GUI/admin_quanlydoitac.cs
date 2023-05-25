@@ -36,7 +36,7 @@ namespace project_tkpmnc.GUI
                     dgv_thongtindoitac.DataSource = doitac_DAO.timdoitactheoten(search_str);
                     break;
                 case "Email":
-                    dgv_thongtindoitac.DataSource = doitac_DAO.timdoitactheoemail(search_str);
+                    dgv_thongtindoitac.DataSource = doitac_DAO.timdoitacgandungtheoemail(search_str);
                     break;
                 case "Số điện thoại":
                     dgv_thongtindoitac.DataSource = doitac_DAO.timdoitactheosodienthoai(search_str);
@@ -63,6 +63,7 @@ namespace project_tkpmnc.GUI
         {
             dgv_thongtindoitac.DataSource = doitac_DAO.timdoitactheoid(doitac_DTO.id);
             button_save.Enabled = true;
+            dgv_thongtindoitac.ReadOnly = false;
         }
         private void button_save_Click(object sender, EventArgs e)
         {

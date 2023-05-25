@@ -29,12 +29,10 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox_tendangnhap = new System.Windows.Forms.TextBox();
-            this.textBox_matkhau = new System.Windows.Forms.TextBox();
             this.textBox_tennguoidung = new System.Windows.Forms.TextBox();
             this.textBox_diachiemail = new System.Windows.Forms.TextBox();
             this.textBox_sodienthoai = new System.Windows.Forms.TextBox();
@@ -45,25 +43,16 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(44, 48);
+            this.label1.Location = new System.Drawing.Point(107, 48);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 13);
+            this.label1.Size = new System.Drawing.Size(18, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Tên đăng nhập";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(44, 75);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Mật khẩu";
+            this.label1.Text = "ID";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(44, 100);
+            this.label3.Location = new System.Drawing.Point(43, 100);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(82, 13);
             this.label3.TabIndex = 2;
@@ -72,7 +61,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(44, 126);
+            this.label4.Location = new System.Drawing.Point(58, 74);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(67, 13);
             this.label4.TabIndex = 3;
@@ -81,7 +70,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(44, 154);
+            this.label5.Location = new System.Drawing.Point(55, 123);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(70, 13);
             this.label5.TabIndex = 4;
@@ -91,16 +80,9 @@
             // 
             this.textBox_tendangnhap.Location = new System.Drawing.Point(131, 45);
             this.textBox_tendangnhap.Name = "textBox_tendangnhap";
+            this.textBox_tendangnhap.ReadOnly = true;
             this.textBox_tendangnhap.Size = new System.Drawing.Size(208, 20);
             this.textBox_tendangnhap.TabIndex = 6;
-            // 
-            // textBox_matkhau
-            // 
-            this.textBox_matkhau.Location = new System.Drawing.Point(131, 71);
-            this.textBox_matkhau.Name = "textBox_matkhau";
-            this.textBox_matkhau.PasswordChar = '*';
-            this.textBox_matkhau.Size = new System.Drawing.Size(208, 20);
-            this.textBox_matkhau.TabIndex = 7;
             // 
             // textBox_tennguoidung
             // 
@@ -111,26 +93,27 @@
             // 
             // textBox_diachiemail
             // 
-            this.textBox_diachiemail.Location = new System.Drawing.Point(131, 123);
+            this.textBox_diachiemail.Location = new System.Drawing.Point(131, 71);
             this.textBox_diachiemail.Name = "textBox_diachiemail";
             this.textBox_diachiemail.Size = new System.Drawing.Size(208, 20);
             this.textBox_diachiemail.TabIndex = 9;
             // 
             // textBox_sodienthoai
             // 
-            this.textBox_sodienthoai.Location = new System.Drawing.Point(131, 151);
+            this.textBox_sodienthoai.Location = new System.Drawing.Point(131, 123);
             this.textBox_sodienthoai.Name = "textBox_sodienthoai";
             this.textBox_sodienthoai.Size = new System.Drawing.Size(208, 20);
             this.textBox_sodienthoai.TabIndex = 10;
             // 
             // button_capnhat
             // 
-            this.button_capnhat.Location = new System.Drawing.Point(264, 177);
+            this.button_capnhat.Location = new System.Drawing.Point(264, 149);
             this.button_capnhat.Name = "button_capnhat";
             this.button_capnhat.Size = new System.Drawing.Size(75, 23);
             this.button_capnhat.TabIndex = 11;
             this.button_capnhat.Text = "Cập nhật";
             this.button_capnhat.UseVisualStyleBackColor = true;
+            this.button_capnhat.Click += new System.EventHandler(this.button_capnhat_Click);
             // 
             // label6
             // 
@@ -151,15 +134,14 @@
             this.Controls.Add(this.textBox_sodienthoai);
             this.Controls.Add(this.textBox_diachiemail);
             this.Controls.Add(this.textBox_tennguoidung);
-            this.Controls.Add(this.textBox_matkhau);
             this.Controls.Add(this.textBox_tendangnhap);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "admin_thaydoithongtin";
-            this.Size = new System.Drawing.Size(506, 364);
+            this.Size = new System.Drawing.Size(437, 227);
+            this.Load += new System.EventHandler(this.admin_thaydoithongtin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -168,12 +150,10 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox_tendangnhap;
-        private System.Windows.Forms.TextBox textBox_matkhau;
         private System.Windows.Forms.TextBox textBox_tennguoidung;
         private System.Windows.Forms.TextBox textBox_diachiemail;
         private System.Windows.Forms.TextBox textBox_sodienthoai;

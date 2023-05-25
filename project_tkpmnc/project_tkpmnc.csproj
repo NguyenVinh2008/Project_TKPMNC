@@ -60,6 +60,7 @@
   <ItemGroup>
     <Compile Include="BUS\login_BUS.cs" />
     <Compile Include="BUS\quayso.cs" />
+    <Compile Include="BUS\voucher_BUS.cs" />
     <Compile Include="DAO\admin_DAO.cs" />
     <Compile Include="DAO\chiendich_DAO.cs" />
     <Compile Include="DAO\db.cs" />

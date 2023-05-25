@@ -44,7 +44,7 @@ namespace Phan_mem_quan_ly_voucher.DAO
             string sql = "EXEC SELECT_LIKE_DOITAC_INFO_THEO_SODIENTHOAI '" + sodienthoai + "'";
             return db.laydulieu(sql);
         }
-        public DataTable timdoitactheoemail(string email)
+        public DataTable timdoitacgandungtheoemail(string email)
         {
             string sql = "EXEC SELECT_LIKE_DOITAC_INFO_THEO_EMAIL '"+ email +"'";
             return db.laydulieu(sql);
@@ -58,6 +58,11 @@ namespace Phan_mem_quan_ly_voucher.DAO
         {
             string sql = "EXEC UPDATE_DOITAC_INFO " + doitac_id + ",'" + ten + "', '" + sodienthoai + "'";
             return db.thucthi(sql);
+        }
+        public DataTable timdoitactheoemail(string email)
+        {
+            string sql = "EXEC SELECT_DOITAC_INFO_THEO_EMAIL '" + email + "'";
+            return db.laydulieu(sql);
         }
     }
 }

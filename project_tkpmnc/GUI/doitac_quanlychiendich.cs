@@ -1,15 +1,7 @@
-﻿using DevExpress.XtraBars.FluentDesignSystem;
-using Phan_mem_quan_ly_voucher.DAO;
+﻿using Phan_mem_quan_ly_voucher.DAO;
 using project_tkpmnc.DAO;
 using project_tkpmnc.DTO;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace project_tkpmnc.GUI
@@ -27,14 +19,11 @@ namespace project_tkpmnc.GUI
         }
         private void button_taochiendich_Click(object sender, EventArgs e)
         {
-
             frm_taochiendich taochiendich = new frm_taochiendich();
             taochiendich.Show();
         }
-
         private void button_timkiem_Click(object sender, EventArgs e)
         {
-            //load_data();
             switch (comboBox1.SelectedIndex)
             {
                 case 0:
@@ -55,13 +44,13 @@ namespace project_tkpmnc.GUI
                     dgv_thongtinchiendich.DataSource = chiendich_DAO.laychiendichcuadoitacdaketthuc(doitac_DTO.id);
                     break;
             }
-
         }
         private void dgv_thongtinchiendich_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = new DataGridViewRow();
             row = dgv_thongtinchiendich.Rows[e.RowIndex];
             chiendich_DTO.chiendich_id = int.Parse(row.Cells["chiendich_id"].Value.ToString());
+            chiendich_DTO.chiendich_ten = row.Cells["chiendich_ten"].Value.ToString();
             chiendich_DTO.doitac_id = int.Parse(row.Cells["taoboi_doitac_id"].Value.ToString());
             chiendich_DTO.trochoi_id = int.Parse(row.Cells["trochoi_id"].Value.ToString());
             chiendich_DTO.trangthai = int.Parse(row.Cells["chiendich_trangthai"].Value.ToString()); ;
@@ -79,13 +68,37 @@ namespace project_tkpmnc.GUI
                 frm_taovoucher taovoucher = new frm_taovoucher();
                 taovoucher.Show();
             }
-            
         }
-
         private void doitac_quanlychiendich_Load(object sender, EventArgs e)
         {
             comboBox1.SelectedIndex = 0;
             load_data();
+        }
+        private void button_chinhsua_Click(object sender, EventArgs e)
+        {
+            if (chiendich_DTO.chiendich_id == 0)
+            {
+                MessageBox.Show("Vui lòng chọn chiến dịch bạn muốn chỉnh sửa!");
+            }
+            else
+            {
+                dgv_thongtinchiendich.DataSource = chiendich_DAO.laychiendichtheoid(chiendich_DTO.chiendich_id);
+                button_save.Enabled = true;
+                dgv_thongtinchiendich.ReadOnly= false;
+            }
+
+        }
+        private void button_save_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow row = new DataGridViewRow();
+            row = dgv_thongtinchiendich.Rows[0];
+            chiendich_DTO.chiendich_id = int.Parse(row.Cells["chiendich_id"].Value.ToString());
+            chiendich_DTO.chiendich_ten = row.Cells["chiendich_ten"].Value.ToString();
+            chiendich_DTO.trochoi_id = int.Parse(row.Cells["trochoi_id"].Value.ToString());
+            chiendich_DAO.thaydoithongtinchiendich(chiendich_DTO.chiendich_id, chiendich_DTO.chiendich_ten);
+            MessageBox.Show("Thay đổi thông tin chiến dịch thành công!");
+            dgv_thongtinchiendich.DataSource = chiendich_DAO.laychiendichtheoid(chiendich_DTO.chiendich_id);
+            button_save.Enabled = false;
         }
     }
 }
