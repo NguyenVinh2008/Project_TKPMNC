@@ -56,5 +56,22 @@ namespace project_tkpmnc.DAO
             string sql = "EXEC UPDATE_VOUCHER_GIATRI '" + voucher_id + "','" + giatri + "'";
             return db.thucthi(sql);
         }
+        public DataTable layphanthuongcuachiendichbangtrangthai(int chiendich_id, int trangthai)
+        {
+            string sql = "EXEC SELECT_PHANTHUONG_CUACHIENDICH_BANGTRANGTHAI '" + chiendich_id + "','" + trangthai + "'";
+            return db.laydulieu(sql);
+        }
+
+        public DataTable kiemtratrunglapmagiamgia(string magiamgia)
+        {
+            string sql = "EXEC SELECT_VOUCHER_TRUNG_MAGIAMGIA '" + magiamgia  + "'";
+            return db.laydulieu(sql);
+        }
+        public DataTable layvoucheridbangmagiamgia(string magiamgia)
+        {
+            string sql = "EXEC SELECT_VOUCHER_THEO_MAGIAMGIA '" + magiamgia + "'";
+            return db.laydulieu(sql);
+        }
+
     }
 }

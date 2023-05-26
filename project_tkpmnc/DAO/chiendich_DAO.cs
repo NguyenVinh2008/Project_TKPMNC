@@ -74,5 +74,11 @@ namespace project_tkpmnc.DAO
             string sql = "EXEC SELECT_CHIENDICH_THEO_CHIENDICHID '" + chiendich_id + "'";
             return db.laydulieu(sql);
         }
+        public DataTable laychiendichdangdienratheotrangthai(int trangthai)
+        {
+            string sql = "EXEC SELECT_CHIENDICH_DANGDIENRA_THEOTRANGTHAI '" + trangthai + "'";
+            return db.laydulieu(sql);
+        }
+
     }
 }

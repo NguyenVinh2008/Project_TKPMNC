@@ -56,5 +56,11 @@ namespace project_tkpmnc.DAO
             string sql = "EXEC UPDATE_NGUOI_DUNG_INFO " + doitac_id + ",'" + ten + "', '" + sodienthoai + "', '"+ trangthai+ "'";
             return db.thucthi(sql);
         }
+        public int thaydoithongtinnguoidungemail(int doitac_id, string email, string ten, string sodienthoai)
+        {
+            string sql = "EXEC UPDATE_NGUOI_DUNG_INFO_EMAIL " + doitac_id + ",'" + email + "', '" + ten + "', '" + sodienthoai + "'";
+            return db.thucthi(sql);
+        }
+
     }
 }

@@ -1,6 +1,6 @@
-﻿namespace project_tkpmnc
+﻿namespace project_tkpmnc.GUI
 {
-    partial class frm_doitac
+    partial class frm_nguoidung
     {
         /// <summary>
         /// Required designer variable.
@@ -32,14 +32,14 @@
             this.fluentDesignFormContainer1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer();
             this.accordionControl1 = new DevExpress.XtraBars.Navigation.AccordionControl();
             this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.ce_quanlychiendich = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.ce_thamgiatrochoi = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ce_quanlyvoucher = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ce_thaydoithongtin = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement4 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ce_dangxuat = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.ce_thoat = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.ce_exit = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             this.fluentFormDefaultManager1 = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
@@ -73,32 +73,30 @@
             // accordionControlElement1
             // 
             this.accordionControlElement1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.ce_quanlychiendich});
+            this.ce_thamgiatrochoi});
             this.accordionControlElement1.Expanded = true;
             this.accordionControlElement1.Name = "accordionControlElement1";
-            this.accordionControlElement1.Text = "Quản lý chiến dịch";
+            this.accordionControlElement1.Text = "Chiến dịch";
             // 
-            // ce_quanlychiendich
+            // ce_thamgiatrochoi
             // 
-            this.ce_quanlychiendich.Name = "ce_quanlychiendich";
-            this.ce_quanlychiendich.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.ce_quanlychiendich.Text = "Quản lý chiến dịch";
-            this.ce_quanlychiendich.Click += new System.EventHandler(this.ce_quanlychiendich_Click);
+            this.ce_thamgiatrochoi.Name = "ce_thamgiatrochoi";
+            this.ce_thamgiatrochoi.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.ce_thamgiatrochoi.Text = "Tham gia trò chơi";
+            this.ce_thamgiatrochoi.Click += new System.EventHandler(this.ce_thamgiatrochoi_Click);
             // 
             // accordionControlElement2
             // 
             this.accordionControlElement2.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.ce_quanlyvoucher});
-            this.accordionControlElement2.Expanded = true;
             this.accordionControlElement2.Name = "accordionControlElement2";
-            this.accordionControlElement2.Text = "Quản lý voucher";
+            this.accordionControlElement2.Text = "Voucher của tôi";
             // 
             // ce_quanlyvoucher
             // 
             this.ce_quanlyvoucher.Name = "ce_quanlyvoucher";
             this.ce_quanlyvoucher.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.ce_quanlyvoucher.Text = "Quản lý voucher";
-            this.ce_quanlyvoucher.Click += new System.EventHandler(this.ce_quanlyvoucher_Click);
             // 
             // accordionControlElement3
             // 
@@ -119,7 +117,7 @@
             // 
             this.accordionControlElement4.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.ce_dangxuat,
-            this.ce_thoat});
+            this.ce_exit});
             this.accordionControlElement4.Expanded = true;
             this.accordionControlElement4.Name = "accordionControlElement4";
             this.accordionControlElement4.Text = "Hệ thống";
@@ -131,12 +129,12 @@
             this.ce_dangxuat.Text = "Đăng xuất";
             this.ce_dangxuat.Click += new System.EventHandler(this.ce_dangxuat_Click);
             // 
-            // ce_thoat
+            // ce_exit
             // 
-            this.ce_thoat.Name = "ce_thoat";
-            this.ce_thoat.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.ce_thoat.Text = "Thoát chương trình";
-            this.ce_thoat.Click += new System.EventHandler(this.ce_thoat_Click);
+            this.ce_exit.Name = "ce_exit";
+            this.ce_exit.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.ce_exit.Text = "Thoát chương trình";
+            this.ce_exit.Click += new System.EventHandler(this.ce_exit_Click);
             // 
             // fluentDesignFormControl1
             // 
@@ -152,7 +150,7 @@
             // 
             this.fluentFormDefaultManager1.Form = this;
             // 
-            // frm_doitac
+            // frm_nguoidung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -162,9 +160,9 @@
             this.Controls.Add(this.accordionControl1);
             this.Controls.Add(this.fluentDesignFormControl1);
             this.FluentDesignFormControl = this.fluentDesignFormControl1;
-            this.Name = "frm_doitac";
+            this.Name = "frm_nguoidung";
             this.NavigationControl = this.accordionControl1;
-            this.Text = "Đối tác";
+            this.Text = "frm_nguoidung";
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).EndInit();
@@ -178,13 +176,13 @@
         private DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl fluentDesignFormControl1;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement1;
         private DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager fluentFormDefaultManager1;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement ce_thamgiatrochoi;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement2;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement3;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement4;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement ce_quanlychiendich;
         private DevExpress.XtraBars.Navigation.AccordionControlElement ce_quanlyvoucher;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement3;
         private DevExpress.XtraBars.Navigation.AccordionControlElement ce_thaydoithongtin;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement4;
         private DevExpress.XtraBars.Navigation.AccordionControlElement ce_dangxuat;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement ce_thoat;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement ce_exit;
     }
 }

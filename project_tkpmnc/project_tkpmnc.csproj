@@ -121,6 +121,24 @@
     <Compile Include="GUI\admin_thaydoithongtin.Designer.cs">
       <DependentUpon>admin_thaydoithongtin.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\frm_mayman.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frm_mayman.Designer.cs">
+      <DependentUpon>frm_mayman.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frm_nguoidung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frm_nguoidung.Designer.cs">
+      <DependentUpon>frm_nguoidung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frm_ochu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frm_ochu.Designer.cs">
+      <DependentUpon>frm_ochu.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frm_taochiendich.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +150,18 @@
     </Compile>
     <Compile Include="GUI\frm_taovoucher.Designer.cs">
       <DependentUpon>frm_taovoucher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\nguoidung_thamgiatrochoi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\nguoidung_thamgiatrochoi.Designer.cs">
+      <DependentUpon>nguoidung_thamgiatrochoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\nguoidung_thaydoithongtin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\nguoidung_thaydoithongtin.Designer.cs">
+      <DependentUpon>nguoidung_thaydoithongtin.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\user_LottoGame.cs">
       <SubType>UserControl</SubType>
@@ -216,11 +246,26 @@
     <EmbeddedResource Include="GUI\admin_thaydoithongtin.resx">
       <DependentUpon>admin_thaydoithongtin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frm_mayman.resx">
+      <DependentUpon>frm_mayman.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frm_nguoidung.resx">
+      <DependentUpon>frm_nguoidung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frm_ochu.resx">
+      <DependentUpon>frm_ochu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\frm_taochiendich.resx">
       <DependentUpon>frm_taochiendich.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frm_taovoucher.resx">
       <DependentUpon>frm_taovoucher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\nguoidung_thamgiatrochoi.resx">
+      <DependentUpon>nguoidung_thamgiatrochoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\nguoidung_thaydoithongtin.resx">
+      <DependentUpon>nguoidung_thaydoithongtin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\user_LottoGame.resx">
       <DependentUpon>user_LottoGame.cs</DependentUpon>

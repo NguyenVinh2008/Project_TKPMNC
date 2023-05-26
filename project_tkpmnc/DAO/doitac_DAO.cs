@@ -54,9 +54,9 @@ namespace Phan_mem_quan_ly_voucher.DAO
             string sql = "EXEC SELECT_DOITAC_INFO_THEO_ID '" + id + "'";
             return db.laydulieu(sql);
         }
-        public int thaydoithongtindoitac(int doitac_id, string ten, string sodienthoai)
+        public int thaydoithongtindoitac(int doitac_id, string email , string ten, string sodienthoai)
         {
-            string sql = "EXEC UPDATE_DOITAC_INFO " + doitac_id + ",'" + ten + "', '" + sodienthoai + "'";
+            string sql = "EXEC UPDATE_DOITAC_INFO '" + doitac_id + "','" + email + "','" + ten + "', '" + sodienthoai + "'";
             return db.thucthi(sql);
         }
         public DataTable timdoitactheoemail(string email)

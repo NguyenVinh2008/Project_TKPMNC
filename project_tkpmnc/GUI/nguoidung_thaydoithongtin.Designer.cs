@@ -1,6 +1,6 @@
 ﻿namespace project_tkpmnc.GUI
 {
-    partial class doitac_thaydoithongtin
+    partial class nguoidung_thaydoithongtin
     {
         /// <summary> 
         /// Required designer variable.
@@ -47,7 +47,7 @@
             this.label6.Location = new System.Drawing.Point(42, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(278, 25);
-            this.label6.TabIndex = 34;
+            this.label6.TabIndex = 44;
             this.label6.Text = "Thay đổi thông tin tài khoản";
             // 
             // button_capnhat
@@ -55,7 +55,7 @@
             this.button_capnhat.Location = new System.Drawing.Point(264, 149);
             this.button_capnhat.Name = "button_capnhat";
             this.button_capnhat.Size = new System.Drawing.Size(75, 23);
-            this.button_capnhat.TabIndex = 33;
+            this.button_capnhat.TabIndex = 43;
             this.button_capnhat.Text = "Cập nhật";
             this.button_capnhat.UseVisualStyleBackColor = true;
             this.button_capnhat.Click += new System.EventHandler(this.button_capnhat_Click);
@@ -65,21 +65,21 @@
             this.textBox_sodienthoai.Location = new System.Drawing.Point(131, 123);
             this.textBox_sodienthoai.Name = "textBox_sodienthoai";
             this.textBox_sodienthoai.Size = new System.Drawing.Size(208, 20);
-            this.textBox_sodienthoai.TabIndex = 32;
+            this.textBox_sodienthoai.TabIndex = 42;
             // 
             // textBox_diachiemail
             // 
             this.textBox_diachiemail.Location = new System.Drawing.Point(131, 71);
             this.textBox_diachiemail.Name = "textBox_diachiemail";
             this.textBox_diachiemail.Size = new System.Drawing.Size(208, 20);
-            this.textBox_diachiemail.TabIndex = 31;
+            this.textBox_diachiemail.TabIndex = 41;
             // 
             // textBox_tennguoidung
             // 
             this.textBox_tennguoidung.Location = new System.Drawing.Point(131, 97);
             this.textBox_tennguoidung.Name = "textBox_tennguoidung";
             this.textBox_tennguoidung.Size = new System.Drawing.Size(208, 20);
-            this.textBox_tennguoidung.TabIndex = 30;
+            this.textBox_tennguoidung.TabIndex = 40;
             // 
             // textBox_tendangnhap
             // 
@@ -87,7 +87,7 @@
             this.textBox_tendangnhap.Name = "textBox_tendangnhap";
             this.textBox_tendangnhap.ReadOnly = true;
             this.textBox_tendangnhap.Size = new System.Drawing.Size(208, 20);
-            this.textBox_tendangnhap.TabIndex = 29;
+            this.textBox_tendangnhap.TabIndex = 39;
             // 
             // label5
             // 
@@ -95,7 +95,7 @@
             this.label5.Location = new System.Drawing.Point(55, 126);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(70, 13);
-            this.label5.TabIndex = 28;
+            this.label5.TabIndex = 38;
             this.label5.Text = "Số điện thoại";
             // 
             // label4
@@ -104,7 +104,7 @@
             this.label4.Location = new System.Drawing.Point(58, 74);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(67, 13);
-            this.label4.TabIndex = 27;
+            this.label4.TabIndex = 37;
             this.label4.Text = "Địa chỉ email";
             // 
             // label3
@@ -113,7 +113,7 @@
             this.label3.Location = new System.Drawing.Point(43, 100);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(82, 13);
-            this.label3.TabIndex = 26;
+            this.label3.TabIndex = 36;
             this.label3.Text = "Tên người dùng";
             // 
             // label1
@@ -122,10 +122,10 @@
             this.label1.Location = new System.Drawing.Point(107, 48);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(18, 13);
-            this.label1.TabIndex = 25;
+            this.label1.TabIndex = 35;
             this.label1.Text = "ID";
             // 
-            // doitac_thaydoithongtin
+            // nguoidung_thaydoithongtin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -139,9 +139,9 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Name = "doitac_thaydoithongtin";
+            this.Name = "nguoidung_thaydoithongtin";
             this.Size = new System.Drawing.Size(437, 227);
-            this.Load += new System.EventHandler(this.doitac_thaydoithongtin_Load);
+            this.Load += new System.EventHandler(this.nguoidung_thaydoithongtin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

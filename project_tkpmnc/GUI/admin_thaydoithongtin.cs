@@ -1,4 +1,5 @@
-﻿using project_tkpmnc.BUS;
+﻿using Phan_mem_quan_ly_voucher.DAO;
+using project_tkpmnc.BUS;
 using project_tkpmnc.DAO;
 using project_tkpmnc.DTO;
 using System;
@@ -26,14 +27,35 @@ namespace project_tkpmnc.GUI
             admin_DTO.ten = textBox_tennguoidung.Text.Trim().ToString();
             admin_DTO.email = textBox_diachiemail.Text.Trim().ToString();
             admin_DTO.sodienthoai = textBox_sodienthoai.Text.Trim().ToString();
-            if (login_BUS.CheckExistEmail(admin_DTO.email) == 1)
+            var datatable = admin_DAO.timquantrivienidbangemail(admin_DTO.email);
+            if (datatable.Rows.Count == 1)
             {
-                MessageBox.Show("Email đã tồn tại trong hệ thống!");
+                int id = int.Parse(datatable.Rows[0]["doitac_id"].ToString());
+                if (login_BUS.CheckExistEmail(admin_DTO.email) == 0)
+                {
+                    admin_DAO.thaydoithongtinquantrivien(admin_DTO.id, admin_DTO.email, admin_DTO.ten, admin_DTO.sodienthoai);
+                    MessageBox.Show("Thay đổi thông tin thành công");
+                }
+                else
+                {
+                    if (id == admin_DTO.id)
+                    {
+                        admin_DAO.thaydoithongtinquantrivien(admin_DTO.id, admin_DTO.email, admin_DTO.ten, admin_DTO.sodienthoai);
+                        MessageBox.Show("Thay đổi thông tin thành công");
+                    }
+                    else
+                        MessageBox.Show("Email đã tồn tại trong hệ thống!");
+                }
             }
             else
             {
-                admin_DAO.thaydoithongtinquantrivien(admin_DTO.id, admin_DTO.ten, admin_DTO.email, admin_DTO.sodienthoai);
-                MessageBox.Show("Thay đổi thông tin thành công");
+                if (login_BUS.CheckExistEmail(admin_DTO.email) == 0)
+                {
+                    admin_DAO.thaydoithongtinquantrivien(admin_DTO.id, admin_DTO.email, admin_DTO.ten, admin_DTO.sodienthoai);
+                    MessageBox.Show("Thay đổi thông tin thành công");
+                }
+                else
+                    MessageBox.Show("Email đã tồn tại trong hệ thống!");
             }
         }
         private void admin_thaydoithongtin_Load(object sender, EventArgs e)

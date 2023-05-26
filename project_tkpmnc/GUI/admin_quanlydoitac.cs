@@ -70,10 +70,19 @@ namespace project_tkpmnc.GUI
             DataGridViewRow row = new DataGridViewRow();
             row = dgv_thongtindoitac.Rows[0];
             doitac_DTO.id = int.Parse(row.Cells["doitac_id"].Value.ToString());
+            doitac_DTO.email = row.Cells["info_email"].Value.ToString();
             doitac_DTO.ten = row.Cells["info_ten"].Value.ToString();
             doitac_DTO.sodienthoai = row.Cells["info_dienthoai"].Value.ToString();
-            doitac_DAO.thaydoithongtindoitac(doitac_DTO.id, doitac_DTO.ten, doitac_DTO.sodienthoai);
-            MessageBox.Show("Thay đổi thông tin thành công!");
+
+            if (login_BUS.CheckExistEmail(doitac_DTO.email) == 0)
+            {
+                doitac_DAO.thaydoithongtindoitac(doitac_DTO.id, doitac_DTO.email, doitac_DTO.ten, doitac_DTO.sodienthoai);
+                MessageBox.Show("Thay đổi thông tin thành công!");
+            }
+            else
+            {
+                MessageBox.Show("Email đã tồn tại trong hệ thống!");
+            }
             dgv_thongtindoitac.DataSource = doitac_DAO.timdoitactheoid(doitac_DTO.id);
             button_save.Enabled = false;
         }

@@ -93,12 +93,12 @@
             // linklable_dangky
             // 
             this.linklable_dangky.AutoSize = true;
-            this.linklable_dangky.Location = new System.Drawing.Point(176, 60);
+            this.linklable_dangky.Location = new System.Drawing.Point(164, 60);
             this.linklable_dangky.Name = "linklable_dangky";
-            this.linklable_dangky.Size = new System.Drawing.Size(82, 13);
+            this.linklable_dangky.Size = new System.Drawing.Size(94, 13);
             this.linklable_dangky.TabIndex = 3;
             this.linklable_dangky.TabStop = true;
-            this.linklable_dangky.Text = "Đăng ký đối tác";
+            this.linklable_dangky.Text = "Đăng ký tài khoản";
             this.linklable_dangky.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklable_dangky_LinkClicked);
             // 
             // frm_dangnhap

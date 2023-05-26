@@ -63,5 +63,12 @@ namespace project_tkpmnc
         {
             Application.Exit();
         }
+
+        private void ce_dangxuat_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frm_dangnhap dangnhap = new frm_dangnhap();
+            dangnhap.ShowDialog();
+        }
     }
 }

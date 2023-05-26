@@ -1,5 +1,7 @@
-﻿using System;
+﻿using project_tkpmnc.DAO;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,6 +10,7 @@ namespace project_tkpmnc.BUS
 {
     internal class voucher_BUS
     {
+        voucher_DAO voucher_DAO = new voucher_DAO();
         private string RandomString(int size, bool lowerCase)
         {
             StringBuilder builder = new StringBuilder();
@@ -27,13 +30,27 @@ namespace project_tkpmnc.BUS
             Random random = new Random();
             return random.Next(min, max);
         }
+
+        public int kiemtratrunglapmagiamgia(string magiamgia)
+        {
+            DataTable dataTable = voucher_DAO.kiemtratrunglapmagiamgia(magiamgia);
+            if (dataTable.Rows.Count > 0)
+            {
+                return 0;
+            }
+            return 1;
+        }
+
         public string taomagiamgia()
         {
             StringBuilder builder = new StringBuilder();
             builder.Append(RandomString(4, true));
             builder.Append(RandomNumber(1000, 9999));
             builder.Append(RandomString(2, false));
-            return builder.ToString();
+            if (kiemtratrunglapmagiamgia(builder.ToString()) == 1)
+                return builder.ToString();
+            else
+                return taomagiamgia();
         }
     }
 }

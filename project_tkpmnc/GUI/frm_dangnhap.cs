@@ -45,11 +45,20 @@ namespace project_tkpmnc.GUI
                 {
                     case 0:
                         // Đăng nhập người dùng
+                        nguoidung_DAO nguoidung_DAO = new nguoidung_DAO();
+                        var datatable = nguoidung_DAO.timnguoidungtheoemail(email);
+                        nguoidung_DTO.id = int.Parse(datatable.Rows[0]["nguoidung_id"].ToString());
+                        nguoidung_DTO.ten = datatable.Rows[0]["info_ten"].ToString();
+                        MessageBox.Show("Đăng nhập thành công!");
+                        this.Hide();
+                        frm_nguoidung dangnhapnguoidung = new frm_nguoidung();
+                        dangnhapnguoidung.Text = ("welcome admin name: " + nguoidung_DTO.ten);
+                        dangnhapnguoidung.ShowDialog();
                         break;
                     case 1:
                         // Đăng nhập quản trị viên
                         admin_DAO admin_DAO = new admin_DAO();
-                        var datatable = admin_DAO.timquantrivienidbangemail(email);
+                        datatable = admin_DAO.timquantrivienidbangemail(email);
                         admin_DTO.id = int.Parse(datatable.Rows[0]["quantrivien_id"].ToString());
                         admin_DTO.ten = datatable.Rows[0]["info_ten"].ToString();
                         MessageBox.Show("Đăng nhập admin thành công!");

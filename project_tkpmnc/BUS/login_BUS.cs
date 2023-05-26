@@ -32,10 +32,10 @@ namespace project_tkpmnc.BUS
 
         public int CheckExistEmail(string email)
         {
-            // return 1: tồn tại email, return 0: không tồn tài email
+            // return 1: tồn tại email, return 0: không tồn tại email
             login_DAO login_DAO = new login_DAO();
             var kq = login_DAO.checkexist(email);
-            if (kq.Rows.Count == 1)
+            if (kq.Rows.Count >= 1)
                 return 1;
             else
                 return 0;
