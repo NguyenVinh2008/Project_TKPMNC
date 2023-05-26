@@ -58,6 +58,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\application_BUS.cs" />
     <Compile Include="BUS\login_BUS.cs" />
     <Compile Include="BUS\quayso.cs" />
     <Compile Include="BUS\voucher_BUS.cs" />
