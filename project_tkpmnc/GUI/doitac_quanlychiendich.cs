@@ -20,7 +20,8 @@ namespace project_tkpmnc.GUI
         private void button_taochiendich_Click(object sender, EventArgs e)
         {
             frm_taochiendich taochiendich = new frm_taochiendich();
-            taochiendich.Show();
+            taochiendich.ShowDialog();
+            load_data();
         }
         private void button_timkiem_Click(object sender, EventArgs e)
         {

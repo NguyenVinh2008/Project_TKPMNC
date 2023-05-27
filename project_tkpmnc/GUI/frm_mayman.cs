@@ -18,12 +18,14 @@ namespace project_tkpmnc.GUI
         {
             InitializeComponent();
         }
+        nguoidung_thamgiatrochoi ucThamgiatrochoi;
         voucher_DAO voucher_DAO = new voucher_DAO();
         phanthuong_DAO phanthuong_DAO = new phanthuong_DAO();
         int count;
-        
+        thamgia_DAO thamgia_DAO = new thamgia_DAO();
         private void button_quayso_Click(object sender, EventArgs e)
         {
+            thamgia_DAO.taonguoidungthamgiachiendich(nguoidung_DTO.id, chiendich_DTO.chiendich_id);
             timer1.Enabled = !timer1.Enabled;
             button_quayso.Text = button_quayso.Text == "Dừng lại" ? "Bắt đầu" : "Dừng lại";
             if (button_quayso.Text == "Bắt đầu")
@@ -56,6 +58,7 @@ namespace project_tkpmnc.GUI
             phanthuong_DTO.id = int.Parse(dataTable.Rows[0]["phanthuong_id"].ToString());
             phanthuong_DAO.themphanthuongvaotaikhoannguoidung(nguoidung_DTO.id, phanthuong_DTO.id);
             MessageBox.Show("Thêm phần thưởng vào tài khoản thành công!");
+            this.Close();
         }
     }
 }

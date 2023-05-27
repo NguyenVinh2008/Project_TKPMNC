@@ -18,6 +18,7 @@ namespace project_tkpmnc.GUI
         }
         nguoidung_thamgiatrochoi ucThamgiatrochoi;
         nguoidung_thaydoithongtin ucThaydoithongtin;
+        nguoidung_quanlyvoucher ucQuanlyvoucher;
         private void ce_thaydoithongtin_Click(object sender, EventArgs e)
         {
             if (ucThaydoithongtin == null)
@@ -54,6 +55,19 @@ namespace project_tkpmnc.GUI
             }
             else
                 ucThamgiatrochoi.BringToFront();
+        }
+
+        private void ce_quanlyvoucher_Click(object sender, EventArgs e)
+        {
+            if (ucQuanlyvoucher == null)
+            {
+                ucQuanlyvoucher = new nguoidung_quanlyvoucher();
+                ucQuanlyvoucher.Dock = DockStyle.Fill;
+                fluentDesignFormContainer1.Controls.Add(ucQuanlyvoucher);
+                ucQuanlyvoucher.BringToFront();
+            }
+            else
+                ucQuanlyvoucher.BringToFront();
         }
     }
 }

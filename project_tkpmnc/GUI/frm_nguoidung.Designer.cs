@@ -89,6 +89,7 @@
             // 
             this.accordionControlElement2.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.ce_quanlyvoucher});
+            this.accordionControlElement2.Expanded = true;
             this.accordionControlElement2.Name = "accordionControlElement2";
             this.accordionControlElement2.Text = "Voucher của tôi";
             // 
@@ -97,6 +98,7 @@
             this.ce_quanlyvoucher.Name = "ce_quanlyvoucher";
             this.ce_quanlyvoucher.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.ce_quanlyvoucher.Text = "Quản lý voucher";
+            this.ce_quanlyvoucher.Click += new System.EventHandler(this.ce_quanlyvoucher_Click);
             // 
             // accordionControlElement3
             // 

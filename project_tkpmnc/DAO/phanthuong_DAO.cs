@@ -30,5 +30,10 @@ namespace project_tkpmnc.DAO
             string sql = "EXEC INSERT_PHANTHUONG_VAOTAIKHOANNGUOIDUNG '" + nguoidung_id + "','" + phanthuong_id + "'";
             return db.thucthi(sql);
         }
+        public DataTable layphanthuongcuanguoidung(int nguoidung_id)
+        {
+            string sql = "EXEC SELECT_PHANTHUONG_CUA_NGUOIDUNG '" + nguoidung_id + "'";
+            return db.laydulieu(sql);
+        }
     }
 }

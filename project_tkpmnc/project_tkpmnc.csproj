@@ -69,6 +69,7 @@
     <Compile Include="DAO\login_DAO.cs" />
     <Compile Include="DAO\nguoidung_DAO.cs" />
     <Compile Include="DAO\phanthuong_DAO.cs" />
+    <Compile Include="DAO\thamgia_DAO.cs" />
     <Compile Include="DAO\thongkenguoidung_DAO.cs" />
     <Compile Include="DAO\trochoi_DAO.cs" />
     <Compile Include="DAO\voucher_DAO.cs" />
@@ -150,6 +151,12 @@
     </Compile>
     <Compile Include="GUI\frm_taovoucher.Designer.cs">
       <DependentUpon>frm_taovoucher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\nguoidung_quanlyvoucher.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\nguoidung_quanlyvoucher.Designer.cs">
+      <DependentUpon>nguoidung_quanlyvoucher.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\nguoidung_thamgiatrochoi.cs">
       <SubType>UserControl</SubType>
@@ -260,6 +267,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frm_taovoucher.resx">
       <DependentUpon>frm_taovoucher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\nguoidung_quanlyvoucher.resx">
+      <DependentUpon>nguoidung_quanlyvoucher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\nguoidung_thamgiatrochoi.resx">
       <DependentUpon>nguoidung_thamgiatrochoi.cs</DependentUpon>

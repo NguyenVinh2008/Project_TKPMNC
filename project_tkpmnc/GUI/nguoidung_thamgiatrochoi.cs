@@ -23,7 +23,7 @@ namespace project_tkpmnc.GUI
         public int countphanthuong;
         public void load_data()
         {
-            dgv_thongtintrochoi.DataSource = chiendich_DAO.laychiendichdangdienratheotrangthai(1);
+            dgv_thongtintrochoi.DataSource = chiendich_DAO.laychiendichdangdienratheotrangthai(nguoidung_DTO.id, 1);
         }
 
         private void button_reload_Click(object sender, EventArgs e)
@@ -55,14 +55,14 @@ namespace project_tkpmnc.GUI
             switch (trochoi_DTO.id)
             {
                 case 1 :
-                    frm_mayman lotto = new frm_mayman();
-                    lotto.Show();
-                    //frm_ochu ochu = new frm_ochu();
-                    //ochu.Show();
+                    frm_ochu ochu = new frm_ochu();
+                    ochu.ShowDialog();
+                    load_data();
                     break;
                 case 2:
-                    //frm_mayman lotto = new frm_mayman();
-                    //lotto.Show();
+                    frm_mayman lotto = new frm_mayman();
+                    lotto.ShowDialog();
+                    load_data();
                     break;
             }
         }
