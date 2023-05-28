@@ -16,7 +16,7 @@ namespace Phan_mem_quan_ly_voucher.DAO
 
         public int themdoitac(string ten, string email, string sodienthoai, string password)
         {
-            string sql = "EXEC TAO_DOI_TAC '" + ten + "','" + email + "','" + sodienthoai + "','" + password + "'";
+            string sql = "EXEC TAO_DOI_TAC N'" + ten + "','" + email + "','" + sodienthoai + "','" + password + "'";
             return db.thucthi(sql);
         }
         public DataTable timdoitactheotrangthai (int trangthai)
@@ -36,7 +36,7 @@ namespace Phan_mem_quan_ly_voucher.DAO
         }
         public DataTable timdoitactheoten(string ten)
         {
-            string sql = "EXEC SELECT_LIKE_DOITAC_INFO_THEO_TEN '" + ten + "'";
+            string sql = "EXEC SELECT_LIKE_DOITAC_INFO_THEO_TEN N'" + ten + "'";
             return db.laydulieu(sql);
         }
         public DataTable timdoitactheosodienthoai(string sodienthoai)
@@ -56,7 +56,7 @@ namespace Phan_mem_quan_ly_voucher.DAO
         }
         public int thaydoithongtindoitac(int doitac_id, string email , string ten, string sodienthoai)
         {
-            string sql = "EXEC UPDATE_DOITAC_INFO '" + doitac_id + "','" + email + "','" + ten + "', '" + sodienthoai + "'";
+            string sql = "EXEC UPDATE_DOITAC_INFO '" + doitac_id + "','" + email + "',N'" + ten + "', '" + sodienthoai + "'";
             return db.thucthi(sql);
         }
         public DataTable timdoitactheoemail(string email)

@@ -13,7 +13,7 @@ namespace project_tkpmnc.DAO
         public db db = new db();
         public int themnguoidung(string ten, string email, string sodienthoai, string password)
         {
-            string sql = "EXEC TAO_NGUOI_DUNG '" + ten + "','" + email + "','" + sodienthoai + "','" + password + "'";
+            string sql = "EXEC TAO_NGUOI_DUNG N'" + ten + "','" + email + "','" + sodienthoai + "','" + password + "'";
             return db.thucthi(sql);
         }
         public DataTable timnguoidungtheotrangthai(int trangthai)
@@ -33,7 +33,7 @@ namespace project_tkpmnc.DAO
         }
         public DataTable timnguoidungtheoten(string ten)
         {
-            string sql = "EXEC SELECT_LIKE_NGUOI_DUNG_INFO_THEO_TEN '" + ten + "'";
+            string sql = "EXEC SELECT_LIKE_NGUOI_DUNG_INFO_THEO_TEN N'" + ten + "'";
             return db.laydulieu(sql);
         }
         public DataTable timnguoidungtheosodienthoai(string sodienthoai)
@@ -51,14 +51,14 @@ namespace project_tkpmnc.DAO
             string sql = "EXEC SELECT_NGUOI_DUNG_INFO_THEO_ID '" + id + "'";
             return db.laydulieu(sql);
         }
-        public int thaydoithongtinnguoidung(int doitac_id, string ten, string sodienthoai, int trangthai)
+        public int thaydoithongtinnguoidung(int nguoidung_id, string ten, string sodienthoai, int trangthai)
         {
-            string sql = "EXEC UPDATE_NGUOI_DUNG_INFO " + doitac_id + ",'" + ten + "', '" + sodienthoai + "', '"+ trangthai+ "'";
+            string sql = "EXEC UPDATE_NGUOI_DUNG_INFO " + nguoidung_id + ",N'" + ten + "', '" + sodienthoai + "', '"+ trangthai+ "'";
             return db.thucthi(sql);
         }
-        public int thaydoithongtinnguoidungemail(int doitac_id, string email, string ten, string sodienthoai)
+        public int thaydoithongtinnguoidungemail(int nguoidung_id, string email, string ten, string sodienthoai)
         {
-            string sql = "EXEC UPDATE_NGUOI_DUNG_INFO_EMAIL " + doitac_id + ",'" + email + "', '" + ten + "', '" + sodienthoai + "'";
+            string sql = "EXEC UPDATE_NGUOI_DUNG_INFO_EMAIL " + nguoidung_id + ",'" + email + "', N'" + ten + "', '" + sodienthoai + "'";
             return db.thucthi(sql);
         }
 

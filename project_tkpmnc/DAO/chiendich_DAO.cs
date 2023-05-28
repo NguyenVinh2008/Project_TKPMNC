@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using project_tkpmnc.DTO;
-using Phan_mem_quan_ly_voucher.DTO;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
-using System.Drawing;
+﻿using Phan_mem_quan_ly_voucher.DTO;
 using System.Data;
 
 namespace project_tkpmnc.DAO
@@ -16,7 +8,7 @@ namespace project_tkpmnc.DAO
         public db db = new db();
         public int taochiendich(string chiendich_ten, int doitac_id, int trochoi_id, string start, string end)
         {
-            string sql = "EXEC TAO_CHIEN_DICH '" + chiendich_ten + "','" + doitac_id + "','" + trochoi_id + "','" + start + "','" + end + "'";
+            string sql = "EXEC TAO_CHIEN_DICH N'" + chiendich_ten + "','" + doitac_id + "','" + trochoi_id + "','" + start + "','" + end + "'";
             return db.thucthi(sql);
         }
         public DataTable laythongtinchiendich()
@@ -31,7 +23,7 @@ namespace project_tkpmnc.DAO
         }
         public DataTable laychiendichtheotengandung(string tenchiendich)
         {
-            string sql = "EXEC SELECT_LIKE_CHIENDICH_THEO_TEN'" + tenchiendich + "'";
+            string sql = "EXEC SELECT_LIKE_CHIENDICH_THEO_TEN N'" + tenchiendich + "'";
             return db.laydulieu(sql);
         }
         public int duyetchiendich (int chiendich_id, int quantrivien_id)
@@ -41,7 +33,7 @@ namespace project_tkpmnc.DAO
         }
         public int thaydoithongtinchiendich(int chiendich_id,string chiendich_ten)
         {
-            string sql = "EXEC UPDATE_CHIENDICH_INFO '" + chiendich_id + "','" + chiendich_ten + "'";
+            string sql = "EXEC UPDATE_CHIENDICH_INFO '" + chiendich_id + "',N'" + chiendich_ten + "'";
             return db.thucthi(sql);
         }
         public DataTable laychiendichidlonnhat()

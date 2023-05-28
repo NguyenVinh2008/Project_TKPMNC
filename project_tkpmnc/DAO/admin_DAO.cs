@@ -1,12 +1,5 @@
-﻿using DevExpress.Utils.DPI;
-using Phan_mem_quan_ly_voucher.DTO;
-using project_tkpmnc.DTO;
-using System;
-using System.Collections.Generic;
+﻿using Phan_mem_quan_ly_voucher.DTO;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace project_tkpmnc.DAO
 {
@@ -16,7 +9,7 @@ namespace project_tkpmnc.DAO
 
         public int themquantrivien(string ten, string email, string sodienthoai, string password)
         {
-            string sql = "EXEC TAO_QUAN_TRI_VIEN '" + ten + "','" + email + "','" + sodienthoai + "','" + password + "'";
+            string sql = "EXEC TAO_QUAN_TRI_VIEN N'" + ten + "','" + email + "','" + sodienthoai + "','" + password + "'";
             return db.thucthi(sql);
         }
 
@@ -27,7 +20,7 @@ namespace project_tkpmnc.DAO
         }
         public int thaydoithongtinquantrivien(int id, string ten, string email, string sodienthoai)
         {
-            string sql = "EXEC UPDATE_ADMIN_INFO '" + id + "','" + ten + "','" + email + "','" + sodienthoai + "'";
+            string sql = "EXEC UPDATE_ADMIN_INFO '" + id + "',N'" + ten + "','" + email + "','" + sodienthoai + "'";
             return db.thucthi(sql);
         }
     }

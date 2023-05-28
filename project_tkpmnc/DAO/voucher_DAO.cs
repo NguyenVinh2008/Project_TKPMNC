@@ -13,7 +13,7 @@ namespace project_tkpmnc.DAO
         public db db = new db();
         public int taovoucher(string giatri, string magiamgia)
         {
-            string sql = "EXEC TAO_VOUCHER '" + giatri + "','" + magiamgia + "'";
+            string sql = "EXEC TAO_VOUCHER N'" + giatri + "','" + magiamgia + "'";
             return db.thucthi(sql);
         }
         public DataTable layvoucher()
@@ -53,7 +53,7 @@ namespace project_tkpmnc.DAO
         }
         public int updatevouchertheogiatri(int voucher_id, string giatri)
         {
-            string sql = "EXEC UPDATE_VOUCHER_GIATRI '" + voucher_id + "','" + giatri + "'";
+            string sql = "EXEC UPDATE_VOUCHER_GIATRI '" + voucher_id + "',N'" + giatri + "'";
             return db.thucthi(sql);
         }
         public DataTable layphanthuongcuachiendichbangtrangthai(int chiendich_id, int trangthai)

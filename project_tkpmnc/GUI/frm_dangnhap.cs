@@ -52,7 +52,7 @@ namespace project_tkpmnc.GUI
                         MessageBox.Show("Đăng nhập thành công!");
                         this.Hide();
                         frm_nguoidung dangnhapnguoidung = new frm_nguoidung();
-                        dangnhapnguoidung.Text = ("welcome admin name: " + nguoidung_DTO.ten);
+                        dangnhapnguoidung.Text = ("Xin chào: " + nguoidung_DTO.ten);
                         dangnhapnguoidung.ShowDialog();
                         break;
                     case 1:
@@ -64,7 +64,7 @@ namespace project_tkpmnc.GUI
                         MessageBox.Show("Đăng nhập admin thành công!");
                         this.Hide();
                         frm_admin dangnhapadmin = new frm_admin();
-                        dangnhapadmin.Text = ("welcome admin name: " + admin_DTO.ten);
+                        dangnhapadmin.Text = ("Xin chào admin: " + admin_DTO.ten);
                         dangnhapadmin.ShowDialog();
                         break;
                     case 2:
@@ -78,7 +78,7 @@ namespace project_tkpmnc.GUI
                             MessageBox.Show("Đăng nhập đối tác thành công!");
                             this.Hide();
                             frm_doitac dangnhapdoitac = new frm_doitac();
-                            dangnhapdoitac.Text = ("welcome đối tác name: " + doitac_DTO.ten);
+                            dangnhapdoitac.Text = ("Xin chào đối tác: " + doitac_DTO.ten);
                             dangnhapdoitac.ShowDialog();
                         }
                         else

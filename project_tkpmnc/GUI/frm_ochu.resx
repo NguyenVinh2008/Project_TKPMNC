@@ -117,4 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Luật chơi: Người tham gia trả lời các câu hỏi bên dưới. Nếu đúng sẽ nhận được 1 phần quà. Giá trị của phần quà sẽ tương ứng với số lượng câu trả lời đúng của các bạn. Lưu ý, người tham gia trả lời hết các câu hỏi rồi mới bấm nút hoàn thành</value>
+  </data>
 </root>
