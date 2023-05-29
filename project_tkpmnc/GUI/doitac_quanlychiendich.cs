@@ -1,5 +1,4 @@
-﻿using Phan_mem_quan_ly_voucher.DAO;
-using project_tkpmnc.DAO;
+﻿using project_tkpmnc.BUS;
 using project_tkpmnc.DTO;
 using System;
 using System.Windows.Forms;
@@ -8,14 +7,14 @@ namespace project_tkpmnc.GUI
 {
     public partial class doitac_quanlychiendich : UserControl
     {
-        chiendich_DAO chiendich_DAO = new chiendich_DAO();
+        chiendich_BUS chiendich_BUS = new chiendich_BUS();
         public doitac_quanlychiendich()
         {
             InitializeComponent();
         }
         private void load_data()
         {
-            dgv_thongtinchiendich.DataSource = chiendich_DAO.laychiendichtheodoitacid(doitac_DTO.id);
+            dgv_thongtinchiendich.DataSource = chiendich_BUS.laychiendichtheodoitacid();
         }
         private void button_taochiendich_Click(object sender, EventArgs e)
         {
@@ -32,17 +31,17 @@ namespace project_tkpmnc.GUI
                     break;
                 case 1:
                     chiendich_DTO.trangthai = 0;
-                    dgv_thongtinchiendich.DataSource = chiendich_DAO.laychiendichcuadoitactheotrangthai(doitac_DTO.id, chiendich_DTO.trangthai);
+                    dgv_thongtinchiendich.DataSource = chiendich_BUS.laychiendichcuadoitactheotrangthai();
                     break;
                 case 2:
                     chiendich_DTO.trangthai = 1;
-                    dgv_thongtinchiendich.DataSource = chiendich_DAO.laychiendichcuadoitactheotrangthai(doitac_DTO.id, chiendich_DTO.trangthai);
+                    dgv_thongtinchiendich.DataSource = chiendich_BUS.laychiendichcuadoitactheotrangthai();
                     break;
                 case 3:
-                    dgv_thongtinchiendich.DataSource = chiendich_DAO.laychiendichcuadoitacdangdienra(doitac_DTO.id);
+                    dgv_thongtinchiendich.DataSource = chiendich_BUS.laychiendichcuadoitacdangdienra();
                     break;
                 case 4:
-                    dgv_thongtinchiendich.DataSource = chiendich_DAO.laychiendichcuadoitacdaketthuc(doitac_DTO.id);
+                    dgv_thongtinchiendich.DataSource = chiendich_BUS.laychiendichcuadoitacdaketthuc();
                     break;
             }
         }
@@ -83,11 +82,10 @@ namespace project_tkpmnc.GUI
             }
             else
             {
-                dgv_thongtinchiendich.DataSource = chiendich_DAO.laychiendichtheoid(chiendich_DTO.chiendich_id);
+                dgv_thongtinchiendich.DataSource = chiendich_BUS.laychiendichtheoid();
                 button_save.Enabled = true;
                 dgv_thongtinchiendich.ReadOnly= false;
             }
-
         }
         private void button_save_Click(object sender, EventArgs e)
         {
@@ -96,9 +94,9 @@ namespace project_tkpmnc.GUI
             chiendich_DTO.chiendich_id = int.Parse(row.Cells["chiendich_id"].Value.ToString());
             chiendich_DTO.chiendich_ten = row.Cells["chiendich_ten"].Value.ToString();
             chiendich_DTO.trochoi_id = int.Parse(row.Cells["trochoi_id"].Value.ToString());
-            chiendich_DAO.thaydoithongtinchiendich(chiendich_DTO.chiendich_id, chiendich_DTO.chiendich_ten);
+            chiendich_BUS.thaydoithongtinchiendich();
             MessageBox.Show("Thay đổi thông tin chiến dịch thành công!");
-            dgv_thongtinchiendich.DataSource = chiendich_DAO.laychiendichtheoid(chiendich_DTO.chiendich_id);
+            dgv_thongtinchiendich.DataSource = chiendich_BUS.laychiendichtheoid();
             button_save.Enabled = false;
         }
     }

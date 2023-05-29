@@ -1,13 +1,6 @@
-﻿using project_tkpmnc.DAO;
+﻿using project_tkpmnc.BUS;
 using project_tkpmnc.DTO;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace project_tkpmnc.GUI
@@ -18,10 +11,10 @@ namespace project_tkpmnc.GUI
         {
             InitializeComponent();
         }
-        voucher_DAO voucher_DAO = new voucher_DAO();
+        voucher_BUS voucher_BUS = new voucher_BUS();
         private void load_data()
         {
-            dgv_thongtinvoucher.DataSource = voucher_DAO.layvoucher();
+            dgv_thongtinvoucher.DataSource = voucher_BUS.layvoucher();
         }
         private void admin_quanlyvoucher_Load(object sender, EventArgs e)
         {
@@ -38,17 +31,16 @@ namespace project_tkpmnc.GUI
                     break;
                 case 1:
                     voucher_DTO.trangthai = 0;
-                    dgv_thongtinvoucher.DataSource = voucher_DAO.layvouchertheotrangthai(voucher_DTO.trangthai);
                     break;
                 case 2:
                     voucher_DTO.trangthai = 1;
-                    dgv_thongtinvoucher.DataSource = voucher_DAO.layvouchertheotrangthai(voucher_DTO.trangthai);
                     break;
                 case 3:
                     voucher_DTO.trangthai = 2;
-                    dgv_thongtinvoucher.DataSource = voucher_DAO.layvouchertheotrangthai(voucher_DTO.trangthai);
                     break;
             }
+            dgv_thongtinvoucher.DataSource = voucher_BUS.layvouchertheotrangthai();
+
         }
         private void dgv_thongtinvoucher_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -67,7 +59,7 @@ namespace project_tkpmnc.GUI
             }
             else
             {
-                dgv_thongtinvoucher.DataSource = voucher_DAO.layvouchertheovoucherid(voucher_DTO.id);
+                dgv_thongtinvoucher.DataSource = voucher_BUS.layvouchertheovoucherid();
                 button_save.Enabled = true;
                 dgv_thongtinvoucher.ReadOnly = false;
             }
@@ -78,9 +70,9 @@ namespace project_tkpmnc.GUI
             row = dgv_thongtinvoucher.Rows[0];
             voucher_DTO.id = int.Parse(row.Cells["voucher_id"].Value.ToString());
             voucher_DTO.giatri = row.Cells["voucher_giatri"].Value.ToString();
-            dgv_thongtinvoucher.DataSource = voucher_DAO.updatevouchertheogiatri(voucher_DTO.id, voucher_DTO.giatri);
+            dgv_thongtinvoucher.DataSource = voucher_BUS.updatevouchertheogiatri();
             MessageBox.Show("Thay đổi giá trị voucher thành công!");
-            dgv_thongtinvoucher.DataSource = voucher_DAO.layvouchertheovoucherid(voucher_DTO.id);
+            dgv_thongtinvoucher.DataSource = voucher_BUS.layvouchertheovoucherid();
             button_save.Enabled = false;
         }
     }

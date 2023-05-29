@@ -16,16 +16,6 @@ namespace project_tkpmnc.DAO
             string sql = "EXEC TAO_NGUOI_DUNG N'" + ten + "','" + email + "','" + sodienthoai + "','" + password + "'";
             return db.thucthi(sql);
         }
-        public DataTable timnguoidungtheotrangthai(int trangthai)
-        {
-            string sql = "EXEC SELECT_NGUOI_DUNG_THEO_TRANG_THAI '" + trangthai + "'";
-            return db.laydulieu(sql);
-        }
-        //public int duyetnguoidung(int doitac_id, int admin_id)
-        //{
-        //    string sql = "EXEC DUYET_NGUOI_DUNG '" + doitac_id + "','" + admin_id + "'";
-        //    return db.thucthi(sql);
-        //}
         public DataTable timnguoidung()
         {
             string sql = "EXEC SELECT_NGUOI_DUNG_INFO";
@@ -41,9 +31,14 @@ namespace project_tkpmnc.DAO
             string sql = "EXEC SELECT_LIKE_NGUOI_DUNG_INFO_THEO_SODIENTHOAI '" + sodienthoai + "'";
             return db.laydulieu(sql);
         }
-        public DataTable timnguoidungtheoemail(string email)
+        public DataTable timnguoidunggandungtheoemail(string email)
         {
             string sql = "EXEC SELECT_LIKE_NGUOI_DUNG_INFO_THEO_EMAIL '" + email + "'";
+            return db.laydulieu(sql);
+        }
+        public DataTable timnguoidungtheoemail(string email)
+        {
+            string sql = "EXEC SELECT_NGUOI_DUNG_INFO_THEO_EMAIL '" + email + "'";
             return db.laydulieu(sql);
         }
         public DataTable timnguoidungtheoid(int id)
@@ -61,6 +56,30 @@ namespace project_tkpmnc.DAO
             string sql = "EXEC UPDATE_NGUOI_DUNG_INFO_EMAIL " + nguoidung_id + ",'" + email + "', N'" + ten + "', '" + sodienthoai + "'";
             return db.thucthi(sql);
         }
-
+        public DataTable tongsotaikhoan()
+        {
+            string sql = "EXEC SELECT_TONG_SO_TAI_KHOAN";
+            return db.laydulieu(sql);
+        }
+        public DataTable tongsonguoidung()
+        {
+            string sql = "EXEC SELECT_TONG_SO_NGUOI_DUNG";
+            return db.laydulieu(sql);
+        }
+        public DataTable tongsodoitac()
+        {
+            string sql = "EXEC SELECT_TONG_SO_DOI_TAC";
+            return db.laydulieu(sql);
+        }
+        public DataTable tongsoquantrivien()
+        {
+            string sql = "EXEC SELECT_TONG_SO_QUAN_TRI_VIEN";
+            return db.laydulieu(sql);
+        }
+        public DataTable tongsotaikhoanmoitrongthang()
+        {
+            string sql = "EXEC SELECT_TONG_SO_TAI_KHOAN_MOI_TRONG_THANG";
+            return db.laydulieu(sql);
+        }
     }
 }

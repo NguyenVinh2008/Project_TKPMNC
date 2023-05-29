@@ -1,4 +1,5 @@
-﻿using project_tkpmnc.DAO;
+﻿using project_tkpmnc.BUS;
+using project_tkpmnc.DAO;
 using project_tkpmnc.DTO;
 using System;
 using System.Collections.Generic;
@@ -18,12 +19,12 @@ namespace project_tkpmnc.GUI
         {
             InitializeComponent();
         }
-        chiendich_DAO chiendich_DAO = new chiendich_DAO();
-        voucher_DAO voucher_DAO = new voucher_DAO();
+        chiendich_BUS chiendich_BUS = new chiendich_BUS();
         public int countphanthuong;
         public void load_data()
         {
-            dgv_thongtintrochoi.DataSource = chiendich_DAO.laychiendichdangdienratheotrangthai(nguoidung_DTO.id, 1);
+            chiendich_DTO.trangthai = 1;
+            dgv_thongtintrochoi.DataSource = chiendich_BUS.laychiendichdangdienratheotrangthai();
         }
 
         private void button_reload_Click(object sender, EventArgs e)

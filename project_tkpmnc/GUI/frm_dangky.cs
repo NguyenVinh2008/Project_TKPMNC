@@ -13,7 +13,7 @@ namespace project_tkpmnc.GUI
         {
             InitializeComponent();
         }
-        login_BUS login = new login_BUS();
+        application_BUS application_BUS = new application_BUS();
         DOITAC_DAO doitac_DAO = new DOITAC_DAO();
         nguoidung_DAO nguoidung_DAO = new nguoidung_DAO();
         private void button_dangky_Click(object sender, EventArgs e)
@@ -25,8 +25,8 @@ namespace project_tkpmnc.GUI
                 doitac_DTO.email = textBox_diachiemail.Text.Trim();
                 doitac_DTO.sodienthoai = textBox_sodienthoai.Text.Trim();
                 // Mã hóa mật khẩu MD5
-                doitac_DTO.password = login.GetMD5(textBox_matkhau.Text.Trim());
-                if (login.CheckExistEmail(doitac_DTO.email) == 0)
+                doitac_DTO.password = application_BUS.GetMD5(textBox_matkhau.Text.Trim());
+                if (application_BUS.CheckExistEmail(doitac_DTO.email) == 0)
                 {
                     doitac_DAO.themdoitac(doitac_DTO.ten, doitac_DTO.email, doitac_DTO.sodienthoai, doitac_DTO.password);
                     MessageBox.Show("Đăng ký đối tác thành công, vui lòng chờ quản trị viên duyệt!");
@@ -43,9 +43,9 @@ namespace project_tkpmnc.GUI
                 nguoidung_DTO.email = textBox_diachiemail.Text.Trim();
                 nguoidung_DTO.sodienthoai = textBox_sodienthoai.Text.Trim();
                 // Mã hóa mật khẩu MD5
-                nguoidung_DTO.password = login.GetMD5(textBox_matkhau.Text.Trim());
+                nguoidung_DTO.password = application_BUS.GetMD5(textBox_matkhau.Text.Trim());
 
-                if (login.CheckExistEmail(nguoidung_DTO.email) == 0)
+                if (application_BUS.CheckExistEmail(nguoidung_DTO.email) == 0)
                 {
                     nguoidung_DAO.themnguoidung(nguoidung_DTO.ten, nguoidung_DTO.email, nguoidung_DTO.sodienthoai, nguoidung_DTO.password);
                     MessageBox.Show("Đăng ký người dùng thành công!");

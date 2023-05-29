@@ -1,13 +1,5 @@
-﻿using DevExpress.Utils.Extensions;
-using DevExpress.XtraBars;
-using project_tkpmnc.GUI;
+﻿using project_tkpmnc.GUI;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace project_tkpmnc
@@ -26,11 +18,9 @@ namespace project_tkpmnc
         admin_quanlyvoucher ucQuanlyvoucher;
         admin_thaydoithongtin ucThaydoithongtin;
         thongke_nguoidung ucThongkenguoidung;
-        user_LottoGame ucLotto;
-        user_OChuGame ucOChu;
+
         private void ce_quanlychiendich_Click(object sender, EventArgs e)
         {
-
             if (ucQuanlychiendich == null)
             {
                 ucQuanlychiendich = new admin_quanlychiendich();
@@ -105,9 +95,7 @@ namespace project_tkpmnc
             }
             else
                 ucQuanlynguoidung.BringToFront();
-        }
-
-        
+        }       
 
         private void ce_thaydoithongtin_Click(object sender, EventArgs e)
         {
@@ -125,9 +113,7 @@ namespace project_tkpmnc
         private void ce_thoat_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        
+        }        
 
         private void ce_thongketaikhoan_Click(object sender, EventArgs e)
         {
@@ -147,34 +133,6 @@ namespace project_tkpmnc
             this.Hide();
             frm_dangnhap dangnhap = new frm_dangnhap();
             dangnhap.ShowDialog();
-
-        }
-
-        private void ce_testform_Click(object sender, EventArgs e)
-        {
-            if (ucLotto == null)
-            {
-                ucLotto = new user_LottoGame();
-                ucLotto.Dock = DockStyle.Fill;
-                fluentDesignFormContainer1.Controls.Add(ucLotto);
-                ucLotto.BringToFront();
-            }
-            else
-                ucLotto.BringToFront();
-        }
-
-        private void accordionControlElement9_Click(object sender, EventArgs e)
-        {
-
-            if (ucOChu == null)
-            {
-                ucOChu = new user_OChuGame();
-                ucOChu.Dock = DockStyle.Fill;
-                fluentDesignFormContainer1.Controls.Add(ucOChu);
-                ucOChu.BringToFront();
-            }
-            else
-                ucOChu.BringToFront();
-        }
+        }      
     }
 }

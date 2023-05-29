@@ -1,13 +1,6 @@
-﻿using project_tkpmnc.DAO;
+﻿using project_tkpmnc.BUS;
 using project_tkpmnc.DTO;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace project_tkpmnc.GUI
@@ -18,10 +11,10 @@ namespace project_tkpmnc.GUI
         {
             InitializeComponent();
         }
-        phanthuong_DAO phanthuong_DAO = new phanthuong_DAO();
+        phanthuong_BUS phanthuong_BUS = new phanthuong_BUS();
         private void load_data()
         {
-            dgv_thongtinvoucher.DataSource = phanthuong_DAO.layphanthuongcuanguoidung(nguoidung_DTO.id);
+            dgv_thongtinvoucher.DataSource = phanthuong_BUS.layphanthuongcuanguoidung();
         }
 
         private void nguoidung_quanlyvoucher_Load(object sender, EventArgs e)

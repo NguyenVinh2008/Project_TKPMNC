@@ -1,10 +1,8 @@
 ﻿using project_tkpmnc.DAO;
+using project_tkpmnc.DTO;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace project_tkpmnc.BUS
 {
@@ -30,7 +28,6 @@ namespace project_tkpmnc.BUS
             Random random = new Random();
             return random.Next(min, max);
         }
-
         public int kiemtratrunglapmagiamgia(string magiamgia)
         {
             DataTable dataTable = voucher_DAO.kiemtratrunglapmagiamgia(magiamgia);
@@ -40,7 +37,6 @@ namespace project_tkpmnc.BUS
             }
             return 1;
         }
-
         public string taomagiamgia()
         {
             StringBuilder builder = new StringBuilder();
@@ -52,5 +48,42 @@ namespace project_tkpmnc.BUS
             else
                 return taomagiamgia();
         }
+        public DataTable layvoucher()
+        {
+            return voucher_DAO.layvoucher();
+        }
+        public DataTable layvouchertheotrangthai()
+        {
+            return voucher_DAO.layvouchertheotrangthai(voucher_DTO.trangthai);
+        }
+        public DataTable layvouchertheovoucherid()
+        {
+            return voucher_DAO.layvouchertheovoucherid(voucher_DTO.id);
+        }
+        public int updatevouchertheogiatri()
+        {
+            return voucher_DAO.updatevouchertheogiatri(voucher_DTO.id, voucher_DTO.giatri);
+        }
+        public DataTable layphanthuongcuachiendichbangtrangthai(int trangthai)
+        {
+            return voucher_DAO.layphanthuongcuachiendichbangtrangthai(chiendich_DTO.chiendich_id, trangthai);
+        }
+        public DataTable layvoucheridbangmagiamgia()
+        {
+            return voucher_DAO.layvoucheridbangmagiamgia(voucher_DTO.magiamgia);
+        }
+        public DataTable layvouchertheodoitac()
+        {
+            return voucher_DAO.layvouchertheodoitac(doitac_DTO.id);
+        }
+        public DataTable layvouchercuadoitactheotrangthai()
+        {
+            return voucher_DAO.layvouchercuadoitactheotrangthai(doitac_DTO.id, voucher_DTO.trangthai);
+        }
+        public DataTable layvouchercuadoitactheovoucherid()
+        {
+            return voucher_DAO.layvouchercuadoitactheovoucherid(doitac_DTO.id, voucher_DTO.id);
+        }
+       
     }
 }

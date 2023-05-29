@@ -72,5 +72,10 @@ namespace project_tkpmnc.DAO
             return db.laydulieu(sql);
         }
 
+        public int thaydoitrangthaichiendich(int quantrivien_id, int chiendich_id, int trangthai)
+        {
+            string sql = "EXEC UPDATE_CHIENDICH_TRANGTHAI '" + quantrivien_id + "','" + chiendich_id + "','" + trangthai + "'";
+            return db.thucthi(sql);
+        }
     }
 }

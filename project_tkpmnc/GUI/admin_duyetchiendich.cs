@@ -1,13 +1,6 @@
-﻿using project_tkpmnc.DAO;
+﻿using project_tkpmnc.BUS;
 using project_tkpmnc.DTO;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace project_tkpmnc.GUI
@@ -18,20 +11,19 @@ namespace project_tkpmnc.GUI
         {
             InitializeComponent();
         }
-        chiendich_DAO chiendich_DAO = new chiendich_DAO();
+        chiendich_BUS chiendich_BUS = new chiendich_BUS();
 
         private void load_data()
         {
-            dgv_danhsachchoduyet.DataSource = chiendich_DAO.laychiendichtheotrangthai(0);
-        }
-        private void button_timkiem_Click(object sender, EventArgs e)
-        {
-            load_data();
+            dgv_danhsachchoduyet.DataSource = chiendich_BUS.laythongtinchiendich();
         }
 
         private void admin_duyetchiendich_Load(object sender, EventArgs e)
         {
             load_data();
+            comboBox1.SelectedIndex = 0;
+            button_duyet.Enabled = false;
+            button_huy.Enabled = false;
         }
 
         private void dgv_danhsachchoduyet_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -39,12 +31,45 @@ namespace project_tkpmnc.GUI
             DataGridViewRow row = new DataGridViewRow();
             row = dgv_danhsachchoduyet.Rows[e.RowIndex];
             chiendich_DTO.chiendich_id = int.Parse(row.Cells["chiendich_id"].Value.ToString());
+            chiendich_DTO.trangthai = int.Parse(row.Cells["chiendich_trangthai"].Value.ToString());
+            button_duyet.Enabled = true;
+            button_huy.Enabled = true;
         }
 
         private void button_duyet_Click(object sender, EventArgs e)
         {
-            chiendich_DAO.duyetchiendich(chiendich_DTO.chiendich_id, admin_DTO.id);
+            chiendich_DTO.trangthai = 1;
+            chiendich_BUS.thaydoitrangthaichiendich();
+            dgv_danhsachchoduyet.DataSource = chiendich_BUS.laychiendichtheoid();
+            MessageBox.Show("Đã duyệt chiến dịch thành công!");
+        }
+
+        private void button_huy_Click(object sender, EventArgs e)
+        {
+            chiendich_DTO.trangthai = 2;
+            chiendich_BUS.thaydoitrangthaichiendich();
+            MessageBox.Show("Đã hủy thành công!");
             load_data();
+        }
+
+        private void button_timkiem_Click(object sender, EventArgs e)
+        {
+            switch (comboBox1.SelectedIndex)
+            {
+                case 0:
+                    load_data();
+                    break;
+                case 1:
+                    chiendich_DTO.trangthai = 0;
+                    break;
+                case 2:
+                    chiendich_DTO.trangthai = 1;
+                    break;
+                case 3:
+                    chiendich_DTO.trangthai = 2;
+                    break;
+            }
+            dgv_danhsachchoduyet.DataSource = chiendich_BUS.timkiemtheotrangthai();
         }
     }
 }

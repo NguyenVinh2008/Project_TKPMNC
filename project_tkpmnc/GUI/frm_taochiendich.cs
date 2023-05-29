@@ -1,4 +1,5 @@
-﻿using project_tkpmnc.DAO;
+﻿using project_tkpmnc.BUS;
+using project_tkpmnc.DAO;
 using project_tkpmnc.DTO;
 using System;
 using System.Collections.Generic;
@@ -18,29 +19,26 @@ namespace project_tkpmnc.GUI
         {
             InitializeComponent();
         }
-        chiendich_DAO chiendich_DAO = new chiendich_DAO();
-        trochoi_DAO trochoi_DAO = new trochoi_DAO();
+        chiendich_BUS chiendich_BUS = new chiendich_BUS();
+        trochoi_BUS trochoi_BUS = new trochoi_BUS();
         private void frm_taochiendich_Load(object sender, EventArgs e)
         {
-            int chiendich_id = int.Parse(chiendich_DAO.laychiendichidlonnhat().Rows[0]["chiendich_id"].ToString()) + 1;
+            int chiendich_id = int.Parse(chiendich_BUS.laychiendichidlonnhat().Rows[0]["chiendich_id"].ToString()) + 1;
             textBox_chiendichid.Text = chiendich_id.ToString();
             textBox_nguoitao.Text = doitac_DTO.id.ToString();
-            comboBox_trochoi.DataSource = trochoi_DAO.laydanhsachtrochoi();
+            comboBox_trochoi.DataSource = trochoi_BUS.laydanhsachtrochoi();
             comboBox_trochoi.DisplayMember = "trochoi_ten";
             comboBox_trochoi.ValueMember = "trochoi_id";
         }
         private void button_tao_Click(object sender, EventArgs e)
         {
             chiendich_DTO.chiendich_ten = textBox_tenchiendich.Text;
-            chiendich_DTO.doitac_id = doitac_DTO.id;
-            chiendich_DTO.trochoi_id = int.Parse(comboBox_trochoi.SelectedValue.ToString());
+            trochoi_DTO.id = int.Parse(comboBox_trochoi.SelectedValue.ToString());
             chiendich_DTO.chiendich_start = dateTimePicker_start.Value.ToString("yyyy/MM/dd");
             chiendich_DTO.chiendich_end = dateTimePicker_end.Value.ToString("yyyy/MM/dd");
-            chiendich_DAO.taochiendich(chiendich_DTO.chiendich_ten, chiendich_DTO.doitac_id, chiendich_DTO.trochoi_id, chiendich_DTO.chiendich_start, chiendich_DTO.chiendich_end);
+            chiendich_BUS.taochiendich();
             MessageBox.Show("Tạo chiến dịch mới thành công!");
             this.Close();
         }
-
-       
     }
 }

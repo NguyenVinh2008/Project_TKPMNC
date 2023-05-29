@@ -38,6 +38,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgv_thongtinchiendich = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
+            this.button_save = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_thongtinchiendich)).BeginInit();
@@ -47,6 +48,7 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.button_save);
             this.groupBox1.Controls.Add(this.comboBox_timkiem);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.button_timkiem);
@@ -118,6 +120,7 @@
             this.button_chinhsua.TabIndex = 0;
             this.button_chinhsua.Text = "Chỉnh sửa";
             this.button_chinhsua.UseVisualStyleBackColor = true;
+            this.button_chinhsua.Click += new System.EventHandler(this.button_chinhsua_Click);
             // 
             // groupBox2
             // 
@@ -146,6 +149,7 @@
             this.dgv_thongtinchiendich.ReadOnly = true;
             this.dgv_thongtinchiendich.Size = new System.Drawing.Size(541, 275);
             this.dgv_thongtinchiendich.TabIndex = 0;
+            this.dgv_thongtinchiendich.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_thongtinchiendich_CellClick);
             // 
             // label6
             // 
@@ -156,6 +160,16 @@
             this.label6.Size = new System.Drawing.Size(190, 25);
             this.label6.TabIndex = 25;
             this.label6.Text = "Quản lý chiến dịch";
+            // 
+            // button_save
+            // 
+            this.button_save.Location = new System.Drawing.Point(168, 43);
+            this.button_save.Name = "button_save";
+            this.button_save.Size = new System.Drawing.Size(75, 23);
+            this.button_save.TabIndex = 7;
+            this.button_save.Text = "Ghi lại";
+            this.button_save.UseVisualStyleBackColor = true;
+            this.button_save.Click += new System.EventHandler(this.button_save_Click);
             // 
             // admin_quanlychiendich
             // 
@@ -188,5 +202,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox comboBox_timkiem;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button_save;
     }
 }

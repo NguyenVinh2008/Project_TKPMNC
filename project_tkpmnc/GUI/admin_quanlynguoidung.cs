@@ -8,15 +8,14 @@ namespace project_tkpmnc.GUI
 {
     public partial class admin_quanlynguoidung : UserControl
     {
-        nguoidung_DAO nguoidung_DAO = new nguoidung_DAO();
-        login_BUS login_BUS = new login_BUS();
+        nguoidung_BUS nguoidung_BUS = new nguoidung_BUS();
         public admin_quanlynguoidung()
         {
             InitializeComponent();
         }
         public void load()
         {
-            dgv_thongtinnguoidung.DataSource = nguoidung_DAO.timnguoidung();
+            dgv_thongtinnguoidung.DataSource = nguoidung_BUS.timnguoidung();
         }
         private void admin_quanlynguoidung_Load(object sender, EventArgs e)
         {
@@ -30,13 +29,13 @@ namespace project_tkpmnc.GUI
             switch (loai)
             {
                 case "Tên":
-                    dgv_thongtinnguoidung.DataSource = nguoidung_DAO.timnguoidungtheoten(search_str);
+                    dgv_thongtinnguoidung.DataSource = nguoidung_BUS.timnguoidungtheoten(search_str);
                     break;
                 case "Email":
-                    dgv_thongtinnguoidung.DataSource = nguoidung_DAO.timnguoidungtheoemail(search_str);
+                    dgv_thongtinnguoidung.DataSource = nguoidung_BUS.timnguoidunggandungtheoemail(search_str);
                     break;
                 case "Số điện thoại":
-                    dgv_thongtinnguoidung.DataSource = nguoidung_DAO.timnguoidungtheosodienthoai(search_str);
+                    dgv_thongtinnguoidung.DataSource = nguoidung_BUS.timnguoidungtheosodienthoai(search_str);
                     break;
             }
         }
@@ -53,7 +52,7 @@ namespace project_tkpmnc.GUI
         }
         private void button_chinhsua_Click(object sender, EventArgs e)
         {
-            dgv_thongtinnguoidung.DataSource = nguoidung_DAO.timnguoidungtheoid(nguoidung_DTO.id);
+            dgv_thongtinnguoidung.DataSource = nguoidung_BUS.timnguoidungtheoid();
             button_save.Enabled = true;
         }
         private void button_save_Click(object sender, EventArgs e)
@@ -65,9 +64,9 @@ namespace project_tkpmnc.GUI
             nguoidung_DTO.email = row.Cells["info_email"].Value.ToString();
             nguoidung_DTO.sodienthoai = row.Cells["info_dienthoai"].Value.ToString();
             nguoidung_DTO.trangthai = int.Parse(row.Cells["info_trangthai"].Value.ToString());
-            nguoidung_DAO.thaydoithongtinnguoidung(nguoidung_DTO.id, nguoidung_DTO.ten, nguoidung_DTO.sodienthoai, nguoidung_DTO.trangthai);
+            nguoidung_BUS.thaydoithongtinnguoidung();
             MessageBox.Show("Thay đổi thông tin thành công!");
-            dgv_thongtinnguoidung.DataSource = nguoidung_DAO.timnguoidungtheoid(nguoidung_DTO.id);
+            dgv_thongtinnguoidung.DataSource = nguoidung_BUS.timnguoidungtheoid();
             button_save.Enabled = false;
         }
         private void button_reload_Click(object sender, EventArgs e)

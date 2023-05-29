@@ -36,12 +36,12 @@ namespace project_tkpmnc.GUI
 
         private void button_dangnhap_Click(object sender, EventArgs e)
         {
-            login_BUS login_BUS = new login_BUS();
+            application_BUS application_BUS = new application_BUS();
             email = textBox_email.Text.Trim().ToString();
-            password = login_BUS.GetMD5(textBox_matkhau.Text.Trim().ToString());
-            if (login_BUS.CheckLogin(email, password) == 1)
+            password = application_BUS.GetMD5(textBox_matkhau.Text.Trim().ToString());
+            if (application_BUS.CheckLogin(email, password) == 1)
             {
-                switch (login_BUS.checkUserType(email))
+                switch (application_BUS.checkUserType(email))
                 {
                     case 0:
                         // Đăng nhập người dùng
@@ -69,7 +69,7 @@ namespace project_tkpmnc.GUI
                         break;
                     case 2:
                         // Đăng nhập đối tác
-                        if (login_BUS.CheckStatus(email, 1) == 1)
+                        if (application_BUS.CheckStatus(email, 1) == 1)
                         {
                             DOITAC_DAO doitac_DAO = new DOITAC_DAO();
                             datatable = doitac_DAO.timdoitactheoemail(email);

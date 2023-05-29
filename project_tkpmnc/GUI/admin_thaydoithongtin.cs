@@ -21,7 +21,7 @@ namespace project_tkpmnc.GUI
             InitializeComponent();
         }
         admin_DAO admin_DAO = new admin_DAO();
-        login_BUS login_BUS = new login_BUS();
+        application_BUS application_BUS = new application_BUS();
         private void button_capnhat_Click(object sender, EventArgs e)
         {
             admin_DTO.ten = textBox_tennguoidung.Text.Trim().ToString();
@@ -31,7 +31,7 @@ namespace project_tkpmnc.GUI
             if (datatable.Rows.Count == 1)
             {
                 int id = int.Parse(datatable.Rows[0]["doitac_id"].ToString());
-                if (login_BUS.CheckExistEmail(admin_DTO.email) == 0)
+                if (application_BUS.CheckExistEmail(admin_DTO.email) == 0)
                 {
                     admin_DAO.thaydoithongtinquantrivien(admin_DTO.id, admin_DTO.email, admin_DTO.ten, admin_DTO.sodienthoai);
                     MessageBox.Show("Thay đổi thông tin thành công");
@@ -49,7 +49,7 @@ namespace project_tkpmnc.GUI
             }
             else
             {
-                if (login_BUS.CheckExistEmail(admin_DTO.email) == 0)
+                if (application_BUS.CheckExistEmail(admin_DTO.email) == 0)
                 {
                     admin_DAO.thaydoithongtinquantrivien(admin_DTO.id, admin_DTO.email, admin_DTO.ten, admin_DTO.sodienthoai);
                     MessageBox.Show("Thay đổi thông tin thành công");

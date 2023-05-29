@@ -10,8 +10,9 @@ namespace project_tkpmnc.GUI
 {
     public partial class admin_quanlydoitac : DevExpress.XtraEditors.XtraUserControl
     {
-        DOITAC_DAO doitac_DAO = new DOITAC_DAO();
-        login_BUS login_BUS = new login_BUS();
+        //DOITAC_DAO doitac_DAO = new DOITAC_DAO();
+        doitac_BUS doitac_BUS = new doitac_BUS();
+        application_BUS application_BUS = new application_BUS();
         public admin_quanlydoitac()
         {
             InitializeComponent();
@@ -20,7 +21,7 @@ namespace project_tkpmnc.GUI
         {
             comboBox_danhmuc.SelectedIndex = 0;
             textBox_timkiem.Text = string.Empty;
-            dgv_thongtindoitac.DataSource = doitac_DAO.timdoitac();
+            dgv_thongtindoitac.DataSource = doitac_BUS.timdoitac();
         }
         private void admin_quanlydoitac_Load(object sender, EventArgs e)
         {
@@ -33,17 +34,17 @@ namespace project_tkpmnc.GUI
             switch (loai)
             {
                 case "Tên":
-                    dgv_thongtindoitac.DataSource = doitac_DAO.timdoitactheoten(search_str);
+                    dgv_thongtindoitac.DataSource = doitac_BUS.timdoitactheoten(search_str);
                     break;
                 case "Email":
-                    dgv_thongtindoitac.DataSource = doitac_DAO.timdoitacgandungtheoemail(search_str);
+                    dgv_thongtindoitac.DataSource = doitac_BUS.timdoitacgandungtheoemail(search_str);
                     break;
                 case "Số điện thoại":
-                    dgv_thongtindoitac.DataSource = doitac_DAO.timdoitactheosodienthoai(search_str);
+                    dgv_thongtindoitac.DataSource = doitac_BUS.timdoitactheosodienthoai(search_str);
                     break;
                 case "Trạng thái":
                     if (search_str == "0" || search_str == "1")
-                        dgv_thongtindoitac.DataSource = doitac_DAO.timdoitactheotrangthai(int.Parse(search_str));
+                        dgv_thongtindoitac.DataSource = doitac_BUS.timdoitactheotrangthai(int.Parse(search_str));
                     else
                         MessageBox.Show("Trạng thái chỉ nhập số 0 (chưa duyệt) và số 1 (đã duyệt)!");
                     break;
@@ -61,7 +62,7 @@ namespace project_tkpmnc.GUI
         }
         private void button_chinhsua_Click(object sender, EventArgs e)
         {
-            dgv_thongtindoitac.DataSource = doitac_DAO.timdoitactheoid(doitac_DTO.id);
+            dgv_thongtindoitac.DataSource = doitac_BUS.timdoitactheoid();
             button_save.Enabled = true;
             dgv_thongtindoitac.ReadOnly = false;
         }
@@ -74,16 +75,16 @@ namespace project_tkpmnc.GUI
             doitac_DTO.ten = row.Cells["info_ten"].Value.ToString();
             doitac_DTO.sodienthoai = row.Cells["info_dienthoai"].Value.ToString();
 
-            if (login_BUS.CheckExistEmail(doitac_DTO.email) == 0)
+            if (application_BUS.CheckExistEmail(doitac_DTO.email) == 0)
             {
-                doitac_DAO.thaydoithongtindoitac(doitac_DTO.id, doitac_DTO.email, doitac_DTO.ten, doitac_DTO.sodienthoai);
+                doitac_BUS.thaydoithongtindoitac();
                 MessageBox.Show("Thay đổi thông tin thành công!");
             }
             else
             {
                 MessageBox.Show("Email đã tồn tại trong hệ thống!");
             }
-            dgv_thongtindoitac.DataSource = doitac_DAO.timdoitactheoid(doitac_DTO.id);
+            dgv_thongtindoitac.DataSource = doitac_BUS.timdoitactheoid();
             button_save.Enabled = false;
         }
         private void button_reload_Click(object sender, EventArgs e)

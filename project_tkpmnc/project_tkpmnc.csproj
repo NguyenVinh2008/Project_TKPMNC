@@ -58,9 +58,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\chiendich_BUS.cs" />
     <Compile Include="BUS\application_BUS.cs" />
-    <Compile Include="BUS\login_BUS.cs" />
+    <Compile Include="BUS\doitac_BUS.cs" />
+    <Compile Include="BUS\nguoidung_BUS.cs" />
+    <Compile Include="BUS\phanthuong_BUS.cs" />
     <Compile Include="BUS\quayso.cs" />
+    <Compile Include="BUS\trochoi_BUS.cs" />
     <Compile Include="BUS\voucher_BUS.cs" />
     <Compile Include="DAO\admin_DAO.cs" />
     <Compile Include="DAO\chiendich_DAO.cs" />
@@ -70,7 +74,6 @@
     <Compile Include="DAO\nguoidung_DAO.cs" />
     <Compile Include="DAO\phanthuong_DAO.cs" />
     <Compile Include="DAO\thamgia_DAO.cs" />
-    <Compile Include="DAO\thongkenguoidung_DAO.cs" />
     <Compile Include="DAO\trochoi_DAO.cs" />
     <Compile Include="DAO\voucher_DAO.cs" />
     <Compile Include="DTO\admin_DTO.cs" />
@@ -170,12 +173,6 @@
     <Compile Include="GUI\nguoidung_thaydoithongtin.Designer.cs">
       <DependentUpon>nguoidung_thaydoithongtin.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\user_LottoGame.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\user_LottoGame.Designer.cs">
-      <DependentUpon>user_LottoGame.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\doitac_quanlychiendich.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -224,12 +221,6 @@
     <Compile Include="GUI\thongke_nguoidung.Designer.cs">
       <DependentUpon>thongke_nguoidung.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\user_OChuGame.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\user_OChuGame.Designer.cs">
-      <DependentUpon>user_OChuGame.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\admin_duyetchiendich.resx">
@@ -277,9 +268,6 @@
     <EmbeddedResource Include="GUI\nguoidung_thaydoithongtin.resx">
       <DependentUpon>nguoidung_thaydoithongtin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\user_LottoGame.resx">
-      <DependentUpon>user_LottoGame.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\doitac_quanlychiendich.resx">
       <DependentUpon>doitac_quanlychiendich.cs</DependentUpon>
     </EmbeddedResource>
@@ -303,9 +291,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\thongke_nguoidung.resx">
       <DependentUpon>thongke_nguoidung.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\user_OChuGame.resx">
-      <DependentUpon>user_OChuGame.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

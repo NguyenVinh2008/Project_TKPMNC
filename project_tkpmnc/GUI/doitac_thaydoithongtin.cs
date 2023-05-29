@@ -21,7 +21,7 @@ namespace project_tkpmnc.GUI
         {
             InitializeComponent();
         }
-        login_BUS login_BUS = new login_BUS();
+        application_BUS application_BUS = new application_BUS();
         DOITAC_DAO DOITAC_DAO = new DOITAC_DAO();
         private void button_capnhat_Click(object sender, EventArgs e)
         {
@@ -32,7 +32,7 @@ namespace project_tkpmnc.GUI
             if (datatable.Rows.Count == 1)/*int.Parse(datatable.Rows[0]["doitac_id"].ToString()) == 0*/
             {
                 int id = int.Parse(datatable.Rows[0]["doitac_id"].ToString());
-                if (login_BUS.CheckExistEmail(doitac_DTO.email) == 0)
+                if (application_BUS.CheckExistEmail(doitac_DTO.email) == 0)
                 {
                     DOITAC_DAO.thaydoithongtindoitac(doitac_DTO.id, doitac_DTO.email, doitac_DTO.ten, doitac_DTO.sodienthoai);
                     MessageBox.Show("Thay đổi thông tin thành công");
@@ -50,7 +50,7 @@ namespace project_tkpmnc.GUI
             }
             else
             {
-                if (login_BUS.CheckExistEmail(doitac_DTO.email) == 0)
+                if (application_BUS.CheckExistEmail(doitac_DTO.email) == 0)
                 {
                     DOITAC_DAO.thaydoithongtindoitac(doitac_DTO.id, doitac_DTO.email, doitac_DTO.ten, doitac_DTO.sodienthoai);
                     MessageBox.Show("Thay đổi thông tin thành công");
