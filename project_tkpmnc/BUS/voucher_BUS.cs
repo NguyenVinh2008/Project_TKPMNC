@@ -1,4 +1,5 @@
-﻿using project_tkpmnc.DAO;
+﻿using Phan_mem_quan_ly_voucher.DTO;
+using project_tkpmnc.DAO;
 using project_tkpmnc.DTO;
 using System;
 using System.Data;
@@ -84,6 +85,9 @@ namespace project_tkpmnc.BUS
         {
             return voucher_DAO.layvouchercuadoitactheovoucherid(doitac_DTO.id, voucher_DTO.id);
         }
-       
+        public int taovoucher()
+        {
+            return voucher_DAO.taovoucher(voucher_DTO.giatri, voucher_DTO.magiamgia);
+        }
     }
 }

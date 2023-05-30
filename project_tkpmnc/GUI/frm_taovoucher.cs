@@ -39,8 +39,6 @@ namespace project_tkpmnc.GUI
                     voucher_DAO.taovoucher(textBox_giatri.Text.ToString(), voucher_BUS.taomagiamgia());
                     voucher_DTO.id = int.Parse(voucher_DAO.layvoucheridlonnhat().Rows[0]["voucher_id"].ToString());
                     phanthuong_DAO.themphanthuong(voucher_DTO.id, int.Parse(textBox1.Text));
-
-                
             }
             MessageBox.Show("Thêm voucher vào chiến dịch thành công!");
         }

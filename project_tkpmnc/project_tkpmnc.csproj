@@ -62,6 +62,7 @@
     <Compile Include="BUS\application_BUS.cs" />
     <Compile Include="BUS\doitac_BUS.cs" />
     <Compile Include="BUS\nguoidung_BUS.cs" />
+    <Compile Include="BUS\ochu_BUS.cs" />
     <Compile Include="BUS\phanthuong_BUS.cs" />
     <Compile Include="BUS\quayso.cs" />
     <Compile Include="BUS\trochoi_BUS.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="DAO\doitac_DAO.cs" />
     <Compile Include="DAO\login_DAO.cs" />
     <Compile Include="DAO\nguoidung_DAO.cs" />
+    <Compile Include="DAO\ochu_DAO.cs" />
     <Compile Include="DAO\phanthuong_DAO.cs" />
     <Compile Include="DAO\thamgia_DAO.cs" />
     <Compile Include="DAO\trochoi_DAO.cs" />
@@ -80,6 +82,7 @@
     <Compile Include="DTO\chiendich_DTO.cs" />
     <Compile Include="DTO\doitac_DTO.cs" />
     <Compile Include="DTO\nguoidung_DTO.cs" />
+    <Compile Include="DTO\ochu_DTO.cs" />
     <Compile Include="DTO\phanthuong_DTO.cs" />
     <Compile Include="DTO\trochoi_DTO.cs" />
     <Compile Include="DTO\voucher_DTO.cs" />
@@ -142,6 +145,12 @@
     </Compile>
     <Compile Include="GUI\frm_ochu.Designer.cs">
       <DependentUpon>frm_ochu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frm_tao-cau-hoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frm_tao-cau-hoi.Designer.cs">
+      <DependentUpon>frm_tao-cau-hoi.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\frm_taochiendich.cs">
       <SubType>Form</SubType>
@@ -253,6 +262,9 @@
     <EmbeddedResource Include="GUI\frm_ochu.resx">
       <DependentUpon>frm_ochu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frm_tao-cau-hoi.resx">
+      <DependentUpon>frm_tao-cau-hoi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\frm_taochiendich.resx">
       <DependentUpon>frm_taochiendich.cs</DependentUpon>
     </EmbeddedResource>
@@ -315,11 +327,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\DISCOUNT 10%25.jpg" />
-    <Content Include="Resources\DISCOUNT 15%25.jpg" />
-    <Content Include="Resources\DISCOUNT 5%25.jpg" />
-    <Content Include="Resources\template.jpg" />
-    <None Include="Resources\template1.jpg" />
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

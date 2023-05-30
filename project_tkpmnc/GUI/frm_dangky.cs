@@ -63,5 +63,18 @@ namespace project_tkpmnc.GUI
         {
             comboBox_loaitaikhoan.SelectedIndex = 0;
         }
+
+        private void button_admin_Click(object sender, EventArgs e)
+        {
+            admin_DAO admin = new admin_DAO();
+            admin.themquantrivien("Hồ Hoàng Vũ", "hhvu92@gmail.com", "0123456789", application_BUS.GetMD5("1"));
+        }
+
+        private void button_dangnhap_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frm_dangnhap dangnhap = new frm_dangnhap();
+            dangnhap.ShowDialog();
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using project_tkpmnc.DAO;
+﻿using Phan_mem_quan_ly_voucher.DTO;
+using project_tkpmnc.DAO;
 using project_tkpmnc.DTO;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,11 @@ namespace project_tkpmnc.BUS
         public DataTable layphanthuongcuanguoidung()
         {
             return phanthuong_DAO.layphanthuongcuanguoidung(nguoidung_DTO.id);
+        }
+
+        public int themphanthuong()
+        {
+            return phanthuong_DAO.themphanthuong(voucher_DTO.id, chiendich_DTO.chiendich_id);
         }
     }
 }

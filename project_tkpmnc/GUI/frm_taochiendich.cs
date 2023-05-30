@@ -23,8 +23,8 @@ namespace project_tkpmnc.GUI
         trochoi_BUS trochoi_BUS = new trochoi_BUS();
         private void frm_taochiendich_Load(object sender, EventArgs e)
         {
-            int chiendich_id = int.Parse(chiendich_BUS.laychiendichidlonnhat().Rows[0]["chiendich_id"].ToString()) + 1;
-            textBox_chiendichid.Text = chiendich_id.ToString();
+            chiendich_DTO.chiendich_id = int.Parse(chiendich_BUS.laychiendichidlonnhat().Rows[0]["chiendich_id"].ToString()) + 1;
+            textBox_chiendichid.Text = chiendich_DTO.chiendich_id.ToString();
             textBox_nguoitao.Text = doitac_DTO.id.ToString();
             comboBox_trochoi.DataSource = trochoi_BUS.laydanhsachtrochoi();
             comboBox_trochoi.DisplayMember = "trochoi_ten";
@@ -32,13 +32,31 @@ namespace project_tkpmnc.GUI
         }
         private void button_tao_Click(object sender, EventArgs e)
         {
-            chiendich_DTO.chiendich_ten = textBox_tenchiendich.Text;
-            trochoi_DTO.id = int.Parse(comboBox_trochoi.SelectedValue.ToString());
-            chiendich_DTO.chiendich_start = dateTimePicker_start.Value.ToString("yyyy/MM/dd");
-            chiendich_DTO.chiendich_end = dateTimePicker_end.Value.ToString("yyyy/MM/dd");
-            chiendich_BUS.taochiendich();
-            MessageBox.Show("Tạo chiến dịch mới thành công!");
-            this.Close();
+            switch (comboBox_trochoi.SelectedIndex)
+            {
+                case 0:
+                    chiendich_DTO.chiendich_ten = textBox_tenchiendich.Text;
+                    trochoi_DTO.id = int.Parse(comboBox_trochoi.SelectedValue.ToString());
+                    chiendich_DTO.chiendich_start = dateTimePicker_start.Value.ToString("yyyy/MM/dd");
+                    chiendich_DTO.chiendich_end = dateTimePicker_end.Value.ToString("yyyy/MM/dd");
+                    chiendich_BUS.taochiendich();
+                    MessageBox.Show("Tạo chiến dịch mới thành công!");
+                    frm_tao_cau_hoi taocauhoi = new frm_tao_cau_hoi();
+                    taocauhoi.ShowDialog();
+                    this.Close();
+                    break;
+                case 1:
+                    chiendich_DTO.chiendich_ten = textBox_tenchiendich.Text;
+                    trochoi_DTO.id = int.Parse(comboBox_trochoi.SelectedValue.ToString());
+                    chiendich_DTO.chiendich_start = dateTimePicker_start.Value.ToString("yyyy/MM/dd");
+                    chiendich_DTO.chiendich_end = dateTimePicker_end.Value.ToString("yyyy/MM/dd");
+                    chiendich_BUS.taochiendich();
+                    MessageBox.Show("Tạo chiến dịch mới thành công!");
+                    frm_taovoucher taovoucher = new frm_taovoucher();
+                    taovoucher.ShowDialog();
+                    this.Close();
+                    break;
+            }
         }
     }
 }

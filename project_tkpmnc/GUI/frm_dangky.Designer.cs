@@ -40,6 +40,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.comboBox_loaitaikhoan = new System.Windows.Forms.ComboBox();
+            this.button_admin = new System.Windows.Forms.Button();
+            this.button_dangnhap = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label6
@@ -54,7 +56,7 @@
             // 
             // button_dangky
             // 
-            this.button_dangky.Location = new System.Drawing.Point(234, 186);
+            this.button_dangky.Location = new System.Drawing.Point(153, 186);
             this.button_dangky.Name = "button_dangky";
             this.button_dangky.Size = new System.Drawing.Size(75, 23);
             this.button_dangky.TabIndex = 6;
@@ -147,11 +149,34 @@
             this.comboBox_loaitaikhoan.Size = new System.Drawing.Size(199, 21);
             this.comboBox_loaitaikhoan.TabIndex = 5;
             // 
+            // button_admin
+            // 
+            this.button_admin.Location = new System.Drawing.Point(4, 186);
+            this.button_admin.Name = "button_admin";
+            this.button_admin.Size = new System.Drawing.Size(75, 23);
+            this.button_admin.TabIndex = 40;
+            this.button_admin.Text = "Admin";
+            this.button_admin.UseVisualStyleBackColor = true;
+            this.button_admin.Visible = false;
+            this.button_admin.Click += new System.EventHandler(this.button_admin_Click);
+            // 
+            // button_dangnhap
+            // 
+            this.button_dangnhap.Location = new System.Drawing.Point(234, 186);
+            this.button_dangnhap.Name = "button_dangnhap";
+            this.button_dangnhap.Size = new System.Drawing.Size(75, 23);
+            this.button_dangnhap.TabIndex = 41;
+            this.button_dangnhap.Text = "Đăng nhập";
+            this.button_dangnhap.UseVisualStyleBackColor = true;
+            this.button_dangnhap.Click += new System.EventHandler(this.button_dangnhap_Click);
+            // 
             // frm_dangky
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(335, 231);
+            this.Controls.Add(this.button_dangnhap);
+            this.Controls.Add(this.button_admin);
             this.Controls.Add(this.comboBox_loaitaikhoan);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
@@ -186,5 +211,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox comboBox_loaitaikhoan;
+        private System.Windows.Forms.Button button_admin;
+        private System.Windows.Forms.Button button_dangnhap;
     }
 }
