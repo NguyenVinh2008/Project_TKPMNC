@@ -21,11 +21,12 @@ namespace project_tkpmnc.GUI
         }
         voucher_BUS voucher_BUS = new voucher_BUS();
         phanthuong_BUS phanthuong_BUS = new phanthuong_BUS();
+        thamgia_BUS thamgia_BUS = new thamgia_BUS();
         int count;
-        thamgia_DAO thamgia_DAO = new thamgia_DAO();
+        //thamgia_DAO thamgia_DAO = new thamgia_DAO();
         private void button_quayso_Click(object sender, EventArgs e)
         {
-            thamgia_DAO.taonguoidungthamgiachiendich(nguoidung_DTO.id, chiendich_DTO.chiendich_id);
+            thamgia_BUS.taonguoidungthamgiachiendich();
             timer1.Enabled = !timer1.Enabled;
             button_quayso.Text = button_quayso.Text == "Dừng lại" ? "Bắt đầu" : "Dừng lại";
             if (button_quayso.Text == "Bắt đầu")

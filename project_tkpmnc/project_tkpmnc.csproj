@@ -65,6 +65,7 @@
     <Compile Include="BUS\ochu_BUS.cs" />
     <Compile Include="BUS\phanthuong_BUS.cs" />
     <Compile Include="BUS\quayso.cs" />
+    <Compile Include="BUS\thamgia_BUS.cs" />
     <Compile Include="BUS\trochoi_BUS.cs" />
     <Compile Include="BUS\voucher_BUS.cs" />
     <Compile Include="DAO\admin_DAO.cs" />

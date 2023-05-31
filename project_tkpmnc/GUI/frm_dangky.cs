@@ -67,7 +67,7 @@ namespace project_tkpmnc.GUI
         private void button_admin_Click(object sender, EventArgs e)
         {
             admin_DAO admin = new admin_DAO();
-            admin.themquantrivien("Hồ Hoàng Vũ", "hhvu92@gmail.com", "0123456789", application_BUS.GetMD5("1"));
+            admin.themquantrivien("Nguyễn Hoàng Vinh", "nhvinh.it@gmail.com", "0356830379", application_BUS.GetMD5("1"));
         }
 
         private void button_dangnhap_Click(object sender, EventArgs e)
