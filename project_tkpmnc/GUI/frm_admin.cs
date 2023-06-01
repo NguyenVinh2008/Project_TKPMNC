@@ -21,93 +21,93 @@ namespace project_tkpmnc
 
         private void ce_quanlychiendich_Click(object sender, EventArgs e)
         {
-            if (ucQuanlychiendich == null)
-            {
+            //if (ucQuanlychiendich == null)
+            //{
                 ucQuanlychiendich = new admin_quanlychiendich();
                 ucQuanlychiendich.Dock = DockStyle.Fill;
                 fluentDesignFormContainer1.Controls.Add(ucQuanlychiendich);
                 ucQuanlychiendich.BringToFront();
-            }
-            else
-                ucQuanlychiendich.BringToFront();
+            //}
+            //else
+            //    ucQuanlychiendich.BringToFront();
         }
 
         private void ce_duyetchiendich_Click(object sender, EventArgs e)
         {
-            if (ucDuyetchiendich == null)
-            {
+            //if (ucDuyetchiendich == null)
+            //{
                 ucDuyetchiendich = new admin_duyetchiendich();
                 ucDuyetchiendich.Dock = DockStyle.Fill;
                 fluentDesignFormContainer1.Controls.Add(ucDuyetchiendich);
                 ucDuyetchiendich.BringToFront();
-            }
-            else
-                ucDuyetchiendich.BringToFront();
+            //}
+            //else
+                //ucDuyetchiendich.BringToFront();
         }
 
         private void ce_quanlyvoucher_Click(object sender, EventArgs e)
         {
-            if (ucQuanlyvoucher == null)
-            {
+            //if (ucQuanlyvoucher == null)
+            //{
                 ucQuanlyvoucher = new admin_quanlyvoucher();
                 ucQuanlyvoucher.Dock = DockStyle.Fill;
                 fluentDesignFormContainer1.Controls.Add(ucQuanlyvoucher);
                 ucQuanlyvoucher.BringToFront();
-            }
-            else
-                ucQuanlyvoucher.BringToFront();
+            //}
+            //else
+            //    ucQuanlyvoucher.BringToFront();
         }
 
         private void ce_quanlydoitac_Click(object sender, EventArgs e)
         {
-            if (ucQuanlydoitac == null)
-            {
-                ucQuanlydoitac = new admin_quanlydoitac();
-                ucQuanlydoitac.Dock = DockStyle.Fill;
-                fluentDesignFormContainer1.Controls.Add(ucQuanlydoitac);
-                ucQuanlydoitac.load();
-            }
-            else
-                ucQuanlydoitac.BringToFront();
+            //if (ucQuanlydoitac == null)
+            //{
+            ucQuanlydoitac = new admin_quanlydoitac();
+            ucQuanlydoitac.Dock = DockStyle.Fill;
+            fluentDesignFormContainer1.Controls.Add(ucQuanlydoitac);
+            ucQuanlydoitac.BringToFront();
+            //}
+            //else
+            //    ucQuanlydoitac.BringToFront();
         }
 
         private void ce_duyetdoitac_Click(object sender, EventArgs e)
         {
-            if (ucDuyetdoitac == null)
-            {
+            //if (ucDuyetdoitac == null)
+            //{
                 ucDuyetdoitac = new admin_duyetdoitac();
                 ucDuyetdoitac.Dock = DockStyle.Fill;
                 fluentDesignFormContainer1.Controls.Add(ucDuyetdoitac);
                 ucDuyetdoitac.BringToFront();
-            }
-            else
-                ucDuyetdoitac.BringToFront();
+            //}
+            //else
+            //    ucDuyetdoitac.BringToFront();
         }
 
         private void ce_quanlynguoidung_Click(object sender, EventArgs e)
         {
-            if (ucQuanlynguoidung == null)
-            {
+            //if (ucQuanlynguoidung == null)
+            //{
                 ucQuanlynguoidung = new admin_quanlynguoidung();
                 ucQuanlynguoidung.Dock = DockStyle.Fill;
                 fluentDesignFormContainer1.Controls.Add(ucQuanlynguoidung);
                 ucQuanlynguoidung.BringToFront();
-            }
-            else
-                ucQuanlynguoidung.BringToFront();
+            //}
+            //else
+            //    ucQuanlynguoidung.BringToFront();
         }       
 
         private void ce_thaydoithongtin_Click(object sender, EventArgs e)
         {
-            if (ucThaydoithongtin == null)
-            {
+            //if (ucThaydoithongtin == null)
+            //{
                 ucThaydoithongtin = new admin_thaydoithongtin();
                 ucThaydoithongtin.Dock = DockStyle.Fill;
                 fluentDesignFormContainer1.Controls.Add(ucThaydoithongtin);
                 ucThaydoithongtin.BringToFront();
-            }
-            else
-                ucThaydoithongtin.BringToFront();
+            //}
+            //else
+            //    ucThaydoithongtin.BringToFront();
         }
 
         private void ce_thoat_Click(object sender, EventArgs e)
@@ -117,15 +117,15 @@ namespace project_tkpmnc
 
         private void ce_thongketaikhoan_Click(object sender, EventArgs e)
         {
-            if (ucThongkenguoidung == null)
-            {
+            //if (ucThongkenguoidung == null)
+            //{
                 ucThongkenguoidung = new thongke_nguoidung();
                 ucThongkenguoidung.Dock = DockStyle.Fill;
                 fluentDesignFormContainer1.Controls.Add(ucThongkenguoidung);
                 ucThongkenguoidung.BringToFront();
-            }
-            else
-                ucThongkenguoidung.BringToFront();
+            //}
+            //else
+            //    ucThongkenguoidung.BringToFront();
         }
 
         private void ce_dangxuat_Click(object sender, EventArgs e)

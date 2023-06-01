@@ -98,6 +98,6 @@ namespace project_tkpmnc.GUI
             MessageBox.Show("Thay đổi thông tin chiến dịch thành công!");
             dgv_thongtinchiendich.DataSource = chiendich_BUS.laychiendichtheoid();
             button_save.Enabled = false;
-        }
+        }       
     }
 }

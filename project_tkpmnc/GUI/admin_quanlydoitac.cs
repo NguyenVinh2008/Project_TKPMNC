@@ -1,7 +1,4 @@
-﻿using DevExpress.XtraPrinting.Native.LayoutAdjustment;
-using Phan_mem_quan_ly_voucher.DAO;
-using project_tkpmnc.BUS;
-using project_tkpmnc.DAO;
+﻿using project_tkpmnc.BUS;
 using project_tkpmnc.DTO;
 using System;
 using System.Windows.Forms;
@@ -10,7 +7,6 @@ namespace project_tkpmnc.GUI
 {
     public partial class admin_quanlydoitac : DevExpress.XtraEditors.XtraUserControl
     {
-        //DOITAC_DAO doitac_DAO = new DOITAC_DAO();
         doitac_BUS doitac_BUS = new doitac_BUS();
         application_BUS application_BUS = new application_BUS();
         public admin_quanlydoitac()
@@ -91,5 +87,6 @@ namespace project_tkpmnc.GUI
         {
             load();
         }
+
     }
 }

@@ -80,7 +80,6 @@ namespace project_tkpmnc.GUI
         private void frm_tao_cau_hoi_Load(object sender, EventArgs e)
         {
             ochu_DTO.ochu_id = int.Parse(ochu_BUS.layochuidtieptheo().Rows[0]["ochu_id"].ToString());
-            chiendich_DTO.chiendich_id = int.Parse(chiendich_BUS.laychiendichidlonnhat().Rows[0]["chiendich_id"].ToString());
         }
     }
 }

@@ -23,7 +23,7 @@ namespace project_tkpmnc.GUI
         trochoi_BUS trochoi_BUS = new trochoi_BUS();
         private void frm_taochiendich_Load(object sender, EventArgs e)
         {
-            chiendich_DTO.chiendich_id = int.Parse(chiendich_BUS.laychiendichidlonnhat().Rows[0]["chiendich_id"].ToString()) + 1;
+            chiendich_DTO.chiendich_id = int.Parse(chiendich_BUS.laychiendichidlonnhat().Rows[0]["chiendich_id"].ToString());
             textBox_chiendichid.Text = chiendich_DTO.chiendich_id.ToString();
             textBox_nguoitao.Text = doitac_DTO.id.ToString();
             comboBox_trochoi.DataSource = trochoi_BUS.laydanhsachtrochoi();

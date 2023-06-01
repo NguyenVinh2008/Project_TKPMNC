@@ -74,26 +74,6 @@ namespace project_tkpmnc.BUS
                 else
                     return 0;
             }
-        }
-        public DataTable tongsotaikhoan()
-        {
-            return nguoidung_DAO.tongsotaikhoan();
-        }
-        public DataTable tongsonguoidung()
-        {
-            return nguoidung_DAO.tongsonguoidung();
-        }
-        public DataTable tongsodoitac()
-        {
-            return nguoidung_DAO.tongsodoitac();
-        }
-        public DataTable tongsoquantrivien()
-        {
-            return nguoidung_DAO.tongsoquantrivien();
-        }
-        public DataTable tongsotaikhoanmoitrongthang()
-        {
-            return nguoidung_DAO.tongsotaikhoanmoitrongthang();
-        }
+        } 
     }
 }

@@ -21,15 +21,15 @@ namespace project_tkpmnc.GUI
         nguoidung_quanlyvoucher ucQuanlyvoucher;
         private void ce_thaydoithongtin_Click(object sender, EventArgs e)
         {
-            if (ucThaydoithongtin == null)
-            {
+            //if (ucThaydoithongtin == null)
+            //{
                 ucThaydoithongtin = new nguoidung_thaydoithongtin();
                 ucThaydoithongtin.Dock = DockStyle.Fill;
                 fluentDesignFormContainer1.Controls.Add(ucThaydoithongtin);
                 ucThaydoithongtin.BringToFront();
-            }
-            else
-                ucThaydoithongtin.BringToFront();
+            //}
+            //else
+            //    ucThaydoithongtin.BringToFront();
         }
 
         private void ce_exit_Click(object sender, EventArgs e)
@@ -46,28 +46,28 @@ namespace project_tkpmnc.GUI
 
         private void ce_thamgiatrochoi_Click(object sender, EventArgs e)
         {
-            if (ucThamgiatrochoi == null)
-            {
+            //if (ucThamgiatrochoi == null)
+            //{
                 ucThamgiatrochoi = new nguoidung_thamgiatrochoi();
                 ucThamgiatrochoi.Dock = DockStyle.Fill;
                 fluentDesignFormContainer1.Controls.Add(ucThamgiatrochoi);
                 ucThamgiatrochoi.BringToFront();
-            }
-            else
-                ucThamgiatrochoi.BringToFront();
+            //}
+            //else
+            //    ucThamgiatrochoi.BringToFront();
         }
 
         private void ce_quanlyvoucher_Click(object sender, EventArgs e)
         {
-            if (ucQuanlyvoucher == null)
-            {
+            //if (ucQuanlyvoucher == null)
+            //{
                 ucQuanlyvoucher = new nguoidung_quanlyvoucher();
                 ucQuanlyvoucher.Dock = DockStyle.Fill;
                 fluentDesignFormContainer1.Controls.Add(ucQuanlyvoucher);
                 ucQuanlyvoucher.BringToFront();
-            }
-            else
-                ucQuanlyvoucher.BringToFront();
+            //}
+            //else
+            //    ucQuanlyvoucher.BringToFront();
         }
     }
 }
