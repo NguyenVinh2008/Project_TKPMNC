@@ -135,6 +135,12 @@
     <Compile Include="GUI\admin_thaydoithongtin.Designer.cs">
       <DependentUpon>admin_thaydoithongtin.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\doitac_thongkehethong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\doitac_thongkehethong.Designer.cs">
+      <DependentUpon>doitac_thongkehethong.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frm_mayman.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -259,6 +265,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\admin_thaydoithongtin.resx">
       <DependentUpon>admin_thaydoithongtin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\doitac_thongkehethong.resx">
+      <DependentUpon>doitac_thongkehethong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frm_mayman.resx">
       <DependentUpon>frm_mayman.cs</DependentUpon>

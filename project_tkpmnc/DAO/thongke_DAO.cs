@@ -1,10 +1,5 @@
 ﻿using Phan_mem_quan_ly_voucher.DTO;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace project_tkpmnc.DAO
 {
@@ -31,12 +26,6 @@ namespace project_tkpmnc.DAO
             string sql = "EXEC SELECT_TONG_SO_QUAN_TRI_VIEN";
             return db.laydulieu(sql);
         }
-        public DataTable tongsotaikhoanmoitrongthang()
-        {
-            string sql = "EXEC SELECT_TONG_SO_TAI_KHOAN_MOI_TRONG_THANG";
-            return db.laydulieu(sql);
-        }
-
         public DataTable tongsochiendich()
         {
             string sql = "EXEC SELECT_TONGSO_CHIENDICH";
@@ -82,7 +71,6 @@ namespace project_tkpmnc.DAO
             string sql = "EXEC SELECT_CHIENDICH_START_THEOTHANG'" + thang + "'";
             return db.laydulieu(sql);
         }
-
         public DataTable sotaikhoanmoitrongthang(int thang)
         {
             string sql = "EXEC SELECT_TONG_SO_TAI_KHOAN_MOI_TRONG_THANG'" + thang + "'";
@@ -91,6 +79,31 @@ namespace project_tkpmnc.DAO
         public DataTable sovouchernmoitrongthang(int thang)
         {
             string sql = "EXEC SELECT_TONG_SO_VOUCHER_MOI_TRONG_THANG'" + thang + "'";
+            return db.laydulieu(sql);
+        }
+        public DataTable sovouchercuadoitac(int id)
+        {
+            string sql = "EXEC select_voucher_theo_doitac_id'" + id + "'";
+            return db.laydulieu(sql);
+        }
+        public DataTable sovouchercuadoitactheotrangthai(int doitac_id, int trangthai_id)
+        {
+            string sql = "EXEC SELECT_VOUCHER_TRANGTHAI_THEO_DOITAC_ID '" + doitac_id + "','" + trangthai_id + "'";
+            return db.laydulieu(sql);
+        }
+        public DataTable sovouchercuadoitactheothangvanam(int doitac_id, int thang, int nam)
+        {
+            string sql = "EXEC SELECT_VOUCHER_CUADOITAC_THEOTHANGVANAM'" + doitac_id + "','" + thang + "','" + nam + "'";
+            return db.laydulieu(sql);
+        }
+        public DataTable sochiendichcuadoitactheotrangthai(int doitac_id, int trangthai_id)
+        {
+            string sql = "EXEC select_chiendich_trangthai_cuadoitac'" + doitac_id + "','" + trangthai_id + "'";
+            return db.laydulieu(sql);
+        }
+        public DataTable sochiendichcuadoitactheothangvanam(int doitac_id, int thang, int nam)
+        {
+            string sql = "EXEC SELECT_CHIENDICH_START_CUADOITAC_THEOTHANGVANAM'" + doitac_id + "','" + thang + "','" + nam + "'";
             return db.laydulieu(sql);
         }
     }

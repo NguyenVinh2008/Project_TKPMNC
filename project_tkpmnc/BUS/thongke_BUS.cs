@@ -28,10 +28,6 @@ namespace project_tkpmnc.BUS
         {
             return thongke_DAO.tongsoquantrivien();
         }
-        public DataTable tongsotaikhoanmoitrongthang()
-        {
-            return thongke_DAO.tongsotaikhoanmoitrongthang();
-        }
         public DataTable tongsochiendich()
         {
             return thongke_DAO.tongsochiendich();
@@ -64,10 +60,6 @@ namespace project_tkpmnc.BUS
         {
             return thongke_DAO.tongsovoucherdasudung();
         }
-        public DataTable chiendichtheothang(int thang)
-        {
-            return thongke_DAO.sochiendichtheothang(thang);
-        }
         public DataTable thongkechiendich()
         {
             thongke_DTO.tongso_chiendich = int.Parse(tongsochiendich().Rows.Count.ToString());
@@ -83,9 +75,6 @@ namespace project_tkpmnc.BUS
             table_chiendich.Rows.Add("Đã duyệt", thongke_DTO.chiendich_daduyet);
             table_chiendich.Rows.Add("Đã dừng", thongke_DTO.chiendich_dadung);
             return table_chiendich;
-            // Gắn dữ liệu vào bảng
-            //dataGridView_Data.DataSource = table_chiendich;
-            //bieudotron(table_chiendich, "Thống kê chiến dịch theo trạng thái", "Chiến dịch", "Số lượng");
         }
         public DataTable thongkechiendichtheothang()
         {
@@ -99,7 +88,7 @@ namespace project_tkpmnc.BUS
             {
                 DataRow row = data.NewRow();
                 row["Tháng"] = "Tháng " + i;
-                row["Số lượng"] = int.Parse(chiendichtheothang(i).Rows.Count.ToString());
+                row["Số lượng"] = int.Parse(thongke_DAO.sochiendichtheothang(i).Rows.Count.ToString());
                 data.Rows.Add(row);
             }
             return data;
@@ -118,25 +107,6 @@ namespace project_tkpmnc.BUS
             table_voucher.Rows.Add("Đã phát", thongke_DTO.voucher_daphat);
             table_voucher.Rows.Add("Đã sử dụng", thongke_DTO.voucher_dasudung);
             return table_voucher;
-        }
-        public DataTable thongkevouchertheothang()
-        {
-            DataTable data = new DataTable();
-
-            // Tạo DataTable với 2 cột (Tháng và Số lượng)
-            data.Columns.Add("Tháng", typeof(string));
-            data.Columns.Add("Số lượng", typeof(int));
-
-
-            // Tạo hàng dữ liệu đầu tiên (tháng)
-            for (int i = 1; i < 13; i++)
-            {
-                DataRow row = data.NewRow();
-                row["Tháng"] = "Tháng " + i;
-                row["Số lượng"] = int.Parse(chiendichtheothang(i).Rows.Count.ToString());
-                data.Rows.Add(row);
-            }
-            return data;
         }
         public DataTable thongkenguoidung()
         {
@@ -185,6 +155,69 @@ namespace project_tkpmnc.BUS
                 DataRow row = data.NewRow();
                 row["Tháng"] = "Tháng " + i;
                 row["Số lượng"] = int.Parse(thongke_DAO.sovouchernmoitrongthang(i).Rows.Count.ToString());
+                data.Rows.Add(row);
+            }
+            return data;
+        }
+        public DataTable sovouchercuadoitactheotrangthai()
+        {
+            thongke_DTO.voucher_chuaphat = int.Parse(thongke_DAO.sovouchercuadoitactheotrangthai(doitac_DTO.id, 0).Rows.Count.ToString());
+            thongke_DTO.voucher_daphat = int.Parse(thongke_DAO.sovouchercuadoitactheotrangthai(doitac_DTO.id, 1).Rows.Count.ToString());
+            thongke_DTO.voucher_dasudung = int.Parse(thongke_DAO.sovouchercuadoitactheotrangthai(doitac_DTO.id, 2).Rows.Count.ToString());
+            DataTable table_voucher = new DataTable();
+            table_voucher.Columns.Add("Voucher");
+            table_voucher.Columns.Add("Số lượng", typeof(double));
+            // Thêm dữ liệu vào DataTable
+            table_voucher.Rows.Add("Chưa phát", thongke_DTO.voucher_chuaphat);
+            table_voucher.Rows.Add("Đã phát", thongke_DTO.voucher_daphat);
+            table_voucher.Rows.Add("Đã sử dụng", thongke_DTO.voucher_dasudung);
+            return table_voucher;
+        }
+        public DataTable sovouchercuadoitactheothangvanam(int nam)
+        {
+            DataTable data = new DataTable();
+
+            // Tạo DataTable với 2 cột (Tháng và Số lượng)
+            data.Columns.Add("Tháng", typeof(string));
+            data.Columns.Add("Số lượng", typeof(int));
+            // Tạo hàng dữ liệu đầu tiên (tháng)
+            for (int i = 1; i < 13; i++)
+            {
+                DataRow row = data.NewRow();
+                row["Tháng"] = "Tháng " + i;
+                row["Số lượng"] = int.Parse(thongke_DAO.sovouchercuadoitactheothangvanam(doitac_DTO.id,i, nam).Rows.Count.ToString());
+                data.Rows.Add(row);
+            }
+            return data;
+        }
+        public DataTable sochiendichcuadoitactheotrangthai()
+        {
+            thongke_DTO.chiendich_chuaduyet = int.Parse(thongke_DAO.sochiendichcuadoitactheotrangthai(doitac_DTO.id, 0).Rows.Count.ToString());
+            thongke_DTO.chiendich_daduyet = int.Parse(thongke_DAO.sochiendichcuadoitactheotrangthai(doitac_DTO.id, 1).Rows.Count.ToString());
+            thongke_DTO.chiendich_dadung = int.Parse(thongke_DAO.sochiendichcuadoitactheotrangthai(doitac_DTO.id, 2).Rows.Count.ToString());
+            DataTable table = new DataTable();
+            table.Columns.Add("Chiến dịch");
+            table.Columns.Add("Số lượng", typeof(double));
+
+            // Thêm dữ liệu vào DataTable
+            table.Rows.Add("Chưa duyệt", thongke_DTO.chiendich_chuaduyet);
+            table.Rows.Add("Đã duyệt", thongke_DTO.chiendich_daduyet);
+            table.Rows.Add("Đã dừng", thongke_DTO.chiendich_dadung);
+            return table;
+        }
+        public DataTable sochiendichcuadoitactheothangvanam(int nam)
+        {
+            DataTable data = new DataTable();
+
+            // Tạo DataTable với 2 cột (Tháng và Số lượng)
+            data.Columns.Add("Tháng", typeof(string));
+            data.Columns.Add("Số lượng", typeof(int));
+            // Tạo hàng dữ liệu đầu tiên (tháng)
+            for (int i = 1; i < 13; i++)
+            {
+                DataRow row = data.NewRow();
+                row["Tháng"] = "Tháng " + i;
+                row["Số lượng"] = int.Parse(thongke_DAO.sochiendichcuadoitactheothangvanam(doitac_DTO.id, i, nam).Rows.Count.ToString());
                 data.Rows.Add(row);
             }
             return data;

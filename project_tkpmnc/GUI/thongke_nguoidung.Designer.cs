@@ -59,7 +59,7 @@
             this.dataGridView_Data.Name = "dataGridView_Data";
             this.dataGridView_Data.ReadOnly = true;
             this.dataGridView_Data.RowHeadersVisible = false;
-            this.dataGridView_Data.Size = new System.Drawing.Size(479, 208);
+            this.dataGridView_Data.Size = new System.Drawing.Size(393, 208);
             this.dataGridView_Data.TabIndex = 43;
             // 
             // chart
@@ -74,7 +74,7 @@
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chart.Series.Add(series1);
-            this.chart.Size = new System.Drawing.Size(479, 334);
+            this.chart.Size = new System.Drawing.Size(393, 334);
             this.chart.TabIndex = 44;
             this.chart.Text = "chart1";
             // 
@@ -120,13 +120,13 @@
             this.dataGridView_Data2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView_Data2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView_Data2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_Data2.Location = new System.Drawing.Point(488, 3);
+            this.dataGridView_Data2.Location = new System.Drawing.Point(402, 3);
             this.dataGridView_Data2.Name = "dataGridView_Data2";
             this.dataGridView_Data2.ReadOnly = true;
             this.dataGridView_Data2.RowHeadersVisible = false;
             this.dataGridView_Data2.RowTemplate.ReadOnly = true;
             this.dataGridView_Data2.ShowEditingIcon = false;
-            this.dataGridView_Data2.Size = new System.Drawing.Size(791, 269);
+            this.dataGridView_Data2.Size = new System.Drawing.Size(877, 269);
             this.dataGridView_Data2.TabIndex = 49;
             // 
             // chart2
@@ -137,13 +137,13 @@
             this.chart2.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
             this.chart2.Legends.Add(legend2);
-            this.chart2.Location = new System.Drawing.Point(488, 278);
+            this.chart2.Location = new System.Drawing.Point(402, 278);
             this.chart2.Name = "chart2";
             series2.ChartArea = "ChartArea1";
             series2.Legend = "Legend1";
             series2.Name = "Series1";
             this.chart2.Series.Add(series2);
-            this.chart2.Size = new System.Drawing.Size(792, 334);
+            this.chart2.Size = new System.Drawing.Size(878, 334);
             this.chart2.TabIndex = 50;
             this.chart2.Text = "chart1";
             // 

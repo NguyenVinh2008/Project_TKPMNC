@@ -11,6 +11,7 @@ namespace Phan_mem_quan_ly_voucher.DTO
         {
             SqlConnection conn = new SqlConnection(connectionstr);
             SqlDataAdapter da = new SqlDataAdapter(sql, conn);
+            
             DataTable dt = new DataTable();
             da.Fill(dt);
             return dt;

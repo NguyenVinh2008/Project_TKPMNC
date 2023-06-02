@@ -13,6 +13,7 @@ namespace project_tkpmnc
         doitac_quanlychiendich ucQuanlychiendich;
         doitac_quanlyvoucher ucQuanlyvoucher;
         doitac_thaydoithongtin ucThaydoithongtin;
+        doitac_thongkehethong ucThongkehethong;
         private void ce_quanlychiendich_Click(object sender, EventArgs e)
         {
             //if (ucQuanlychiendich == null)
@@ -62,6 +63,14 @@ namespace project_tkpmnc
             this.Hide();
             frm_dangnhap dangnhap = new frm_dangnhap();
             dangnhap.ShowDialog();
+        }
+
+        private void ce_thongke_Click(object sender, EventArgs e)
+        {
+            ucThongkehethong = new doitac_thongkehethong();
+            ucThongkehethong.Dock = DockStyle.Fill;
+            fluentDesignFormContainer1.Controls.Add(ucThongkehethong);
+            ucThongkehethong.BringToFront();
         }
     }
 }
