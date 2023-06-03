@@ -1,12 +1,6 @@
 ﻿using project_tkpmnc.BUS;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 
@@ -79,10 +73,6 @@ namespace project_tkpmnc.GUI
         {
             comboBox_trangthai.SelectedIndex = 0;
             comboBox_nam.SelectedIndex = 0;
-            //dataGridView_Data.DataSource = thongke_BUS.sovouchercuadoitactheotrangthai();
-            //bieudotron(thongke_BUS.sovouchercuadoitactheotrangthai(), "Voucher theo trạng thái", "Voucher", "Số lượng");
-            //dataGridView_Data2.DataSource = thongke_BUS.sovouchercuadoitactheothangvanam(int.Parse(comboBox_nam.SelectedItem.ToString()));
-            //bieudocot(thongke_BUS.sovouchercuadoitactheothangvanam(int.Parse(comboBox_nam.SelectedItem.ToString())), "Voucher mới theo tháng trong năm " + comboBox_nam.SelectedItem.ToString(), "Tháng", "Số lượng");
         }
         private void bieudocottheonam(DataTable table, string name)
         {

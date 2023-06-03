@@ -15,6 +15,9 @@ namespace project_tkpmnc.GUI
         }
         public void load()
         {
+            label1.Visible = false;
+            textBox_timkiem.Visible = false;
+            button_timkiem.Visible = false;
             dgv_thongtinnguoidung.DataSource = nguoidung_BUS.timnguoidung();
         }
         private void admin_quanlynguoidung_Load(object sender, EventArgs e)
@@ -72,6 +75,33 @@ namespace project_tkpmnc.GUI
         private void button_reload_Click(object sender, EventArgs e)
         {
             load();
+        }
+
+        private void comboBox_danhmuc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string loai = comboBox_danhmuc.SelectedItem.ToString();
+            textBox_timkiem.Text = null;
+            switch (loai)
+            {
+                case "Toàn bộ":
+                    load();
+                    break;
+                case "Tên":
+                    label1.Visible = true;
+                    textBox_timkiem.Visible = true;
+                    button_timkiem.Visible = true;
+                    break;
+                case "Email":
+                    label1.Visible = true;
+                    textBox_timkiem.Visible = true;
+                    button_timkiem.Visible = true;
+                    break;
+                case "Số điện thoại":
+                    label1.Visible = true;
+                    textBox_timkiem.Visible = true;
+                    button_timkiem.Visible = true;
+                    break;
+            }
         }
     }
 }

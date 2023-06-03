@@ -176,7 +176,7 @@
             // 
             this.ce_thongketaikhoan.Name = "ce_thongketaikhoan";
             this.ce_thongketaikhoan.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.ce_thongketaikhoan.Text = "Thống kê tài khoản";
+            this.ce_thongketaikhoan.Text = "Thống kê hệ thống";
             this.ce_thongketaikhoan.Click += new System.EventHandler(this.ce_thongketaikhoan_Click);
             // 
             // accordionControlElement5

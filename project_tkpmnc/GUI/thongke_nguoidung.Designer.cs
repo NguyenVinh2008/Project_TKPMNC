@@ -41,6 +41,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView_Data2 = new System.Windows.Forms.DataGridView();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.label3 = new System.Windows.Forms.Label();
+            this.comboBox_nam = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Data2)).BeginInit();
@@ -55,11 +57,11 @@
             this.dataGridView_Data.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView_Data.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView_Data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_Data.Location = new System.Drawing.Point(3, 64);
+            this.dataGridView_Data.Location = new System.Drawing.Point(3, 91);
             this.dataGridView_Data.Name = "dataGridView_Data";
             this.dataGridView_Data.ReadOnly = true;
             this.dataGridView_Data.RowHeadersVisible = false;
-            this.dataGridView_Data.Size = new System.Drawing.Size(393, 208);
+            this.dataGridView_Data.Size = new System.Drawing.Size(393, 181);
             this.dataGridView_Data.TabIndex = 43;
             // 
             // chart
@@ -95,9 +97,9 @@
             "Người dùng",
             "Chiến dịch",
             "Voucher"});
-            this.comboBox_thongke.Location = new System.Drawing.Point(81, 37);
+            this.comboBox_thongke.Location = new System.Drawing.Point(109, 37);
             this.comboBox_thongke.Name = "comboBox_thongke";
-            this.comboBox_thongke.Size = new System.Drawing.Size(121, 21);
+            this.comboBox_thongke.Size = new System.Drawing.Size(97, 21);
             this.comboBox_thongke.TabIndex = 46;
             this.comboBox_thongke.SelectedIndexChanged += new System.EventHandler(this.comboBox_thongke_SelectedIndexChanged);
             // 
@@ -106,9 +108,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(3, 40);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 13);
+            this.label2.Size = new System.Drawing.Size(100, 13);
             this.label2.TabIndex = 47;
-            this.label2.Text = "Loại thống kê";
+            this.label2.Text = "Thống kê trạng thái";
             // 
             // dataGridView_Data2
             // 
@@ -147,10 +149,34 @@
             this.chart2.TabIndex = 50;
             this.chart2.Text = "chart1";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(0, 67);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(100, 13);
+            this.label3.TabIndex = 52;
+            this.label3.Text = "Thống kê theo năm";
+            // 
+            // comboBox_nam
+            // 
+            this.comboBox_nam.FormattingEnabled = true;
+            this.comboBox_nam.Items.AddRange(new object[] {
+            "2023",
+            "2024",
+            "2025"});
+            this.comboBox_nam.Location = new System.Drawing.Point(109, 64);
+            this.comboBox_nam.Name = "comboBox_nam";
+            this.comboBox_nam.Size = new System.Drawing.Size(97, 21);
+            this.comboBox_nam.TabIndex = 51;
+            this.comboBox_nam.SelectedIndexChanged += new System.EventHandler(this.comboBox_nam_SelectedIndexChanged);
+            // 
             // thongke_nguoidung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.comboBox_nam);
             this.Controls.Add(this.chart2);
             this.Controls.Add(this.dataGridView_Data2);
             this.Controls.Add(this.label2);
@@ -178,5 +204,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView_Data2;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox comboBox_nam;
     }
 }

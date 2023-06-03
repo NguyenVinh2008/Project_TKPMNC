@@ -32,11 +32,10 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgv_danhsachchoduyet = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.button_huy = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button_timkiem = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_danhsachchoduyet)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -87,7 +86,6 @@
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.comboBox1);
-            this.groupBox2.Controls.Add(this.button_timkiem);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.button_huy);
             this.groupBox2.Controls.Add(this.button_duyet);
@@ -97,6 +95,29 @@
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thao tác";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Toàn bộ",
+            "Chưa duyệt",
+            "Đã duyệt",
+            "Đã hủy"});
+            this.comboBox1.Location = new System.Drawing.Point(61, 13);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 6;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Tìm kiếm";
             // 
             // button_huy
             // 
@@ -117,38 +138,6 @@
             this.label6.Size = new System.Drawing.Size(295, 25);
             this.label6.TabIndex = 25;
             this.label6.Text = "Thay đổi trạng thái chiến dịch";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Tìm kiếm";
-            // 
-            // button_timkiem
-            // 
-            this.button_timkiem.Location = new System.Drawing.Point(188, 11);
-            this.button_timkiem.Name = "button_timkiem";
-            this.button_timkiem.Size = new System.Drawing.Size(75, 23);
-            this.button_timkiem.TabIndex = 5;
-            this.button_timkiem.Text = "Tìm kiếm";
-            this.button_timkiem.UseVisualStyleBackColor = true;
-            this.button_timkiem.Click += new System.EventHandler(this.button_timkiem_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Toàn bộ",
-            "Chưa duyệt",
-            "Đã duyệt",
-            "Đã hủy"});
-            this.comboBox1.Location = new System.Drawing.Point(61, 13);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 6;
             // 
             // admin_duyetchiendich
             // 
@@ -178,7 +167,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button_huy;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button_timkiem;
         private System.Windows.Forms.Label label1;
     }
 }

@@ -81,6 +81,7 @@
             this.comboBox_timkiem.Name = "comboBox_timkiem";
             this.comboBox_timkiem.Size = new System.Drawing.Size(121, 21);
             this.comboBox_timkiem.TabIndex = 6;
+            this.comboBox_timkiem.SelectedIndexChanged += new System.EventHandler(this.comboBox_timkiem_SelectedIndexChanged);
             // 
             // button_timkiem
             // 

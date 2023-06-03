@@ -66,19 +66,19 @@ namespace project_tkpmnc.DAO
             string sql = "EXEC SELECT_TONGSO_VOUCHER_THEO_TRANGTHAI 2";
             return db.laydulieu(sql);
         }
-        public DataTable sochiendichtheothang(int thang)
+        public DataTable sochiendichtheothangvanam(int thang, int nam)
         {
-            string sql = "EXEC SELECT_CHIENDICH_START_THEOTHANG'" + thang + "'";
+            string sql = "EXEC SELECT_CHIENDICH_START_THEOTHANG'" + thang +"','" +nam+"'";
             return db.laydulieu(sql);
         }
-        public DataTable sotaikhoanmoitrongthang(int thang)
+        public DataTable sotaikhoanmoitrongthang(int thang, int nam)
         {
-            string sql = "EXEC SELECT_TONG_SO_TAI_KHOAN_MOI_TRONG_THANG'" + thang + "'";
+            string sql = "EXEC SELECT_TONG_SO_TAI_KHOAN_MOI_TRONG_THANG'" + thang + "','" + nam + "'";
             return db.laydulieu(sql);
         }
-        public DataTable sovouchernmoitrongthang(int thang)
+        public DataTable sovouchernmoitrongthang(int thang, int nam)
         {
-            string sql = "EXEC SELECT_TONG_SO_VOUCHER_MOI_TRONG_THANG'" + thang + "'";
+            string sql = "EXEC SELECT_TONG_SO_VOUCHER_MOI_TRONG_THANG'" + thang + "','" + nam + "'";
             return db.laydulieu(sql);
         }
         public DataTable sovouchercuadoitac(int id)

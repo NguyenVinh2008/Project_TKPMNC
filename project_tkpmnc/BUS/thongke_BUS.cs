@@ -76,7 +76,7 @@ namespace project_tkpmnc.BUS
             table_chiendich.Rows.Add("Đã dừng", thongke_DTO.chiendich_dadung);
             return table_chiendich;
         }
-        public DataTable thongkechiendichtheothang()
+        public DataTable thongkechiendichtheothangvanam(int nam)
         {
             DataTable data = new DataTable();
 
@@ -88,7 +88,7 @@ namespace project_tkpmnc.BUS
             {
                 DataRow row = data.NewRow();
                 row["Tháng"] = "Tháng " + i;
-                row["Số lượng"] = int.Parse(thongke_DAO.sochiendichtheothang(i).Rows.Count.ToString());
+                row["Số lượng"] = int.Parse(thongke_DAO.sochiendichtheothangvanam(i, nam).Rows.Count.ToString());
                 data.Rows.Add(row);
             }
             return data;
@@ -125,7 +125,7 @@ namespace project_tkpmnc.BUS
             table_nguoidung.Rows.Add("Quản trị viên", thongke_DTO.so_quantrivien);
             return table_nguoidung;
         }
-        public DataTable thongkenguoidungmoitheothang()
+        public DataTable thongkenguoidungmoitheothang(int nam)
         {
             DataTable data = new DataTable();
 
@@ -137,12 +137,12 @@ namespace project_tkpmnc.BUS
             {
                 DataRow row = data.NewRow();
                 row["Tháng"] = "Tháng " + i;
-                row["Số lượng"] = int.Parse(thongke_DAO.sotaikhoanmoitrongthang(i).Rows.Count.ToString());
+                row["Số lượng"] = int.Parse(thongke_DAO.sotaikhoanmoitrongthang(i, nam).Rows.Count.ToString());
                 data.Rows.Add(row);
             }
             return data;
         }
-        public DataTable thongkevouchermoitheothang()
+        public DataTable thongkevouchermoitheothang(int nam)
         {
             DataTable data = new DataTable();
 
@@ -154,7 +154,7 @@ namespace project_tkpmnc.BUS
             {
                 DataRow row = data.NewRow();
                 row["Tháng"] = "Tháng " + i;
-                row["Số lượng"] = int.Parse(thongke_DAO.sovouchernmoitrongthang(i).Rows.Count.ToString());
+                row["Số lượng"] = int.Parse(thongke_DAO.sovouchernmoitrongthang(i, nam).Rows.Count.ToString());
                 data.Rows.Add(row);
             }
             return data;

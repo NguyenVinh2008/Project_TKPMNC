@@ -74,18 +74,26 @@ namespace project_tkpmnc.GUI
                     {
                         textBox_noidung.Visible = false;
                         label_noidungtimkiem.Visible = false;
+                        button_timkiem.Enabled = false;
+                        load_data();
                         break;
                     }
                 case 1:
                     {
+                        chiendich_DTO.trangthai = 0;
+                        dgv_thongtinchiendich.DataSource = chiendich_BUS.timkiemtheotrangthai();
                         textBox_noidung.Visible = false;
                         label_noidungtimkiem.Visible = false;
+                        button_timkiem.Enabled = false;
                         break;
                     }
                 case 2:
                     {
+                        chiendich_DTO.trangthai = 1;
+                        dgv_thongtinchiendich.DataSource = chiendich_BUS.timkiemtheotrangthai();
                         textBox_noidung.Visible = false;
                         label_noidungtimkiem.Visible = false;
+                        button_timkiem.Enabled = false;
                         break;
                     }
                 case 3:
@@ -94,6 +102,7 @@ namespace project_tkpmnc.GUI
                         label_noidungtimkiem.Visible = true;
                         textBox_noidung.ReadOnly = false;
                         label_noidungtimkiem.Text = "Đối tác ID:";
+                        button_timkiem.Enabled = true;
                         break;
                     }
                 case 4:
@@ -102,6 +111,7 @@ namespace project_tkpmnc.GUI
                         label_noidungtimkiem.Visible = true;
                         textBox_noidung.ReadOnly = false;
                         label_noidungtimkiem.Text = "Tên chiến dịch:";
+                        button_timkiem.Enabled = true;
                         break;
                     }
             }

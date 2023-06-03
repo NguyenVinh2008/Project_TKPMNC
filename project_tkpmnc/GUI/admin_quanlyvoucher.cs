@@ -75,5 +75,27 @@ namespace project_tkpmnc.GUI
             dgv_thongtinvoucher.DataSource = voucher_BUS.layvouchertheovoucherid();
             button_save.Enabled = false;
         }
+
+        private void comboBox_timkiem_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (comboBox_timkiem.SelectedIndex)
+            {
+                case 0:
+                    load_data();
+                    break;
+                case 1:
+                    voucher_DTO.trangthai = 0;
+                    dgv_thongtinvoucher.DataSource = voucher_BUS.layvouchertheotrangthai();
+                    break;
+                case 2:
+                    voucher_DTO.trangthai = 1;
+                    dgv_thongtinvoucher.DataSource = voucher_BUS.layvouchertheotrangthai();
+                    break;
+                case 3:
+                    voucher_DTO.trangthai = 2;
+                    dgv_thongtinvoucher.DataSource = voucher_BUS.layvouchertheotrangthai();
+                    break;
+            }
+        }
     }
 }

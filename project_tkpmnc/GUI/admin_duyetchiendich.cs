@@ -61,15 +61,39 @@ namespace project_tkpmnc.GUI
                     break;
                 case 1:
                     chiendich_DTO.trangthai = 0;
+                    dgv_danhsachchoduyet.DataSource = chiendich_BUS.timkiemtheotrangthai();
                     break;
                 case 2:
                     chiendich_DTO.trangthai = 1;
+                    dgv_danhsachchoduyet.DataSource = chiendich_BUS.timkiemtheotrangthai();
                     break;
                 case 3:
                     chiendich_DTO.trangthai = 2;
+                    dgv_danhsachchoduyet.DataSource = chiendich_BUS.timkiemtheotrangthai();
                     break;
             }
-            dgv_danhsachchoduyet.DataSource = chiendich_BUS.timkiemtheotrangthai();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (comboBox1.SelectedIndex)
+            {
+                case 0:
+                    load_data();
+                    break;
+                case 1:
+                    chiendich_DTO.trangthai = 0;
+                    dgv_danhsachchoduyet.DataSource = chiendich_BUS.timkiemtheotrangthai();
+                    break;
+                case 2:
+                    chiendich_DTO.trangthai = 1;
+                    dgv_danhsachchoduyet.DataSource = chiendich_BUS.timkiemtheotrangthai();
+                    break;
+                case 3:
+                    chiendich_DTO.trangthai = 2;
+                    dgv_danhsachchoduyet.DataSource = chiendich_BUS.timkiemtheotrangthai();
+                    break;
+            }
         }
     }
 }

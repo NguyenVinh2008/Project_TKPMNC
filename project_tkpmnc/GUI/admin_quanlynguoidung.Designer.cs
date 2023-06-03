@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button_reload = new System.Windows.Forms.Button();
             this.button_save = new System.Windows.Forms.Button();
             this.comboBox_danhmuc = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -49,7 +48,6 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.button_reload);
             this.groupBox1.Controls.Add(this.button_save);
             this.groupBox1.Controls.Add(this.comboBox_danhmuc);
             this.groupBox1.Controls.Add(this.label2);
@@ -64,20 +62,10 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thao tác";
             // 
-            // button_reload
-            // 
-            this.button_reload.Location = new System.Drawing.Point(6, 41);
-            this.button_reload.Name = "button_reload";
-            this.button_reload.Size = new System.Drawing.Size(75, 23);
-            this.button_reload.TabIndex = 8;
-            this.button_reload.Text = "Tải lại";
-            this.button_reload.UseVisualStyleBackColor = true;
-            this.button_reload.Click += new System.EventHandler(this.button_reload_Click);
-            // 
             // button_save
             // 
             this.button_save.Enabled = false;
-            this.button_save.Location = new System.Drawing.Point(168, 41);
+            this.button_save.Location = new System.Drawing.Point(87, 41);
             this.button_save.Name = "button_save";
             this.button_save.Size = new System.Drawing.Size(75, 23);
             this.button_save.TabIndex = 7;
@@ -89,6 +77,7 @@
             // 
             this.comboBox_danhmuc.FormattingEnabled = true;
             this.comboBox_danhmuc.Items.AddRange(new object[] {
+            "Toàn bộ",
             "Tên",
             "Email",
             "Số điện thoại"});
@@ -96,6 +85,7 @@
             this.comboBox_danhmuc.Name = "comboBox_danhmuc";
             this.comboBox_danhmuc.Size = new System.Drawing.Size(134, 21);
             this.comboBox_danhmuc.TabIndex = 6;
+            this.comboBox_danhmuc.SelectedIndexChanged += new System.EventHandler(this.comboBox_danhmuc_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -134,7 +124,7 @@
             // 
             // button_chinhsua
             // 
-            this.button_chinhsua.Location = new System.Drawing.Point(87, 41);
+            this.button_chinhsua.Location = new System.Drawing.Point(6, 41);
             this.button_chinhsua.Name = "button_chinhsua";
             this.button_chinhsua.Size = new System.Drawing.Size(75, 23);
             this.button_chinhsua.TabIndex = 0;
@@ -203,7 +193,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button_reload;
         private System.Windows.Forms.Button button_save;
         private System.Windows.Forms.ComboBox comboBox_danhmuc;
         private System.Windows.Forms.Label label2;

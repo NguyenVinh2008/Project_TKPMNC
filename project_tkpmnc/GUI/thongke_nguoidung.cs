@@ -1,12 +1,9 @@
 ﻿using project_tkpmnc.BUS;
 using System;
-using System.Windows.Forms;
-using DevExpress.XtraCharts;
-using project_tkpmnc.DTO;
 using System.Data;
+using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using Series = System.Windows.Forms.DataVisualization.Charting.Series;
-using System.Linq;
 
 namespace project_tkpmnc.GUI
 {
@@ -60,73 +57,72 @@ namespace project_tkpmnc.GUI
                 series.Points.AddXY(month, quantity);
             }
 
-            // Thêm series vào biểu đồ
-            chart2.Series.Add(series);
+            if (GetMaximumValue(table, y) != 0)
+            {
+                // Thêm series vào biểu đồ
+                chart2.Series.Add(series);
+                // Đặt tên trục x và trục y
+                chart2.ChartAreas[0].AxisX.Title = x;
+                chart2.ChartAreas[0].AxisY.Title = y;
+                chart2.ChartAreas[0].AxisY.Minimum = 0; // Giá trị nhỏ nhất của trục Y
+                chart2.ChartAreas[0].AxisY.Maximum = GetMaximumValue(table, y);
+                chart2.ChartAreas[0].RecalculateAxesScale();
+            }
+            else
+                chart2.ChartAreas[0].AxisY.Maximum = 0;
 
-            // Đặt tên trục x và trục y
-            chart2.ChartAreas[0].AxisX.Title = x;
-            chart2.ChartAreas[0].AxisY.Title = y;           
-
-            chart2.ChartAreas[0].AxisY.Minimum = 0; // Giá trị nhỏ nhất của trục Y
-            chart2.ChartAreas[0].AxisY.Maximum = GetMaximumValue(table, y);
-            chart2.ChartAreas[0].RecalculateAxesScale();
-
+        }
+        private void bieudocottheonam(DataTable table, string name)
+        {
+            dataGridView_Data2.DataSource = table;
+            bieudocot(table, name, "Tháng", "Số lượng");
+        }
+        private void bieudotrontheotrangthai(DataTable table, string name, string loai)
+        {
+            dataGridView_Data.DataSource = table;
+            bieudotron(table, name, loai, "Số lượng");
         }
         private void thongke_nguoidung_Load(object sender, EventArgs e)
         {
             comboBox_thongke.SelectedIndex = 0;
-            dataGridView_Data.DataSource = thongke_BUS.thongkenguoidung();
-            bieudotron(thongke_BUS.thongkenguoidung(), "Tài khoản theo loại", "Tài khoản", "Số lượng");
-            dataGridView_Data2.DataSource = thongke_BUS.thongkenguoidungmoitheothang();
-            bieudocot(thongke_BUS.thongkenguoidungmoitheothang(), "Tài khoản mới theo tháng", "Tháng", "Số lượng");
-        }
-        private void button_xem_Click(object sender, EventArgs e)
-        {
-            switch(comboBox_thongke.SelectedIndex)
-            {
-                case 0:
-                    dataGridView_Data.DataSource = thongke_BUS.thongkenguoidung();
-                    bieudotron(thongke_BUS.thongkenguoidung(), "Tài khoản theo loại", "Tài khoản", "Số lượng");
-                    dataGridView_Data2.DataSource = thongke_BUS.thongkenguoidungmoitheothang();
-                    bieudocot(thongke_BUS.thongkenguoidungmoitheothang(), "Tài khoản mới theo tháng", "Tháng", "Số lượng");
-                    break;
-                case 1:
-                    dataGridView_Data.DataSource = thongke_BUS.thongkechiendich();
-                    bieudotron(thongke_BUS.thongkechiendich(), "Chiến dịch theo trạng thái", "Chiến dịch", "Số lượng");
-                    dataGridView_Data2.DataSource = thongke_BUS.thongkechiendichtheothang();
-                    bieudocot(thongke_BUS.thongkechiendichtheothang(), "Chiến dịch bắt đầu theo tháng", "Tháng", "Số lượng");
-                    break;
-                case 2:
-                    dataGridView_Data.DataSource = thongke_BUS.thongkevoucher();
-                    bieudotron(thongke_BUS.thongkevoucher(), "Voucher theo trạng thái", "Voucher", "Số lượng");
-                    dataGridView_Data2.DataSource = thongke_BUS.thongkevouchermoitheothang();
-                    bieudocot(thongke_BUS.thongkevouchermoitheothang(), "Voucher mới theo tháng", "Tháng", "Số lượng");
-                    break;
-            }    
+            comboBox_nam.SelectedIndex = 0;
         }
         private void comboBox_thongke_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch (comboBox_thongke.SelectedIndex)
             {
-                case 0:
-                    dataGridView_Data.DataSource = thongke_BUS.thongkenguoidung();
-                    bieudotron(thongke_BUS.thongkenguoidung(), "Tài khoản theo loại", "Tài khoản", "Số lượng");
-                    dataGridView_Data2.DataSource = thongke_BUS.thongkenguoidungmoitheothang();
-                    bieudocot(thongke_BUS.thongkenguoidungmoitheothang(), "Tài khoản mới theo tháng", "Tháng", "Số lượng");
+                case 0:// thống kê người dùng
+                    comboBox_nam.SelectedIndex = 0;
+                    bieudotrontheotrangthai(thongke_BUS.thongkenguoidung(), "Tài khoản theo loại", "Tài khoản");
+                    bieudocottheonam(thongke_BUS.thongkenguoidungmoitheothang(int.Parse(comboBox_nam.SelectedItem.ToString())), "Tài khoản mới theo tháng");
                     break;
-                case 1:
-                    dataGridView_Data.DataSource = thongke_BUS.thongkechiendich();
-                    bieudotron(thongke_BUS.thongkechiendich(), "Chiến dịch theo trạng thái", "Chiến dịch", "Số lượng");
-                    dataGridView_Data2.DataSource = thongke_BUS.thongkechiendichtheothang();
-                    bieudocot(thongke_BUS.thongkechiendichtheothang(), "Chiến dịch bắt đầu theo tháng", "Tháng", "Số lượng");
+                case 1:// Thống kê chiến dịch
+                    comboBox_nam.SelectedIndex = 0;
+                    bieudotrontheotrangthai(thongke_BUS.thongkechiendich(), "Chiến dịch theo trạng thái", "Chiến dịch");
+                    bieudocottheonam(thongke_BUS.thongkechiendichtheothangvanam(int.Parse(comboBox_nam.SelectedItem.ToString())), "Chiến dịch bắt đầu theo tháng");
                     break;
-                case 2:
-                    dataGridView_Data.DataSource = thongke_BUS.thongkevoucher();
-                    bieudotron(thongke_BUS.thongkevoucher(), "Voucher theo trạng thái", "Voucher", "Số lượng");
-                    dataGridView_Data2.DataSource = thongke_BUS.thongkevouchermoitheothang();
-                    bieudocot(thongke_BUS.thongkevouchermoitheothang(), "Voucher mới theo tháng", "Tháng", "Số lượng");
+                case 2:// Thống kê Voucher
+                    comboBox_nam.SelectedIndex = 0;
+                    bieudotrontheotrangthai(thongke_BUS.thongkevoucher(), "Voucher theo trạng thái", "Voucher");
+                    bieudocottheonam(thongke_BUS.thongkevouchermoitheothang(int.Parse(comboBox_nam.SelectedItem.ToString())), "Voucher mới theo tháng");
                     break;
             }
+        }
+        private void comboBox_nam_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (comboBox_thongke.SelectedIndex)
+            {
+                case 0:
+                    bieudocottheonam(thongke_BUS.thongkenguoidungmoitheothang(int.Parse(comboBox_nam.SelectedItem.ToString())), "Tài khoản mới theo tháng");
+                    break;
+                case 1:
+                    bieudocottheonam(thongke_BUS.thongkechiendichtheothangvanam(int.Parse(comboBox_nam.SelectedItem.ToString())), "Chiến dịch bắt đầu theo tháng");
+                    break;
+                case 2:
+                    bieudocottheonam(thongke_BUS.thongkevouchermoitheothang(int.Parse(comboBox_nam.SelectedItem.ToString())), "Voucher mới theo tháng");
+                    break;
+            }
+
         }
     }
 }

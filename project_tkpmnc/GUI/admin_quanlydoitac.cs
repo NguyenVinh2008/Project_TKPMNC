@@ -16,7 +16,10 @@ namespace project_tkpmnc.GUI
         public void load()
         {
             comboBox_danhmuc.SelectedIndex = 0;
+            label1.Visible = false;
+            textBox_timkiem.Visible = false;
             textBox_timkiem.Text = string.Empty;
+            button_timkiem.Visible = false;
             dgv_thongtindoitac.DataSource = doitac_BUS.timdoitac();
         }
         private void admin_quanlydoitac_Load(object sender, EventArgs e)
@@ -29,6 +32,9 @@ namespace project_tkpmnc.GUI
             string search_str = textBox_timkiem.Text;
             switch (loai)
             {
+                //case "Toàn bộ":
+                //    load();
+                //    break;
                 case "Tên":
                     dgv_thongtindoitac.DataSource = doitac_BUS.timdoitactheoten(search_str);
                     break;
@@ -88,5 +94,43 @@ namespace project_tkpmnc.GUI
             load();
         }
 
+        private void comboBox_danhmuc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string loai = comboBox_danhmuc.SelectedItem.ToString();
+            string search_str = textBox_timkiem.Text;
+            switch (loai)
+            {
+                case "Toàn bộ":
+                    load();
+                    break;
+                case "Tên":
+                    label1.Visible = true;
+                    button_timkiem.Visible = true;
+                    textBox_timkiem.Visible = true;
+                    //dgv_thongtindoitac.DataSource = doitac_BUS.timdoitactheoten(search_str);
+                    break;
+                case "Email":
+                    label1.Visible = true;
+                    button_timkiem.Visible = true;
+                    textBox_timkiem.Visible = true;
+                    //dgv_thongtindoitac.DataSource = doitac_BUS.timdoitacgandungtheoemail(search_str);
+                    break;
+                case "Số điện thoại":
+                    label1.Visible = true;
+                    button_timkiem.Visible = true;
+                    textBox_timkiem.Visible = true;
+                    //dgv_thongtindoitac.DataSource = doitac_BUS.timdoitactheosodienthoai(search_str);
+                    break;
+                case "Trạng thái":
+                    label1.Visible = true;
+                    button_timkiem.Visible = true;
+                    textBox_timkiem.Visible = true;
+                    //if (search_str == "0" || search_str == "1")
+                    //    dgv_thongtindoitac.DataSource = doitac_BUS.timdoitactheotrangthai(int.Parse(search_str));
+                    //else
+                    //    MessageBox.Show("Trạng thái chỉ nhập số 0 (chưa duyệt) và số 1 (đã duyệt)!");
+                    break;
+            }
+        }
     }
 }
