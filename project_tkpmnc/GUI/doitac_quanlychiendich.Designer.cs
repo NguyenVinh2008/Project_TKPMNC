@@ -32,7 +32,6 @@
             this.button_save = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button_themvoucher = new System.Windows.Forms.Button();
-            this.button_timkiem = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button_chinhsua = new System.Windows.Forms.Button();
             this.button_taochiendich = new System.Windows.Forms.Button();
@@ -51,7 +50,6 @@
             this.groupBox1.Controls.Add(this.button_save);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.button_themvoucher);
-            this.groupBox1.Controls.Add(this.button_timkiem);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.button_chinhsua);
             this.groupBox1.Controls.Add(this.button_taochiendich);
@@ -86,6 +84,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 6;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // button_themvoucher
             // 
@@ -95,17 +94,8 @@
             this.button_themvoucher.TabIndex = 5;
             this.button_themvoucher.Text = "Thêm voucher";
             this.button_themvoucher.UseVisualStyleBackColor = true;
+            this.button_themvoucher.Visible = false;
             this.button_themvoucher.Click += new System.EventHandler(this.button_themvoucher_Click);
-            // 
-            // button_timkiem
-            // 
-            this.button_timkiem.Location = new System.Drawing.Point(188, 14);
-            this.button_timkiem.Name = "button_timkiem";
-            this.button_timkiem.Size = new System.Drawing.Size(85, 23);
-            this.button_timkiem.TabIndex = 4;
-            this.button_timkiem.Text = "Tìm kiếm";
-            this.button_timkiem.UseVisualStyleBackColor = true;
-            this.button_timkiem.Click += new System.EventHandler(this.button_timkiem_Click);
             // 
             // label1
             // 
@@ -199,7 +189,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button_timkiem;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button_chinhsua;
         private System.Windows.Forms.Button button_taochiendich;

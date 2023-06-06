@@ -30,5 +30,9 @@ namespace project_tkpmnc.BUS
         {
             return phanthuong_DAO.themphanthuong(voucher_DTO.id, chiendich_DTO.chiendich_id);
         }
+        public DataTable layphanthuongcuanguoidungtheotrangthai()
+        {
+            return phanthuong_DAO.layphanthuongcuanguoidungtheotrangthai(nguoidung_DTO.id, voucher_DTO.trangthai);
+        }
     }
 }

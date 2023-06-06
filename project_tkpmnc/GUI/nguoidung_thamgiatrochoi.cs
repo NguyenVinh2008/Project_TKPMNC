@@ -19,17 +19,15 @@ namespace project_tkpmnc.GUI
         {
             InitializeComponent();
         }
+        thamgia_BUS thamgia_BUS = new thamgia_BUS();
         chiendich_BUS chiendich_BUS = new chiendich_BUS();
         public int countphanthuong;
         public void load_data()
         {
+            comboBox_timkiem.SelectedIndex = 0;
+            button_thamgia.Visible = false;
             chiendich_DTO.trangthai = 1;
             dgv_thongtintrochoi.DataSource = chiendich_BUS.laychiendichdangdienratheotrangthai();
-        }
-
-        private void button_reload_Click(object sender, EventArgs e)
-        {
-            load_data();
         }
 
         private void nguoidung_thamgiatrochoi_Load(object sender, EventArgs e)
@@ -64,6 +62,24 @@ namespace project_tkpmnc.GUI
                     frm_mayman lotto = new frm_mayman();
                     lotto.ShowDialog();
                     load_data();
+                    break;
+            }
+        }
+
+        private void comboBox_timkiem_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (comboBox_timkiem.SelectedIndex)
+            {
+                case 0:
+                    load_data();
+                    break;
+                case 1:
+                    button_thamgia.Visible = true;
+                    dgv_thongtintrochoi.DataSource = thamgia_BUS.laydanhsachchiendichchuathamgia();
+                    break;
+                case 2:
+                    button_thamgia.Visible = false;
+                    dgv_thongtintrochoi.DataSource = thamgia_BUS.laydanhsachchiendichdathamgia();
                     break;
             }
         }

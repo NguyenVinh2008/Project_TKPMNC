@@ -29,11 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button_save = new System.Windows.Forms.Button();
+            this.button_sudung = new System.Windows.Forms.Button();
             this.comboBox_timkiem = new System.Windows.Forms.ComboBox();
-            this.button_timkiem = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.button_tailai = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgv_thongtinvoucher = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
@@ -46,11 +44,9 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.button_save);
+            this.groupBox1.Controls.Add(this.button_sudung);
             this.groupBox1.Controls.Add(this.comboBox_timkiem);
-            this.groupBox1.Controls.Add(this.button_timkiem);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.button_tailai);
             this.groupBox1.Location = new System.Drawing.Point(7, 31);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(492, 73);
@@ -58,37 +54,28 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thao tác";
             // 
-            // button_save
+            // button_sudung
             // 
-            this.button_save.Enabled = false;
-            this.button_save.Location = new System.Drawing.Point(97, 41);
-            this.button_save.Name = "button_save";
-            this.button_save.Size = new System.Drawing.Size(85, 23);
-            this.button_save.TabIndex = 7;
-            this.button_save.Text = "Ghi lại";
-            this.button_save.UseVisualStyleBackColor = true;
+            this.button_sudung.Enabled = false;
+            this.button_sudung.Location = new System.Drawing.Point(188, 12);
+            this.button_sudung.Name = "button_sudung";
+            this.button_sudung.Size = new System.Drawing.Size(85, 23);
+            this.button_sudung.TabIndex = 7;
+            this.button_sudung.Text = "Sử dụng";
+            this.button_sudung.UseVisualStyleBackColor = true;
             // 
             // comboBox_timkiem
             // 
             this.comboBox_timkiem.FormattingEnabled = true;
             this.comboBox_timkiem.Items.AddRange(new object[] {
             "Toàn bộ",
-            "Chưa phát",
-            "Đã phát",
+            "Chưa sử dụng",
             "Đã sử dụng"});
             this.comboBox_timkiem.Location = new System.Drawing.Point(61, 14);
             this.comboBox_timkiem.Name = "comboBox_timkiem";
             this.comboBox_timkiem.Size = new System.Drawing.Size(121, 21);
             this.comboBox_timkiem.TabIndex = 6;
-            // 
-            // button_timkiem
-            // 
-            this.button_timkiem.Location = new System.Drawing.Point(188, 14);
-            this.button_timkiem.Name = "button_timkiem";
-            this.button_timkiem.Size = new System.Drawing.Size(85, 23);
-            this.button_timkiem.TabIndex = 4;
-            this.button_timkiem.Text = "Tìm kiếm";
-            this.button_timkiem.UseVisualStyleBackColor = true;
+            this.comboBox_timkiem.SelectedIndexChanged += new System.EventHandler(this.comboBox_timkiem_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -98,15 +85,6 @@
             this.label1.Size = new System.Drawing.Size(49, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "Tìm kiếm";
-            // 
-            // button_tailai
-            // 
-            this.button_tailai.Location = new System.Drawing.Point(6, 41);
-            this.button_tailai.Name = "button_tailai";
-            this.button_tailai.Size = new System.Drawing.Size(85, 23);
-            this.button_tailai.TabIndex = 1;
-            this.button_tailai.Text = "Tải lại";
-            this.button_tailai.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -170,11 +148,9 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button_save;
+        private System.Windows.Forms.Button button_sudung;
         private System.Windows.Forms.ComboBox comboBox_timkiem;
-        private System.Windows.Forms.Button button_timkiem;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button_tailai;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dgv_thongtinvoucher;
         private System.Windows.Forms.Label label6;

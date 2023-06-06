@@ -98,6 +98,31 @@ namespace project_tkpmnc.GUI
             MessageBox.Show("Thay đổi thông tin chiến dịch thành công!");
             dgv_thongtinchiendich.DataSource = chiendich_BUS.laychiendichtheoid();
             button_save.Enabled = false;
-        }       
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (comboBox1.SelectedIndex)
+            {
+                case 0:
+                    load_data();
+                    break;
+                case 1:
+                    chiendich_DTO.trangthai = 0;
+                    dgv_thongtinchiendich.DataSource = chiendich_BUS.laychiendichcuadoitactheotrangthai();
+                    break;
+                case 2:
+                    chiendich_DTO.trangthai = 1;
+                    dgv_thongtinchiendich.DataSource = chiendich_BUS.laychiendichcuadoitactheotrangthai();
+                    break;
+                case 3:
+                    dgv_thongtinchiendich.DataSource = chiendich_BUS.laychiendichcuadoitacdangdienra();
+                    break;
+                case 4:
+                    chiendich_DTO.trangthai = 2;
+                    dgv_thongtinchiendich.DataSource = chiendich_BUS.laychiendichcuadoitactheotrangthai();
+                    break;
+            }
+        }
     }
 }

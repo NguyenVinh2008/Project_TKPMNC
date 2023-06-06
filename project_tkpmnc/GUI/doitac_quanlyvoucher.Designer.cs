@@ -31,7 +31,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button_save = new System.Windows.Forms.Button();
             this.comboBox_timkiem = new System.Windows.Forms.ComboBox();
-            this.button_timkiem = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button_chinhsua = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -48,7 +47,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.button_save);
             this.groupBox1.Controls.Add(this.comboBox_timkiem);
-            this.groupBox1.Controls.Add(this.button_timkiem);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.button_chinhsua);
             this.groupBox1.Location = new System.Drawing.Point(7, 31);
@@ -81,16 +79,7 @@
             this.comboBox_timkiem.Name = "comboBox_timkiem";
             this.comboBox_timkiem.Size = new System.Drawing.Size(121, 21);
             this.comboBox_timkiem.TabIndex = 6;
-            // 
-            // button_timkiem
-            // 
-            this.button_timkiem.Location = new System.Drawing.Point(188, 14);
-            this.button_timkiem.Name = "button_timkiem";
-            this.button_timkiem.Size = new System.Drawing.Size(85, 23);
-            this.button_timkiem.TabIndex = 4;
-            this.button_timkiem.Text = "Tìm kiếm";
-            this.button_timkiem.UseVisualStyleBackColor = true;
-            this.button_timkiem.Click += new System.EventHandler(this.button_timkiem_Click);
+            this.comboBox_timkiem.SelectedIndexChanged += new System.EventHandler(this.comboBox_timkiem_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -174,7 +163,6 @@
         #endregion
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox comboBox_timkiem;
-        private System.Windows.Forms.Button button_timkiem;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dgv_thongtinvoucher;

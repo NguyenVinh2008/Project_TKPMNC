@@ -22,26 +22,7 @@ namespace project_tkpmnc.GUI
             comboBox_timkiem.SelectedIndex = 0;
             dgv_thongtinvoucher.ReadOnly = true;
         }
-        private void button_timkiem_Click(object sender, EventArgs e)
-        {
-            switch (comboBox_timkiem.SelectedIndex)
-            {
-                case 0:
-                    load_data();
-                    break;
-                case 1:
-                    voucher_DTO.trangthai = 0;
-                    break;
-                case 2:
-                    voucher_DTO.trangthai = 1;
-                    break;
-                case 3:
-                    voucher_DTO.trangthai = 2;
-                    break;
-            }
-            dgv_thongtinvoucher.DataSource = voucher_BUS.layvouchertheotrangthai();
-
-        }
+        
         private void dgv_thongtinvoucher_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = new DataGridViewRow();

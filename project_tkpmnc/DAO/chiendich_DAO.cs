@@ -68,7 +68,7 @@ namespace project_tkpmnc.DAO
         }
         public DataTable laychiendichdangdienratheotrangthai(int nguoidung_id, int trangthai)
         {
-            string sql = "EXEC SELECT_CHIENDICH_DANGDIENRA_THEOTRANGTHAI '" + nguoidung_id + "','" + trangthai + "'";
+            string sql = "EXEC SELECT_CHIENDICH_DANGDIENRA_THEOTRANGTHAI '" + trangthai + "'";
             return db.laydulieu(sql);
         }
 
